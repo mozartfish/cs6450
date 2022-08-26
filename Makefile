@@ -28,4 +28,4 @@ LABS=" lab1 lab2a lab2b lab2c lab2d lab3a lab3b lab4a lab4b "
 .PHONY: check-%
 check-%:
 	@echo "Checking that your submission builds correctly..."
-	@./.check-build git@github.com:rstutsman/cs6450-labs.git $(patsubst check-%,%,$@)
+	@./.check-build https://github.com/rstutsman/cs6450-labs.git $(patsubst check-%,%,$@)
