@@ -23,6 +23,42 @@ type ExampleReply struct {
 }
 
 // Add your RPC definitions here.
+type mrArgs struct {
+	X int
+}
+type mrReply struct {
+	FileName string 
+}
+
+
+// Constants for handling when program is done (Section 3.1)
+// - Notify coordinator when finish map 
+// - Notify coordinator when finish reduce 
+// - Notify user program that map and reduce are done 
+// const (
+// 	MapDone = iota
+// 	ReduceDone
+// 	MapReduceDone
+// )
+
+// Three types of messages 
+// 1. Coordinator Message 
+// 2. Intermediate State Message 
+// 3. Worker Message
+
+// Coordinator Message 
+
+// Intermediate Message
+//  group together all intermediate values associated with the
+//  same intermediate key I and pass to reduce function
+
+// Worker Message 
+
+// message needs to contain the following
+// 1. File Name 
+// 2. Task - map or reduce 
+// 3. Status - Map, Reduce or done
+// 4. 
 
 
 // Cook up a unique-ish UNIX-domain socket name
