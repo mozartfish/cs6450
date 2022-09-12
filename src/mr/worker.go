@@ -3,8 +3,12 @@ package mr
 import (
 	"fmt"
 	"hash/fnv"
+	"io/ioutil"
 	"log"
 	"net/rpc"
+	"os"
+	"encoding/json"
+	// "decoding/json"
 )
 
 // Map functions return a slice of KeyValue.
@@ -30,7 +34,40 @@ func Worker(mapf func(string, string) []KeyValue,
 	// uncomment to send the Example RPC to the coordinator.
 	//CallExample()
 
-	mapReduce()
+	fileName := mapReduce()
+
+	// for _, line := range fileName {
+	// 	fmt.Println(line)
+	// }
+
+	file, err := os.Open(fileName)
+	if err != nil {
+		log.Fatalf("cannot open %v", fileName)
+	}
+	content, err := ioutil.ReadAll(file)
+
+	// fmt.Println("finish printing lines")
+
+	if err != nil {
+		log.Fatalf("cannot read %v", fileName)
+	}
+	file.Close()
+
+	kva := mapf(fileName, string(content))
+
+	// // write kva to a file to check contents
+	mapFile := "mr-out-0"
+	ofile, _ := os.Create(mapFile)
+	enc:= json.NewEncoder(ofile)
+
+	for i:= 0; i < len(kva); i++{
+		err = enc.Encode(&kva[i])
+		// err = enc.Encode()
+	}
+	// enc := json.NewEncoder(ofile)
+	// kv := kva[0]
+	// err = enc.Encode(&kv)
+	fmt.Printf("test write to file")
 
 }
 
@@ -61,15 +98,17 @@ func CallExample() {
 	}
 }
 
-func mapReduce() {
-	args := mrArgs{}
+func mapReduce() string {
+	args := MRArgs{}
 	args.X = 10
-	reply := mrReply{}
+	reply := MRReply{}
 	ok := call("Coordinator.AssignTask", &args, &reply)
 	if ok {
 		fmt.Printf("reply.name %v\n", reply.FileName)
+		return reply.FileName
 	} else {
 		fmt.Printf("call failed!\n")
+		return ""
 	}
 }
 

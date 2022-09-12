@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/rpc"
 	"os"
+	"fmt"
 )
 
 // Section 3.2 state of workers
@@ -52,8 +53,9 @@ func (c *Coordinator) Example(args *ExampleArgs, reply *ExampleReply) error {
 	return nil
 }
 
-func (c *Coordinator) AssignTask(args *mrArgs, reply *mrReply) error {
+func (c *Coordinator) AssignTask(args *MRArgs, reply *MRReply) error {
 	reply.FileName = c.files[0]
+	fmt.Printf("Assign value %v\n", reply.FileName)
 	return nil
 }
 
@@ -81,7 +83,7 @@ func (c *Coordinator) Done() bool {
 	return ret
 }
 
-// create a Coordinator.
+// create a Coordinator
 // main/mrcoordinator.go calls this function.
 // nReduce is the number of reduce tasks to use.
 func MakeCoordinator(files []string, nReduce int) *Coordinator {

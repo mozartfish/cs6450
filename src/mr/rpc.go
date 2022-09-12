@@ -23,10 +23,10 @@ type ExampleReply struct {
 }
 
 // Add your RPC definitions here.
-type mrArgs struct {
+type MRArgs struct {
 	X int
 }
-type mrReply struct {
+type MRReply struct {
 	FileName string 
 }
 
