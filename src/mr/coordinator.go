@@ -1,20 +1,19 @@
 package mr
 
 import (
+	"fmt"
 	"log"
 	"net"
 	"net/http"
 	"net/rpc"
 	"os"
-	"fmt"
-	
 )
 
 // Section 3.2 state of workers
 const (
-	idleState = iota
-	inProgressState
-	completedState
+	IdleState = iota
+	InProgress
+	Completed
 )
 
 type Coordinator struct {
@@ -22,50 +21,75 @@ type Coordinator struct {
 
 	// Text files are input files - correspond to 1 piece in the map reduce paper
 	// M files => M pieces => 8 map tasks, 10 reduce tasks () from the tests
-	files []string
+	// files []string
 
-	// Number of reduce tasks 
-	reduceTaskCount int
+	// Task variables
+	TaskMsg string // the task the worker is supposed to perform
 
-	// Number of map tasks 
-	mapTaskCount int
-
-	// // file to task status
-	// splits map[string]int
-
-	// // Number of map tasks
-	// nMap int
-
-	// // Number of reduce tasks
-	// nReduce int
-
-	// // Coordinator lock
-	// cMutex sync.Mutex
-
-	// // Map Done
-	// mapFinish bool
-
-	// // Reduce Done
-	// reduceFinish bool
+	// Map Task Variables
+	MapFileStatus map[string]int // keep track of which map jobs done
+	MapFinish     bool           // keep track of when all map tasks are finished
 
 }
 
 // Your code here -- RPC handlers for the worker to call.
+func (c *Coordinator) AssignTask(args *MRArgs, reply *MRReply) error {
+	// print the arg values
 
-// an example RPC handler.
-//
-// the RPC argument and reply types are defined in rpc.go.
-func (c *Coordinator) Example(args *ExampleArgs, reply *ExampleReply) error {
-	reply.Y = args.X + 1
+	// Send the reply message
+	reply.FileName = TaskManager(c) // send the file name for mapping
+	reply.TaskMsg = c.TaskMsg       // send the task
+
+	fmt.Printf("File name: %v\n", reply.FileName)
+	fmt.Printf("Task: %v\n", reply.TaskMsg)
 	return nil
 }
 
-func (c *Coordinator) AssignTask(args *MRArgs, reply *MRReply) error {
-	task := 0 
-	reply.FileName = c.files[task]
-	task += 1
-	fmt.Printf("Assign value %v\n", reply.FileName)
+func (c *Coordinator) UpdateTask(args *MRArgs, reply *MRReply) error {
+	fmt.Printf("File name updated: %v\n", args.FileName)
+	c.MapFileStatus[args.FileName] = Completed
+	fmt.Printf("the mapped files %v\n", c.MapFileStatus)
 	return nil
+}
+
+// Find a Task for the map
+// returns the name of task that is incomplete
+func TaskManager(c *Coordinator) string {
+	// check if the all the map tasks have been finished
+	mapDone := CheckMapStatus(c)
+	fmt.Printf("map status %v\n", mapDone)
+
+	// if not all the map tasks have been done then assign an incomplete file
+	if !mapDone {
+		// set the task value
+		c.TaskMsg = "map"
+
+		for key, value := range c.MapFileStatus {
+			if value == IdleState {
+				c.MapFileStatus[key] = InProgress
+				return key
+			}
+		}
+	}
+
+	if c.MapFinish {
+		c.TaskMsg = ""
+		fmt.Println("Finish all the map tasks")
+	}
+
+	return ""
+}
+
+// Function that checks whether all map tasks have been completed
+func CheckMapStatus(c *Coordinator) bool {
+	// check if all the map status are complete
+	for _, value := range c.MapFileStatus {
+		if value != Completed {
+			return false
+		}
+	}
+	c.MapFinish = true
+	return true
 }
 
 // start a thread that listens for RPCs from worker.go
@@ -99,9 +123,23 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 	c := Coordinator{}
 
 	// Your code here.
-	c.files = files
-	c.mapTaskCount = len(files)
-	c.reduceTaskCount = nReduce
+	c.MapFileStatus = make(map[string]int)
+	c.MapFinish = false
+	c.TaskMsg = ""
+
+	// populate files
+	for _, value := range files {
+		c.MapFileStatus[value] = IdleState
+	}
+
 	c.server()
 	return &c
+}
+
+// an example RPC handler.
+//
+// the RPC argument and reply types are defined in rpc.go.
+func (c *Coordinator) Example(args *ExampleArgs, reply *ExampleReply) error {
+	reply.Y = args.X + 1
+	return nil
 }

@@ -24,10 +24,20 @@ type ExampleReply struct {
 
 // Add your RPC definitions here.
 type MRArgs struct {
-	X int
+	FileName string // function that was just mapped 
 }
 type MRReply struct {
-	FileName string 
+	FileName string // the name of the file that was requested by the worker
+	TaskMsg string // the task the worker is supposed to perform
+
+
+
+	// MapTaskCount int
+	// MapTaskCount int // the number of map tasks that have been completed
+	// MapTaskCount int
+	// ReduceTasksCount int
+	// Task string
+	// ResultFiles []string // contains all the filenames from the result of reduce
 }
 
 
