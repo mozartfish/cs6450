@@ -1,13 +1,14 @@
 package mr
 
 import (
+	"encoding/json"
 	"fmt"
 	"hash/fnv"
 	"io/ioutil"
 	"log"
 	"net/rpc"
 	"os"
-	"encoding/json"
+	"sort"
 	// "decoding/json"
 )
 
@@ -16,6 +17,14 @@ type KeyValue struct {
 	Key   string
 	Value string
 }
+
+// for sorting by key.
+type ByKey []KeyValue
+
+// for sorting by key.
+func (a ByKey) Len() int           { return len(a) }
+func (a ByKey) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByKey) Less(i, j int) bool { return a[i].Key < a[j].Key }
 
 // use ihash(key) % NReduce to choose the reduce
 // task number for each KeyValue emitted by Map.
@@ -36,38 +45,73 @@ func Worker(mapf func(string, string) []KeyValue,
 
 	fileName := mapReduce()
 
-	// for _, line := range fileName {
-	// 	fmt.Println(line)
-	// }
-
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatalf("cannot open %v", fileName)
 	}
 	content, err := ioutil.ReadAll(file)
-
-	// fmt.Println("finish printing lines")
-
 	if err != nil {
 		log.Fatalf("cannot read %v", fileName)
 	}
 	file.Close()
-
 	kva := mapf(fileName, string(content))
 
 	// // write kva to a file to check contents
-	mapFile := "mr-out-0"
-	ofile, _ := os.Create(mapFile)
-	enc:= json.NewEncoder(ofile)
+	mapFile := "mr-intermediatory-0"
+	outfile, _ := os.Create(mapFile)
+	enc := json.NewEncoder(outfile)
 
-	for i:= 0; i < len(kva); i++{
+	for i := 0; i < len(kva); i++ {
 		err = enc.Encode(&kva[i])
-		// err = enc.Encode()
 	}
+	outfile.Close()
+
+	// Perform the reduce
+	openFile, err := os.Open(mapFile)
+
+	dec := json.NewDecoder(openFile)
+	intermediate := []KeyValue{}
+	for {
+	  var kv KeyValue
+	  if err := dec.Decode(&kv); err != nil {
+		break
+	  }
+	  intermediate = append(intermediate, kv)
+	}
+
+	sort.Sort(ByKey(intermediate))
+	reduceFile := "mr-out-1"
+	outfile2, _ := os.Create(reduceFile)
+	i := 0
+	for i < len(intermediate) {
+		j := i + 1
+		for j < len(intermediate) && intermediate[j].Key == intermediate[i].Key {
+			j++
+		}
+		values := []string{}
+		for k := i; k < j; k++ {
+			values = append(values, intermediate[k].Value)
+		}
+		output := reducef(intermediate[i].Key, values)
+
+		// this is the correct format for each line of Reduce output.
+		fmt.Fprintf(outfile2, "%v %v\n", intermediate[i].Key, output)
+
+		i = j
+	}
+
+	outfile2.Close()
+
+
+	// fileOpen, err := os.Open(mapFile)
+	// if err != nil {
+	// 	log.Fatalf("cannot open %v", mapFile)
+	// }
+
 	// enc := json.NewEncoder(ofile)
 	// kv := kva[0]
 	// err = enc.Encode(&kv)
-	fmt.Printf("test write to file")
+	// fmt.Printf("test write to file")
 
 }
 
