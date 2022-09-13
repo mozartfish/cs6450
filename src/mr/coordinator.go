@@ -24,6 +24,12 @@ type Coordinator struct {
 	// M files => M pieces => 8 map tasks, 10 reduce tasks () from the tests
 	files []string
 
+	// Number of reduce tasks 
+	reduceTaskCount int
+
+	// Number of map tasks 
+	mapTaskCount int
+
 	// // file to task status
 	// splits map[string]int
 
@@ -55,7 +61,9 @@ func (c *Coordinator) Example(args *ExampleArgs, reply *ExampleReply) error {
 }
 
 func (c *Coordinator) AssignTask(args *MRArgs, reply *MRReply) error {
-	reply.FileName = c.files[0]
+	task := 0 
+	reply.FileName = c.files[task]
+	task += 1
 	fmt.Printf("Assign value %v\n", reply.FileName)
 	return nil
 }
@@ -92,7 +100,8 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 
 	// Your code here.
 	c.files = files
-
+	c.mapTaskCount = len(files)
+	c.reduceTaskCount = nReduce
 	c.server()
 	return &c
 }
