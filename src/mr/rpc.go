@@ -35,13 +35,22 @@ type TaskReply struct {
 	FileName    string // the name of the file name for the map task
 	MapCount    int    // the map task count
 	ReduceCount int    // the reduce task count
+	Reducer int // the reducer to apply to a map task 
 }
 
-// // Task Completed
+// Tasks Completed
 type MapTaskCompletedArgs struct {
-	FileName string
+	FileName string // name of the file that completed its map
 }
+
 type MapTaskCompletedReply struct {
+}
+
+type ReduceTaskCompletedArgs struct {
+	Reducer int // name of the reducer that completed its reduce
+}
+
+type ReduceTaskCompletedReply struct {
 }
 
 // Cook up a unique-ish UNIX-domain socket name

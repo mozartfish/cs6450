@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/rpc"
 	"os"
+	"sort"
 	"strconv"
 )
 
@@ -47,19 +48,62 @@ func Worker(mapf func(string, string) []KeyValue,
 			fileName := taskReply.FileName
 			// fmt.Printf("Map Count: %v\n", taskReply.MapCount)
 			mapCount := taskReply.MapCount
-			fmt.Printf("Reduce Count: %v\n", taskReply.ReduceCount)
+			// fmt.Printf("Reduce Count: %v\n", taskReply.ReduceCount)
 			reduceCount := taskReply.ReduceCount
+
+			// Map
 			Map(fileName, mapCount, reduceCount, mapf)
+
+			// Notify coordinator with the update
 			CompleteMapTask(fileName)
 		case task == "reduce":
 			fmt.Println("Perform a Reduce Task")
+			// fmt.Printf("Reducer: %v\n", taskReply.Reducer)
+			reducer := taskReply.Reducer
+			// fmt.Printf("Map Count: %v\n", taskReply.MapCount)
+			mapCount := taskReply.MapCount
+
+			// combine all the files into an array corresponding to the reducer
+			var reduceList []string
+			for i := 0; i < mapCount; i++ {
+				if reducer >= 0 {
+					filename := "mr-" + strconv.Itoa(i) + "-" + strconv.Itoa(reducer)
+					reduceList = append(reduceList, filename)
+				}
+			}
+
+			// Produce a single intermediate value for sorting and reducing
+			intermediate := []KeyValue{}
+			for j := 0; j < len(reduceList); j++ {
+				filename := reduceList[j]
+				fmt.Printf("Filename: %v\n", filename)
+				file, err := os.Open(filename)
+				if err != nil {
+					log.Fatalf("cannot open %v", filename)
+				}
+				defer file.Close()
+				dec := json.NewDecoder(file)
+				for {
+					var kv KeyValue
+					if err := dec.Decode(&kv); err != nil {
+						break
+					}
+					intermediate = append(intermediate, kv)
+				}
+			}
+			// sort the intermediate values
+			sort.Sort(ByKey(intermediate))
+
+			// Reduce
+			Reduce(reducer, intermediate, reducef)
+
+			// Notify coodinator that reduce task is complete
+			CompleteReduceTask(reducer)
+
 		default:
 			log.Fatal("The Message was not received and failed!\n")
 		}
 	}
-	// perform either a map or reduce task depending on the task sent by the coordinator
-
-	// fmt.Printf("Task: %v\n", taskReply.Task)
 
 	// uncomment to send the Example RPC to the coordinator.
 	// CallExample()
@@ -69,7 +113,7 @@ func Worker(mapf func(string, string) []KeyValue,
 func Map(filename string, MapCount int, ReduceCount int, mapf func(string, string) []KeyValue) {
 	file, err := os.Open(filename)
 	if err != nil {
-		log.Fatal("Cannot open file %v\n", file)
+		log.Fatalf("Cannot open file %v\n", file)
 	}
 	defer file.Close()
 	if err != nil {
@@ -81,21 +125,46 @@ func Map(filename string, MapCount int, ReduceCount int, mapf func(string, strin
 	}
 	kva := mapf(filename, string(content)) // apply map function to data
 
-	// call the partition function and write to temp file 
+	// call the partition function and write to temp file
 	Partition(kva, MapCount, ReduceCount)
 }
 
+func Reduce(Reducer int, Intermediate []KeyValue, reducef func(string, []string) string) {
+	oname := "mr-out" + "-" + strconv.Itoa(Reducer)
+	ofile, _ := os.Create(oname)
+	defer ofile.Close()
+	// fmt.Printf("Intermediate: %v\n", Intermediate)
+	i := 0
+	for i < len(Intermediate) {
+		j := i + 1
+		for j < len(Intermediate) && Intermediate[j].Key == Intermediate[i].Key {
+			j++
+		}
+		values := []string{}
+		for k := i; k < j; k++ {
+			values = append(values, Intermediate[k].Value)
+		}
+		output := reducef(Intermediate[i].Key, values)
+
+		// this is the correct format for each line of Reduce output.
+		fmt.Fprintf(ofile, "%v %v\n", Intermediate[i].Key, output)
+
+		i = j
+	}
+
+}
+
 // Function for mapping key values pairs to an index
-func Partition(kva []KeyValue, nMap int, nReduce int){
+func Partition(kva []KeyValue, nMap int, nReduce int) {
 	// create some buckets for the reduce
 	iMap := make([][]KeyValue, nReduce)
 
-	// Find length of key value map 
-	fmt.Println("Enter the Partition Function")
-	fmt.Printf("len of kva: %v\n", len(kva))
-	fmt.Printf("iMap: %v\n", iMap)
+	// Find length of key value map
+	// fmt.Println("Enter the Partition Function")
+	// fmt.Printf("len of kva: %v\n", len(kva))
+	// fmt.Printf("iMap: %v\n", iMap)
 
-	for i:= 0; i < len(kva); i++ {
+	for i := 0; i < len(kva); i++ {
 		keyVal := kva[i]
 		pIndex := ihash(keyVal.Key) % nReduce
 		// fmt.Printf("bucket: %v\n", pIndex)
@@ -103,7 +172,7 @@ func Partition(kva []KeyValue, nMap int, nReduce int){
 		// fmt.Printf("current hash value: %v\n", iMap[pIndex])
 	}
 
-	// Print indexes of imap 
+	// Print indexes of imap
 	// for index,_ := range iMap {
 	// 	// fmt.Printf("bucket: %v\n", index)
 	// 	// fmt.Printf("number of elements in a bucket: %v\n", len(iMap[index]))
@@ -112,21 +181,17 @@ func Partition(kva []KeyValue, nMap int, nReduce int){
 	// Create intermediary files for each reduce function
 	for j := 0; j < nReduce; j++ {
 		filename := "mr-" + strconv.Itoa(nMap) + "-" + strconv.Itoa(j)
-		outfile, _:= os.Create(filename)
+		outfile, _ := os.Create(filename)
 		defer outfile.Close()
 		enc := json.NewEncoder(outfile)
 		hkva := iMap[j] // the key values in a particular reduce bucket
-		for k:= 0; k < len(hkva); k++ {
+		for k := 0; k < len(hkva); k++ {
 			err := enc.Encode(&hkva[k])
 			if err != nil {
-				log.Fatal("error: %v\n", err)
+				log.Fatalf("error: %v\n", err)
 			}
 		}
 	}
-}
-
-func Reduce(reducef func(string, []string) string) {
-
 }
 
 // RPC Call to the coordinator requesting a task
@@ -155,13 +220,25 @@ func CompleteMapTask(FileName string) {
 	// Arguments
 	args := MapTaskCompletedArgs{}
 	args.FileName = FileName
-	// // Reply
+	// Reply
 	reply := MapTaskCompletedReply{}
 	ok := call("Coordinator.UpdateMap", &args, &reply)
 	if !ok {
 		fmt.Printf("Complete Task Call failed!\n")
 	}
+}
 
+// RPC Call to the coordinator notifying that reduce task has been finished
+func CompleteReduceTask(Reducer int) {
+	//Arguments
+	args := ReduceTaskCompletedArgs{}
+	args.Reducer = Reducer
+	// Reply
+	reply := ReduceTaskCompletedReply{}
+	ok := call("Coordinator.UpdateReduce", &args, &reply)
+	if !ok {
+		fmt.Printf("Complete Task Call failed!\n")
+	}
 }
 
 // example function to show how to make an RPC call to the coordinator.

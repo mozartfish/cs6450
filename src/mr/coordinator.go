@@ -37,7 +37,7 @@ func (c *Coordinator) AssignTask(args *TaskArgs, reply *TaskReply) error {
 	// check if there are any map tasks that have yet to be completed
 	// fmt.Printf("Current Map Count %v\n", c.nMap)
 	mapDone := CheckMapStatus(c)
-	// reduceDone := CheckReduceStatus(c)
+	reduceDone := CheckReduceStatus(c)
 
 	if !mapDone {
 		fmt.Println("Add a map task")
@@ -50,13 +50,18 @@ func (c *Coordinator) AssignTask(args *TaskArgs, reply *TaskReply) error {
 		reply.MapCount = c.nMap
 		reply.ReduceCount = c.nReduce
 	} else {
-		fmt.Println("Add a reduce task")
-		reducer := GetReduceTask(c)
-		c.reduceStatus[reducer] = InProgress
+		if !reduceDone {
+			fmt.Println("Add a reduce task")
+			reducer := GetReduceTask(c)
+			c.reduceStatus[reducer] = InProgress
 
-		// Send a reply
-		reply.Task = "reduce"
-		// reply.
+			// Send a reply
+			reply.Task = "reduce"
+			reply.Reducer = reducer
+			reply.MapCount = c.nMap
+			reply.ReduceCount = c.nReduce
+		}
+
 	}
 
 	// if !reduceDone {
@@ -79,6 +84,15 @@ func (c *Coordinator) UpdateMap(args *MapTaskCompletedArgs, reply *MapTaskComple
 	fileName := args.FileName
 	c.mapStatus[fileName] = Completed
 	c.nMap = c.nMap + 1
+	// fmt.Printf("Current map status: %v\n", c.mapStatus)
+	// fmt.Printf("Current map task count: %v\n", c.nMap)
+	return nil
+}
+
+// RPC Handler to update the reduce task status
+func (c *Coordinator) UpdateReduce(args *ReduceTaskCompletedArgs, reply *ReduceTaskCompletedReply) error {
+	reducer := args.Reducer
+	c.reduceStatus[reducer] = Completed
 	// fmt.Printf("Current map status: %v\n", c.mapStatus)
 	// fmt.Printf("Current map task count: %v\n", c.nMap)
 	return nil
@@ -172,7 +186,7 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 	c.task = ""
 
 	// Initialize the state of the map tasks
-	for i := 0; i < len(files)-7; i++ {
+	for i := 0; i < len(files); i++ {
 		fileName := files[i]
 		c.mapStatus[fileName] = IdleState
 	}
