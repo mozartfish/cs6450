@@ -19,11 +19,11 @@ type Coordinator struct {
 	// Your definitions here.
 
 	// Map Variables
-	nMap int // counter for the number of map tasks
+	nMap      int            // counter for the number of map tasks
 	mapStatus map[string]int // keep track of the map task state
 
 	// Reduce Variables
-	nReduce int // counter for the number of reduce tasks
+	nReduce      int         // counter for the number of reduce tasks
 	reduceStatus map[int]int // keep track of the state of reduce tasks
 
 	// Other Variables
@@ -63,8 +63,8 @@ func (c *Coordinator) AssignTask(args *TaskArgs, reply *TaskReply) error {
 	// 	fmt.Println("Add a reduce task")
 	// 	reducer := GetReduceTask(c)
 	// 	c.reduceStatus[reducer] = InProgress
-		
-	// 	// Send a reply 
+
+	// 	// Send a reply
 	// 	reply.Task = "reduce"
 	// 	reply.ReduceCount = reducer
 	// 	reply
@@ -107,7 +107,7 @@ func GetReduceTask(c *Coordinator) int {
 // Check if all Map tasks are completed
 func CheckMapStatus(c *Coordinator) bool {
 	for _, value := range c.mapStatus {
-		if value !=Completed {
+		if value != Completed {
 			return false
 		}
 	}
@@ -117,7 +117,7 @@ func CheckMapStatus(c *Coordinator) bool {
 // Check if all Reduce tasks are completed
 func CheckReduceStatus(c *Coordinator) bool {
 	for _, value := range c.reduceStatus {
-		if value == IdleState {
+		if value != Completed {
 			return false
 		}
 	}
