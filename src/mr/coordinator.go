@@ -1,12 +1,12 @@
 package mr
 
 import (
+	"fmt"
 	"log"
 	"net"
 	"net/http"
 	"net/rpc"
 	"os"
-	"fmt"
 )
 
 const (
@@ -37,19 +37,38 @@ type Coordinator struct {
 // RPC Handler to request task
 func (c *Coordinator) AssignTask(args *TaskArgs, reply *TaskReply) error {
 	// check if there are any map tasks that have yet to be completed
-	mapComplete := false
-	for !mapComplete {
+	// fmt.Printf("Current Map Count %v\n", c.nMap)
+	mapDone := CheckMapStatus(c)
+	reduceDone := CheckReduceStatus(c)
+
+	if !mapDone {
 		fmt.Println("Add a map task")
 		fileName := GetMapTask(c)
 		c.mapStatus[fileName] = InProgress
 		reply.Task = "map"
 		reply.FileName = fileName
 		reply.MapCount = c.nMap
-		mapComplete = CheckMapStatus(c)
 	}
+
+	if !reduceDone {
+		fmt.Println("Add a reduce task")
+		reducer := GetReduceTask(c)
+		c.reduceStatus[reducer] = InProgress
+
+	}
+
 	// check if there are any reduce tasks that have yet to be completed
 	return nil
+}
 
+// RPC Handler to update the map task status
+func (c *Coordinator) UpdateMap(args *MapTaskCompletedArgs, reply *MapTaskCompletedReply) error {
+	fileName := args.FileName
+	c.mapStatus[fileName] = Completed
+	c.nMap = c.nMap + 1
+	fmt.Printf("Current map status: %v\n", c.mapStatus)
+	fmt.Printf("Current map task count: %v\n", c.nMap)
+	return nil
 }
 
 // Get an Incomplete Map Task
@@ -62,9 +81,29 @@ func GetMapTask(c *Coordinator) string {
 	return ""
 }
 
+// Get an Incomplete Reduce Task
+func GetReduceTask(c *Coordinator) int {
+	for key, value := range c.reduceStatus {
+		if value == IdleState {
+			return key
+		}
+	}
+	return -1
+}
+
 // Check if all Map tasks are completed
 func CheckMapStatus(c *Coordinator) bool {
 	for _, value := range c.mapStatus {
+		if value == IdleState {
+			return false
+		}
+	}
+	return true
+}
+
+// Check if all Reduce tasks are completed
+func CheckReduceStatus(c *Coordinator) bool {
+	for _, value := range c.reduceStatus {
 		if value == IdleState {
 			return false
 		}
@@ -120,7 +159,7 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 	c.task = ""
 
 	// Initialize the state of the map tasks
-	for i := 0; i < len(files); i++ {
+	for i := 0; i < len(files)-6; i++ {
 		fileName := files[i]
 		c.mapStatus[fileName] = IdleState
 	}

@@ -1,10 +1,14 @@
 package mr
 
 import (
+	"encoding/json"
 	"fmt"
 	"hash/fnv"
+	"io/ioutil"
 	"log"
 	"net/rpc"
+	"os"
+	"strconv"
 )
 
 // Map functions return a slice of KeyValue.
@@ -12,6 +16,14 @@ type KeyValue struct {
 	Key   string
 	Value string
 }
+
+// for sorting by key.
+type ByKey []KeyValue
+
+// for sorting by key.
+func (a ByKey) Len() int           { return len(a) }
+func (a ByKey) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByKey) Less(i, j int) bool { return a[i].Key < a[j].Key }
 
 // use ihash(key) % NReduce to choose the reduce
 // task number for each KeyValue emitted by Map.
@@ -24,25 +36,59 @@ func ihash(key string) int {
 // main/mrworker.go calls this function.
 func Worker(mapf func(string, string) []KeyValue,
 	reducef func(string, []string) string) {
-
-	// Your worker implementation here.
-	taskReply := RequestTask()
-	task := taskReply.Task
-	switch {
-	case task == "map":
-		fmt.Println("Perform a Map Task")
-	case task =="reduce":
-		fmt.Println("Perform a Reduce Task")
+	for {
+		// Your worker implementation here.
+		taskReply := RequestTask()
+		task := taskReply.Task // get the task specified by the coordinator
+		switch {
+		case task == "map":
+			fmt.Println("Perform a Map Task")
+			// fmt.Printf("FileName: %v\n", taskReply.FileName)
+			fileName := taskReply.FileName
+			// fmt.Printf("Map Count: %v\n", taskReply.MapCount)
+			mapCount := taskReply.MapCount
+			Map(fileName, mapCount, mapf)
+			CompleteMapTask(fileName)
+		case task == "reduce":
+			fmt.Println("Perform a Reduce Task")
+		default:
+			log.Fatal("The Message was not received and failed!\n")
+		}
 	}
-
-	// perform either a map or reduce task depending on the task sent by the coordinator 
+	// perform either a map or reduce task depending on the task sent by the coordinator
 
 	// fmt.Printf("Task: %v\n", taskReply.Task)
-	// fmt.Printf("FileName: %v\n", taskReply.FileName)
-	// fmt.Printf("Map Count: %v\n", taskReply.MapCount)
 
 	// uncomment to send the Example RPC to the coordinator.
 	// CallExample()
+
+}
+
+func Map(filename string, MapCount int, mapf func(string, string) []KeyValue) {
+	file, err := os.Open(filename)
+	defer file.Close()
+	if err != nil {
+		log.Fatalf("cannot open %v", filename)
+	}
+	content, err := ioutil.ReadAll(file)
+	if err != nil {
+		log.Fatalf("cannot read %v", filename)
+	}
+	kva := mapf(filename, string(content)) // apply map function to data
+
+	// Write to Temp File
+	mapfile := "mr-" + strconv.Itoa(MapCount)
+	outfile, _ := os.Create(mapfile)
+	defer outfile.Close()
+	enc := json.NewEncoder(outfile)
+
+	for i := 0; i < len(kva); i++ {
+		err = enc.Encode(&kva[i])
+	}
+	outfile.Close()
+}
+
+func Reduce(reducef func(string, []string) string) {
 
 }
 
@@ -62,6 +108,21 @@ func RequestTask() TaskReply {
 	} else {
 		fmt.Printf("reply.name %v\n", reply.FileName)
 		return reply
+	}
+
+}
+
+// RPC Call to the coordinator notifying that map task has been finished
+func CompleteMapTask(FileName string) {
+	// fmt.Println("Complete Map Task RPC function")
+	// Arguments
+	args := MapTaskCompletedArgs{}
+	args.FileName = FileName
+	// // Reply
+	reply := MapTaskCompletedReply{}
+	ok := call("Coordinator.UpdateMap", &args, &reply)
+	if !ok {
+		fmt.Printf("Complete Task Call failed!\n")
 	}
 
 }
