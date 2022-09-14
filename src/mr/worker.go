@@ -47,7 +47,9 @@ func Worker(mapf func(string, string) []KeyValue,
 			fileName := taskReply.FileName
 			// fmt.Printf("Map Count: %v\n", taskReply.MapCount)
 			mapCount := taskReply.MapCount
-			Map(fileName, mapCount, mapf)
+			fmt.Printf("Reduce Count: %v\n", taskReply.ReduceCount)
+			reduceCount := taskReply.ReduceCount
+			Map(fileName, mapCount, reduceCount, mapf)
 			CompleteMapTask(fileName)
 		case task == "reduce":
 			fmt.Println("Perform a Reduce Task")
@@ -64,8 +66,11 @@ func Worker(mapf func(string, string) []KeyValue,
 
 }
 
-func Map(filename string, MapCount int, mapf func(string, string) []KeyValue) {
+func Map(filename string, MapCount int, ReduceCount int, mapf func(string, string) []KeyValue) {
 	file, err := os.Open(filename)
+	if err != nil {
+		log.Fatal("Cannot open file %v\n", file)
+	}
 	defer file.Close()
 	if err != nil {
 		log.Fatalf("cannot open %v", filename)
@@ -76,16 +81,48 @@ func Map(filename string, MapCount int, mapf func(string, string) []KeyValue) {
 	}
 	kva := mapf(filename, string(content)) // apply map function to data
 
-	// Write to Temp File
-	mapfile := "mr-" + strconv.Itoa(MapCount)
-	outfile, _ := os.Create(mapfile)
-	defer outfile.Close()
-	enc := json.NewEncoder(outfile)
+	// call the partition function and write to temp file 
+	Partition(kva, MapCount, ReduceCount)
+}
 
-	for i := 0; i < len(kva); i++ {
-		err = enc.Encode(&kva[i])
+// Function for mapping key values pairs to an index
+func Partition(kva []KeyValue, nMap int, nReduce int){
+	// create some buckets for the reduce
+	iMap := make([][]KeyValue, nReduce)
+
+	// Find length of key value map 
+	fmt.Println("Enter the Partition Function")
+	fmt.Printf("len of kva: %v\n", len(kva))
+	fmt.Printf("iMap: %v\n", iMap)
+
+	for i:= 0; i < len(kva); i++ {
+		keyVal := kva[i]
+		pIndex := ihash(keyVal.Key) % nReduce
+		// fmt.Printf("bucket: %v\n", pIndex)
+		iMap[pIndex] = append(iMap[pIndex], keyVal)
+		// fmt.Printf("current hash value: %v\n", iMap[pIndex])
 	}
-	outfile.Close()
+
+	// Print indexes of imap 
+	// for index,_ := range iMap {
+	// 	// fmt.Printf("bucket: %v\n", index)
+	// 	// fmt.Printf("number of elements in a bucket: %v\n", len(iMap[index]))
+	// }
+
+	// Create intermediary files for each reduce function
+	for j := 0; j < nReduce; j++ {
+		filename := "mr-" + strconv.Itoa(nMap) + "-" + strconv.Itoa(j)
+		outfile, _:= os.Create(filename)
+		defer outfile.Close()
+		enc := json.NewEncoder(outfile)
+		hkva := iMap[j] // the key values in a particular reduce bucket
+		for k:= 0; k < len(hkva); k++ {
+			err := enc.Encode(&hkva[k])
+			if err != nil {
+				log.Fatal("error: %v\n", err)
+			}
+		}
+	}
 }
 
 func Reduce(reducef func(string, []string) string) {

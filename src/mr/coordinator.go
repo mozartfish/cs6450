@@ -20,12 +20,10 @@ type Coordinator struct {
 
 	// Map Variables
 	nMap int // counter for the number of map tasks
-	// mapFinish bool           // keep track of when map tasks are finished
 	mapStatus map[string]int // keep track of the map task state
 
 	// Reduce Variables
 	nReduce int // counter for the number of reduce tasks
-	// reduceFinish bool        // keep track of when reduce tasks are finished
 	reduceStatus map[int]int // keep track of the state of reduce tasks
 
 	// Other Variables
@@ -39,23 +37,38 @@ func (c *Coordinator) AssignTask(args *TaskArgs, reply *TaskReply) error {
 	// check if there are any map tasks that have yet to be completed
 	// fmt.Printf("Current Map Count %v\n", c.nMap)
 	mapDone := CheckMapStatus(c)
-	reduceDone := CheckReduceStatus(c)
+	// reduceDone := CheckReduceStatus(c)
 
 	if !mapDone {
 		fmt.Println("Add a map task")
 		fileName := GetMapTask(c)
 		c.mapStatus[fileName] = InProgress
+
+		// Send a reply
 		reply.Task = "map"
 		reply.FileName = fileName
 		reply.MapCount = c.nMap
-	}
-
-	if !reduceDone {
+		reply.ReduceCount = c.nReduce
+	} else {
 		fmt.Println("Add a reduce task")
 		reducer := GetReduceTask(c)
 		c.reduceStatus[reducer] = InProgress
 
+		// Send a reply
+		reply.Task = "reduce"
+		// reply.
 	}
+
+	// if !reduceDone {
+	// 	fmt.Println("Add a reduce task")
+	// 	reducer := GetReduceTask(c)
+	// 	c.reduceStatus[reducer] = InProgress
+		
+	// 	// Send a reply 
+	// 	reply.Task = "reduce"
+	// 	reply.ReduceCount = reducer
+	// 	reply
+	// }
 
 	// check if there are any reduce tasks that have yet to be completed
 	return nil
@@ -66,8 +79,8 @@ func (c *Coordinator) UpdateMap(args *MapTaskCompletedArgs, reply *MapTaskComple
 	fileName := args.FileName
 	c.mapStatus[fileName] = Completed
 	c.nMap = c.nMap + 1
-	fmt.Printf("Current map status: %v\n", c.mapStatus)
-	fmt.Printf("Current map task count: %v\n", c.nMap)
+	// fmt.Printf("Current map status: %v\n", c.mapStatus)
+	// fmt.Printf("Current map task count: %v\n", c.nMap)
 	return nil
 }
 
@@ -94,7 +107,7 @@ func GetReduceTask(c *Coordinator) int {
 // Check if all Map tasks are completed
 func CheckMapStatus(c *Coordinator) bool {
 	for _, value := range c.mapStatus {
-		if value == IdleState {
+		if value !=Completed {
 			return false
 		}
 	}
@@ -159,7 +172,7 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 	c.task = ""
 
 	// Initialize the state of the map tasks
-	for i := 0; i < len(files)-6; i++ {
+	for i := 0; i < len(files)-7; i++ {
 		fileName := files[i]
 		c.mapStatus[fileName] = IdleState
 	}
