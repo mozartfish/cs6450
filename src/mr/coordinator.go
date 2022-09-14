@@ -79,7 +79,18 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 	c.reduceFinish = false
 	c.reduceState = make(map[int]int)
 	c.task = ""
-	
+
+	// Initialize the state of the map tasks
+	for i := 0; i < len(files); i++ {
+		fileName := files[i]
+		c.mapState[fileName] = IdleState
+	}
+
+	// Initialize the state of reduce tasks
+	for j := 0; j < c.nReduce; j++ {
+		c.reduceState[j] = IdleState
+	}
+
 	c.server()
 	return &c
 }
