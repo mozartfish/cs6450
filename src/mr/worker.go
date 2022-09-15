@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/rpc"
 	"os"
+	"sort"
 	"strconv"
 )
 
@@ -16,6 +17,14 @@ type KeyValue struct {
 	Key   string
 	Value string
 }
+
+// for sorting by key.
+type ByKey []KeyValue
+
+// for sorting by key.
+func (a ByKey) Len() int           { return len(a) }
+func (a ByKey) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByKey) Less(i, j int) bool { return a[i].Key < a[j].Key }
 
 // use ihash(key) % NReduce to choose the reduce
 // task number for each KeyValue emitted by Map.
@@ -34,6 +43,7 @@ func Worker(mapf func(string, string) []KeyValue,
 		taskReply := RequestTask()
 		// fmt.Printf("task reply struct %v\n", taskReply)
 		task := taskReply.Task
+		// fmt.Printf("task reply struct %v\n", taskReply)
 		switch {
 		case task == "map":
 			fmt.Printf("Task: %v\n", taskReply.Task)
@@ -47,8 +57,52 @@ func Worker(mapf func(string, string) []KeyValue,
 			nReduce := taskReply.NReduce
 			Map(filename, mapTaskID, nReduce, mapf)
 			MapTaskCompleted(mapTaskID)
+		case task == "reduce":
+			fmt.Printf("Task: %v\n", taskReply.Task)
+			fmt.Printf("Reducer: %v\n", taskReply.Reducer)
+			reducer := taskReply.Reducer
+			fmt.Printf("Reduce Task ID: %v\n", taskReply.ReduceTaskID)
+			reduceTaskID := taskReply.ReduceTaskID
+			fmt.Printf("Map Count %v\n", taskReply.NMap)
+			nMap := taskReply.NMap
+			// fmt.Printf("Reduce Count %v\n", taskReply.NReduce)
+			// nReduce := taskReply.NReduce
+
+			// combine all the files into an array corresponding to the reducer
+			var reduceList []string
+			for i := 0; i < nMap; i++ {
+				if reducer >= 0 {
+					filename := "mr-" + strconv.Itoa(i) + "-" + strconv.Itoa(reducer)
+					reduceList = append(reduceList, filename)
+				}
+			}
+			// fmt.Printf("Combined Reduced List: %v\n", reduceList)
+
+			intermediate := []KeyValue{} // single intermediate value for sorting and reducing
+			for j := 0; j < len(reduceList); j++ {
+				filename := reduceList[j]
+				fmt.Printf("Intermediate File Name: %v\n", filename)
+				file, err := os.Open(filename)
+				if err != nil {
+					log.Fatalf("cannot open %v", filename)
+				}
+				defer file.Close()
+				dec := json.NewDecoder(file)
+				for {
+					var kv KeyValue
+					if err := dec.Decode(&kv); err != nil {
+						break
+					}
+					intermediate = append(intermediate, kv)
+				}
+			}
+			// fmt.Printf("Intermediate Reduce Input: %v\n", intermediate)
+			sort.Sort(ByKey(intermediate)) // sort the intermediate values
+			Reduce(reducer, intermediate, reducef)
+			ReduceTaskCompleted(reduceTaskID)
+
 		case task == "mapReduce":
-			fmt.Println("Finish all the map and reduce tasks")
+			fmt.Println("Finish all the map and reduce tasks and exiting worker")
 			os.Exit(0)
 		default:
 			log.Fatalf("Task Request failed!\n")
@@ -57,6 +111,7 @@ func Worker(mapf func(string, string) []KeyValue,
 	// uncomment to send the Example RPC to the coordinator.
 	// CallExample()
 }
+
 func Map(filename string, nMap, nReduce int, mapf func(string, string) []KeyValue) {
 	fmt.Println("Map Function")
 	file, err := os.Open(filename)
@@ -110,6 +165,31 @@ func Partition(kva []KeyValue, nMap int, nReduce int) {
 	}
 }
 
+func Reduce(Reducer int, Intermediate []KeyValue, reducef func(string, []string) string) {
+	fmt.Println("Reduce Function")
+	oname := "mr-out" + "-" + strconv.Itoa(Reducer)
+	fmt.Printf("Reduce Output Name: %v\n", oname)
+	ofile, _ := os.Create(oname)
+	defer ofile.Close()
+	i := 0
+	for i < len(Intermediate) {
+		j := i + 1
+		for j < len(Intermediate) && Intermediate[j].Key == Intermediate[i].Key {
+			j++
+		}
+		values := []string{}
+		for k := i; k < j; k++ {
+			values = append(values, Intermediate[k].Value)
+		}
+		output := reducef(Intermediate[i].Key, values)
+
+		// this is the correct format for each line of Reduce output.
+		fmt.Fprintf(ofile, "%v %v\n", Intermediate[i].Key, output)
+
+		i = j
+	}
+}
+
 // RPC Call to the coordinator requesting a task
 func RequestTask() TaskReply {
 	fmt.Println("Request a Task")
@@ -140,6 +220,21 @@ func MapTaskCompleted(MapTaskID int) {
 	ok := call("Coordinator.UpdateMapStatus", &args, &reply)
 	if !ok {
 		log.Fatalf("Map Task Completed Reply Failed!\n")
+	}
+}
+
+// RPC Call to the coordinator notifying reduce task has completed
+func ReduceTaskCompleted(ReduceTaskID int) {
+	fmt.Println("Reduce Task Completed")
+	fmt.Printf("Reduce Task ID: %v\n", ReduceTaskID)
+	// Arguments
+	args := ReduceTaskCompletedArgs{}
+	args.ReduceTaskID = ReduceTaskID
+	// Reply
+	reply := ReduceTaskCompletedReply{}
+	ok := call("Coordinator.UpdateReduceStatus", &args, &reply)
+	if !ok {
+		log.Fatalf("Reduce Task Completed Reply Failed!\n")
 	}
 }
 

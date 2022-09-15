@@ -31,9 +31,11 @@ type TaskArgs struct {
 type TaskReply struct {
 	Task         string // task assigned by coordinator
 	FileName     string // file name for mapping
+	Reducer      int // reducer number for reducing
 	MapTaskID    int    // map task ID
-	NMap         int // number of mappers
-	NReduce      int // number of reducers
+	ReduceTaskID int    // reduce task ID
+	NMap         int    // number of mappers
+	NReduce      int    // number of reducers
 }
 
 type MapTaskCompletedArgs struct {
