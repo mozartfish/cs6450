@@ -128,7 +128,7 @@ func Map(filename string, nMap, nReduce int, mapf func(string, string) []KeyValu
 	Partition(kva, nMap, nReduce)
 }
 
-// Function for mapping key values pairs to an index
+// Function for mapping key values pairs to an index and writing to temp files with atomic renaming
 func Partition(kva []KeyValue, nMap int, nReduce int) {
 	fmt.Println("Partition Function")
 	// create some buckets for the reduce
@@ -162,6 +162,7 @@ func Partition(kva []KeyValue, nMap int, nReduce int) {
 			}
 		}
 		outfile.Close()
+		
 		// atomic rename the file
 		err = os.Rename(outfile.Name(), filename)
 		if err != nil {

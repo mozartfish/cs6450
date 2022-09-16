@@ -11,6 +11,7 @@ import (
 	"time"
 )
 
+// Worker State as described in Map Reduce Paper
 const (
 	IdleState = iota
 	InProgress
@@ -31,7 +32,7 @@ type Coordinator struct {
 	reduceFinish bool        // keep track of reduce finish
 	nReduce      int         // number of reducers
 	nMap         int         // number of mappers
-	mu           sync.Mutex
+	mu           sync.Mutex // mutex for locking critical sections
 }
 
 // Your code here -- RPC handlers for the worker to call.
