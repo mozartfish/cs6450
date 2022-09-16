@@ -23,8 +23,12 @@ type Coordinator struct {
 	fileNames    []string    // store all file names
 	mapStatus    []int       // store all the map states
 	mapTime      []time.Time // store all map times
+	mapCount     int         // keep track of all map tasks
+	mapFinish    bool        // keep track of map done status
 	reduceStatus []int       // store all the reduce states
 	reduceTime   []time.Time // store all reduce times
+	reduceCount  int         // keep track of all reduce
+	reduceFinish bool        // keep track of reduce finish
 	nReduce      int         // number of reducers
 	nMap         int         // number of mappers
 	mu           sync.Mutex
@@ -46,49 +50,86 @@ func (c *Coordinator) AssignTask(args *TaskArgs, reply *TaskReply) error {
 	c.mu.Lock()
 	defer c.mu.Unlock()
 	fmt.Println("Assign a Task")
-	fmt.Printf("file Names :%v\n", c.fileNames)
+	// fmt.Printf("file Names :%v\n", c.fileNames)
 	fmt.Printf("map status :%v\n", c.mapStatus)
 	fmt.Printf("reduce status :%v\n", c.reduceStatus)
-	fmt.Printf("num mappers :%v\n", c.nMap)
-	fmt.Printf("num reducers :%v\n", c.nReduce)
-	mapDone := CheckMapStatus(c)
-	reduceDone := CheckReduceStatus(c)
-	if !mapDone {
+	// fmt.Printf("num mappers :%v\n", c.nMap)
+	// fmt.Printf("num reducers :%v\n", c.nReduce)
+	if !c.mapFinish {
 		fmt.Println("Assign a map task")
-		mapTaskID := GetMapTask(c)
-		fmt.Printf("New map task ID: %v\n", mapTaskID)
-		c.mapStatus[mapTaskID] = InProgress
-		c.mapTime[mapTaskID] = time.Now()
-		reply.Task = "map"
-		reply.MapTaskID = mapTaskID
-		reply.FileName = c.fileNames[mapTaskID]
-		reply.NReduce = c.nReduce
-		reply.NMap = c.nMap
-		fmt.Printf("reply name :%v\n", reply.FileName)
-		fmt.Printf("mapped status:%v\n", c.mapStatus)
-		fmt.Printf("num mappers :%v\n", reply.NMap)
-		fmt.Printf("num reducers :%v\n", reply.NReduce)
-		fmt.Printf("reply map task ID: %v\n", reply.MapTaskID)
-	}
-	if mapDone && !reduceDone {
+		fmt.Println("Get a Map Task")
+		for i := 0; i < c.nMap; i++ {
+			if c.mapStatus[i] == IdleState {
+				c.mapStatus[i] = InProgress
+				c.mapTime[i] = time.Now()
+				reply.MapTaskID = i
+				reply.Task = "map"
+				reply.FileName = c.fileNames[i]
+				reply.NReduce = c.nReduce
+				reply.NMap = c.nMap
+				reply.ReduceFinish = c.reduceFinish
+				fmt.Printf("reply name :%v\n", reply.FileName)
+				fmt.Printf("mapped status:%v\n", c.mapStatus)
+				fmt.Printf("num mappers :%v\n", reply.NMap)
+				fmt.Printf("num reducers :%v\n", reply.NReduce)
+				fmt.Printf("reply map task ID: %v\n", reply.MapTaskID)
+				return nil
+			}
+			if c.mapStatus[i] == InProgress && time.Since(c.mapTime[i]) > 10*time.Second {
+				c.mapStatus[i] = InProgress
+				c.mapTime[i] = time.Now()
+				reply.MapTaskID = i
+				reply.Task = "map"
+				reply.FileName = c.fileNames[i]
+				reply.NReduce = c.nReduce
+				reply.NMap = c.nMap
+				reply.ReduceFinish = c.reduceFinish
+				fmt.Printf("reply name :%v\n", reply.FileName)
+				fmt.Printf("mapped status:%v\n", c.mapStatus)
+				fmt.Printf("num mappers :%v\n", reply.NMap)
+				fmt.Printf("num reducers :%v\n", reply.NReduce)
+				fmt.Printf("reply map task ID: %v\n", reply.MapTaskID)
+				return nil
+			}
+		}
+	} else if !c.reduceFinish {
 		fmt.Println("Assign a reduce task")
-		reduceTaskID := GetReduceTask(c)
-		fmt.Printf("New reduce task ID: %v\n", reduceTaskID)
-		c.reduceStatus[reduceTaskID] = InProgress
-		c.reduceTime[reduceTaskID] = time.Now()
-		reply.Task = "reduce"
-		reply.ReduceTaskID = reduceTaskID
-		reply.Reducer = reduceTaskID
-		reply.NReduce = c.nReduce
-		reply.NMap = c.nMap
-		fmt.Printf("reply reducer: %v\n", reply.Reducer)
-		fmt.Printf("reducer status: %v\n", c.reduceStatus)
-		fmt.Printf("num mappers: %v\n", reply.NMap)
-		fmt.Printf("num reducers: %v\n", reply.NReduce)
-		fmt.Printf("reply reduce task ID: %v\n", reply.ReduceTaskID)
+		fmt.Println("Get a Reduce Task")
+		for j := 0; j < c.nReduce; j++ {
+			if c.reduceStatus[j] == IdleState {
+				c.reduceStatus[j] = InProgress
+				c.reduceTime[j] = time.Now()
+				reply.Task = "reduce"
+				reply.ReduceTaskID = j
+				reply.Reducer = j
+				reply.NReduce = c.nReduce
+				reply.NMap = c.nMap
+				reply.ReduceFinish = c.reduceFinish
+				fmt.Printf("reply reducer: %v\n", reply.Reducer)
+				fmt.Printf("reducer status: %v\n", c.reduceStatus)
+				fmt.Printf("num mappers: %v\n", reply.NMap)
+				fmt.Printf("num reducers: %v\n", reply.NReduce)
+				fmt.Printf("reply reduce task ID: %v\n", reply.ReduceTaskID)
+				return nil
+			}
+			if c.reduceStatus[j] == InProgress && time.Since(c.reduceTime[j]) > 10*time.Second {
+				c.reduceStatus[j] = InProgress
+				c.reduceTime[j] = time.Now()
+				reply.Task = "reduce"
+				reply.ReduceTaskID = j
+				reply.Reducer = j
+				reply.NReduce = c.nReduce
+				reply.NMap = c.nMap
+				reply.ReduceFinish = c.reduceFinish
+				fmt.Printf("reply reducer: %v\n", reply.Reducer)
+				fmt.Printf("reducer status: %v\n", c.reduceStatus)
+				fmt.Printf("num mappers: %v\n", reply.NMap)
+				fmt.Printf("num reducers: %v\n", reply.NReduce)
+				fmt.Printf("reply reduce task ID: %v\n", reply.ReduceTaskID)
+				return nil
+			}
+		}
 	}
-	// fmt.Println("Completed All Map and Reduce Tasks")
-	// reply.Task = "mapreduce"
 	return nil
 }
 
@@ -100,6 +141,10 @@ func (c *Coordinator) UpdateMapStatus(args *MapTaskCompletedArgs, reply *MapTask
 	fmt.Printf("Current Map Status: %v\n", c.mapStatus)
 	mapTaskID := args.MapTaskID
 	c.mapStatus[mapTaskID] = Completed
+	c.mapCount++
+	if c.mapCount == c.nMap {
+		c.mapFinish = true
+	}
 	fmt.Printf("New Map Status: %v\n", c.mapStatus)
 	return nil
 }
@@ -112,68 +157,9 @@ func (c *Coordinator) UpdateReduceStatus(args *ReduceTaskCompletedArgs, reply *R
 	fmt.Printf("Current Reduce Status: %v\n", c.reduceStatus)
 	reduceTaskID := args.ReduceTaskID
 	c.reduceStatus[reduceTaskID] = Completed
+	c.reduceCount++
 	fmt.Printf("New Reduce Status: %v\n", c.reduceStatus)
 	return nil
-}
-
-// Get a Map Task
-func GetMapTask(c *Coordinator) int {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	fmt.Println("Get a Map Task")
-	for index, value := range c.mapStatus {
-		if c.mapStatus[index] == InProgress && time.Since(c.mapTime[index]) > 10*time.Second {
-			return index
-		}
-		if value == IdleState {
-			return index
-		}
-	}
-	return -1
-}
-
-// Get a Reduce Task
-func GetReduceTask(c *Coordinator) int {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	fmt.Println("Get a Reduce Task")
-	for index, value := range c.reduceStatus {
-		if c.reduceStatus[index] == InProgress && time.Since(c.reduceTime[index]) > 10*time.Second {
-			return index
-		}
-		if value == IdleState {
-			return index
-		}
-	}
-	return -1
-}
-
-// Check Map Tasks Completed
-func CheckMapStatus(c *Coordinator) bool {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	fmt.Println("Check Map Tasks")
-	fmt.Printf("Current Map Status: %v\n", c.mapStatus)
-	for _, value := range c.mapStatus {
-		if value != Completed {
-			return false
-		}
-	}
-	return true
-}
-
-// Check Reduce Tasks Completed
-func CheckReduceStatus(c *Coordinator) bool {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	fmt.Println("Check Reduce Tasks")
-	fmt.Printf("Current Reduce Status: %v\n", c.reduceStatus)
-	for _, value := range c.reduceStatus {
-		if value != Completed {
-			return false
-		}
-	}
-	return true
 }
 
 // start a thread that listens for RPCs from worker.go
@@ -195,8 +181,10 @@ func (c *Coordinator) server() {
 func (c *Coordinator) Done() bool {
 	c.mu.Lock()
 	defer c.mu.Unlock()
-	ret := CheckReduceStatus(c)
-	// ret := false
+	if c.reduceCount == c.nReduce {
+		c.reduceFinish = true
+	}
+	ret := c.reduceFinish
 
 	// Your code here.
 	return ret
@@ -211,9 +199,13 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 	// files represent the number of map tasks
 	c.fileNames = make([]string, len(files))
 	c.mapStatus = make([]int, len(files))
+	c.mapTime = make([]time.Time, len(files))
 	c.reduceStatus = make([]int, nReduce)
+	c.reduceTime = make([]time.Time, nReduce)
 	c.nReduce = nReduce
 	c.nMap = len(files)
+	c.mapCount = 0
+	c.reduceCount = 0
 
 	// Update Map tasks and files
 	for index, value := range files {
@@ -224,11 +216,11 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 		c.reduceStatus[i] = IdleState
 	}
 
-	fmt.Printf("Coordinator files: %v\n", c.fileNames)
-	fmt.Printf("Coordinator map status: %v\n", c.mapStatus)
-	fmt.Printf("Coordinator reduce status: %v\n", c.reduceStatus)
-	fmt.Printf("Coordinator nMap: %v\n", c.nMap)
-	fmt.Printf("Coordinator nReduce: %v\n", c.nReduce)
+	// fmt.Printf("Coordinator files: %v\n", c.fileNames)
+	// fmt.Printf("Coordinator map status: %v\n", c.mapStatus)
+	// fmt.Printf("Coordinator reduce status: %v\n", c.reduceStatus)
+	// fmt.Printf("Coordinator nMap: %v\n", c.nMap)
+	// fmt.Printf("Coordinator nReduce: %v\n", c.nReduce)
 
 	// Your code here.
 

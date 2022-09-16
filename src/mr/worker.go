@@ -37,10 +37,10 @@ func ihash(key string) int {
 // main/mrworker.go calls this function.
 func Worker(mapf func(string, string) []KeyValue,
 	reducef func(string, []string) string) {
-
+	var taskReply = TaskReply{}
 	// Your worker implementation here.
-	for {
-		taskReply := RequestTask()
+	for !taskReply.ReduceFinish {
+		taskReply = RequestTask()
 		// fmt.Printf("task reply struct %v\n", taskReply)
 		task := taskReply.Task
 		// fmt.Printf("task reply struct %v\n", taskReply)
@@ -100,14 +100,10 @@ func Worker(mapf func(string, string) []KeyValue,
 			sort.Sort(ByKey(intermediate)) // sort the intermediate values
 			Reduce(reducer, intermediate, reducef)
 			ReduceTaskCompleted(reduceTaskID)
-
-		case task == "mapReduce":
-			fmt.Println("Finish all the map and reduce tasks and exiting worker")
-			os.Exit(0)
 		default:
-			log.Fatalf("Task Request failed!\n")
 		}
 	}
+
 	// uncomment to send the Example RPC to the coordinator.
 	// CallExample()
 }
@@ -152,8 +148,11 @@ func Partition(kva []KeyValue, nMap int, nReduce int) {
 	// Create intermediary files for each reduce function
 	for j := 0; j < nReduce; j++ {
 		filename := "mr-" + strconv.Itoa(nMap) + "-" + strconv.Itoa(j)
-		outfile, _ := os.Create(filename)
-		defer outfile.Close()
+		outfile, err := ioutil.TempFile(".", "temp-"+filename)
+		if err != nil {
+			log.Fatalf("Error Occurred %v\n", err)
+		}
+		defer os.Remove(outfile.Name())
 		enc := json.NewEncoder(outfile)
 		hkva := iMap[j] // the key values in a particular reduce bucket
 		for k := 0; k < len(hkva); k++ {
@@ -162,6 +161,13 @@ func Partition(kva []KeyValue, nMap int, nReduce int) {
 				log.Fatalf("JSON encoding error: %v\n", err)
 			}
 		}
+		outfile.Close()
+		// atomic rename the file
+		err = os.Rename(outfile.Name(), filename)
+		if err != nil {
+			log.Fatalf("There was an error in renaming the encoding file %v\n", err)
+		}
+
 	}
 }
 
@@ -169,8 +175,8 @@ func Reduce(Reducer int, Intermediate []KeyValue, reducef func(string, []string)
 	fmt.Println("Reduce Function")
 	oname := "mr-out" + "-" + strconv.Itoa(Reducer)
 	fmt.Printf("Reduce Output Name: %v\n", oname)
-	ofile, _ := os.Create(oname)
-	defer ofile.Close()
+	ofile, err := ioutil.TempFile(".", "temp-"+oname)
+	defer os.Remove(ofile.Name())
 	i := 0
 	for i < len(Intermediate) {
 		j := i + 1
@@ -188,6 +194,14 @@ func Reduce(Reducer int, Intermediate []KeyValue, reducef func(string, []string)
 
 		i = j
 	}
+	ofile.Close()
+
+	// atomic rename the file
+	err = os.Rename(ofile.Name(), oname)
+	if err != nil {
+		log.Fatalf("There was an error in renaming the file %v\n", err)
+	}
+
 }
 
 // RPC Call to the coordinator requesting a task
