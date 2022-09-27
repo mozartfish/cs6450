@@ -21,6 +21,7 @@ import (
 	//	"bytes"
 	"sync"
 	"sync/atomic"
+	"time"
 
 	//	"6.824/labgob"
 	"6.824/labrpc"
@@ -71,13 +72,17 @@ type Raft struct {
 	votedFor int // candidateID that received vote in current term 
 	log[] ApplyMsg // log entries
 
-	// Volatile State on all server 
-	commitIndex int // index of highest log entry known to be committed. initially 0
-	lastApplied int // index of highest log entry applied to state machine. initially 0 
+	// Other variables 
+	serverState int // follower, candidate or leader
+	leaderID int // current id of leader
+	electionTimeOut *time.Timer // keep track of time 
+	// // Volatile State on all server 
+	// commitIndex int // index of highest log entry known to be committed. initially 0
+	// lastApplied int // index of highest log entry applied to state machine. initially 0 
 	
-	// Volatile state on leaders (Reinitialized after election)
-	nextIndex[] int // for each server, index of the next long entry to send to that server (intiialized to leader last log index + 1)
-	matchIndex[] int // for each server, index of highest log entry known to be replicated on server (initially 0)
+	// // Volatile state on leaders (Reinitialized after election)
+	// nextIndex[] int // for each server, index of the next long entry to send to that server (intiialized to leader last log index + 1)
+	// matchIndex[] int // for each server, index of highest log entry known to be replicated on server (initially 0)
 
 	// Your data here (2A, 2B, 2C).
 	// Look at the paper's Figure 2 for a description of what
