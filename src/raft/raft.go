@@ -26,6 +26,12 @@ import (
 	"6.824/labrpc"
 )
 
+// states for the raft servers
+const (
+	follower = iota
+	candidate
+	leader
+)
 
 //
 // as each Raft peer becomes aware that successive log entries are
@@ -41,7 +47,7 @@ import (
 type ApplyMsg struct {
 	CommandValid bool
 	Command      interface{}
-	CommandIndex int
+	CommandIndex int // term when entry was received by leader
 
 	// For 2D:
 	SnapshotValid bool
@@ -59,6 +65,19 @@ type Raft struct {
 	persister *Persister          // Object to hold this peer's persisted state
 	me        int                 // this peer's index into peers[]
 	dead      int32               // set by Kill()
+
+	// Persistent State on all servers
+	currentTerm int // latest term server has seen 
+	votedFor int // candidateID that received vote in current term 
+	log[] ApplyMsg // log entries
+
+	// Volatile State on all server 
+	commitIndex int // index of highest log entry known to be committed. initially 0
+	lastApplied int // index of highest log entry applied to state machine. initially 0 
+	
+	// Volatile state on leaders (Reinitialized after election)
+	nextIndex[] int // for each server, index of the next long entry to send to that server (intiialized to leader last log index + 1)
+	matchIndex[] int // for each server, index of highest log entry known to be replicated on server (initially 0)
 
 	// Your data here (2A, 2B, 2C).
 	// Look at the paper's Figure 2 for a description of what
@@ -92,7 +111,6 @@ func (rf *Raft) persist() {
 	// rf.persister.SaveRaftState(data)
 }
 
-
 //
 // restore previously persisted state.
 //
@@ -115,7 +133,6 @@ func (rf *Raft) readPersist(data []byte) {
 	// }
 }
 
-
 //
 // A service wants to switch to snapshot.  Only do so if Raft hasn't
 // have more recent info since it communicate the snapshot on applyCh.
@@ -135,7 +152,6 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 	// Your code here (2D).
 
 }
-
 
 //
 // example RequestVote RPC arguments structure.
@@ -194,7 +210,6 @@ func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *Reques
 	return ok
 }
 
-
 //
 // the service using Raft (e.g. a k/v server) wants to start
 // agreement on the next command to be appended to Raft's log. if this
@@ -215,7 +230,6 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	isLeader := true
 
 	// Your code here (2B).
-
 
 	return index, term, isLeader
 }
@@ -278,7 +292,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	// start ticker goroutine to start elections
 	go rf.ticker()
-
 
 	return rf
 }
