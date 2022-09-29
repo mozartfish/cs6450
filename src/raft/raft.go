@@ -92,7 +92,7 @@ type Raft struct {
 	commitIndex int // index of highest log entry known to be committed
 	lastApplied int // index of highest log entry applied to state machine
 
-	// Volatile state on leaders (apply to only leaders)
+	// Volatile state on leaders (applies to only leaders)
 	nextIndex  []int // index of the next long entry to send to that server
 	matchIndex []int // for each server, index of highest log entry known to be replicated on server
 
@@ -278,8 +278,20 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.peers = peers
 	rf.persister = persister
 	rf.me = me
-
+	
 	// Your initialization code here (2A, 2B, 2C).
+
+	// Lab 2A Initialization
+	rf.serverState = Follower
+
+	// Persistent state on all servers
+	rf.currentTerm = 0
+	rf.votedFor = -1 // -1 represents null from the RAFT paper definition 
+	rf.log = make([]LogEntry, 1) // first index is 1 for the log so need a placeholder for 0
+
+	// Volatile state on all servers 
+	rf.commitIndex = 0
+	rf.lastApplied = 0
 
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
