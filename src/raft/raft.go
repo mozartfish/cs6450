@@ -55,11 +55,11 @@ const (
 	Leader
 )
 
-// Log definition
+// Log Entry definition
 type LogEntry struct {
 	LogIndex int
-	Term    int
-	Command interface{}
+	Term     int
+	Command  interface{}
 }
 
 // A Go object implementing a single Raft peer.
@@ -83,14 +83,18 @@ type Raft struct {
 	// state a Raft server must maintain.
 
 	// Persistent State on all servers
+	serverState int        // follower, candidate or leader
 	currentTerm int        // latest term server has seen
 	votedFor    int        // candidateID that received vote in current term
 	log         []LogEntry // log entries
 
-	// Other variables
-	serverState     int         // follower, candidate or leader
-	leaderID        int         // current id of leader
-	electionTimeOut *time.Timer // keep track of time
+	// Volatile state on all servers
+	commitIndex int // index of highest log entry known to be committed
+	lastApplied int // index of highest log entry applied to state machine
+
+	// Volatile state on leaders (apply to only leaders)
+	nextIndex  []int // index of the next long entry to send to that server
+	matchIndex []int // for each server, index of highest log entry known to be replicated on server
 
 }
 
@@ -254,6 +258,7 @@ func (rf *Raft) ticker() {
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
+		time.Sleep(rand)
 
 	}
 }
