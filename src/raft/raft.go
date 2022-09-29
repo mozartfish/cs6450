@@ -84,6 +84,7 @@ type Raft struct {
 
 	// Persistent State on all servers
 	serverState int        // follower, candidate or leader
+	orderTime time.Time     // keep track of the last time at which a peer heard from the leader 
 	currentTerm int        // latest term server has seen
 	votedFor    int        // candidateID that received vote in current term
 	log         []LogEntry // log entries
@@ -261,7 +262,9 @@ func (rf *Raft) ticker() {
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
-		time.Sleep(rand)
+		rf.mu.Lock()
+		defer rf.mu.Unlock()
+		if (time.Now().Sub(rf.orderTime))
 
 	}
 }
@@ -286,6 +289,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	// Lab 2A Initialization
 	rf.serverState = Follower
+	rf.orderTime = time.Time{}
 
 	// Persistent state on all servers
 	rf.currentTerm = 0
