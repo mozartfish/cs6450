@@ -19,6 +19,7 @@ package raft
 
 import (
 	//	"bytes"
+	"math/rand"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -83,11 +84,11 @@ type Raft struct {
 	// state a Raft server must maintain.
 
 	// Persistent State on all servers
-	serverState int        // follower, candidate or leader
-	orderTime time.Time     // keep track of the last time at which a peer heard from the leader 
-	currentTerm int        // latest term server has seen
-	votedFor    int        // candidateID that received vote in current term
-	log         []LogEntry // log entries
+	serverState   int        // follower, candidate or leader
+	lastHeartBeat time.Time  // keep track of the last time at which a peer heard from the leader
+	currentTerm   int        // latest term server has seen
+	votedFor      int        // candidateID that received vote in current term
+	log           []LogEntry // log entries
 
 	// Volatile state on all servers
 	commitIndex int // index of highest log entry known to be committed
@@ -257,14 +258,31 @@ func (rf *Raft) killed() bool {
 // The ticker go routine starts a new election if this peer hasn't received
 // heartsbeats recently.
 func (rf *Raft) ticker() {
+	electionTimeOut := time.Duration(rand.Intn(300-150)+150) * time.Millisecond
+
 	for rf.killed() == false {
 
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
 		rf.mu.Lock()
-		defer rf.mu.Unlock()
-		if (time.Now().Sub(rf.orderTime))
+		// create a new election time out
+		if (rf.lastHeartBeat.Add(electionTimeOut)).Before(time.Now()) {
+			// become candidate logic (can put it into a function)
+			// increment current term
+			rf.currentTerm = rf.currentTerm + 1
+			// vote for self
+			rf.votedFor = rf.me
+			// reset timer
+			rf.lastHeartBeat = time.Now()
+			electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
+
+			// send request vote rpc
+		}
+		rf.mu.Unlock()
+		time.Sleep(10)
+
+		// if (time.Now().Sub(rf.orderTime))
 
 	}
 }
@@ -284,19 +302,19 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.peers = peers
 	rf.persister = persister
 	rf.me = me
-	
+
 	// Your initialization code here (2A, 2B, 2C).
 
 	// Lab 2A Initialization
 	rf.serverState = Follower
-	rf.orderTime = time.Time{}
+	rf.lastHeartBeat = time.Now()
 
 	// Persistent state on all servers
 	rf.currentTerm = 0
-	rf.votedFor = -1 // -1 represents null from the RAFT paper definition 
+	rf.votedFor = -1             // -1 represents null from the RAFT paper definition
 	rf.log = make([]LogEntry, 1) // first index is 1 for the log so need a placeholder for 0
 
-	// Volatile state on all servers 
+	// Volatile state on all servers
 	rf.commitIndex = 0
 	rf.lastApplied = 0
 
@@ -305,6 +323,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	// start ticker goroutine to start elections
 	go rf.ticker()
+	// send off heart beat routine to check for leader
 
 	return rf
 }
