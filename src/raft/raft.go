@@ -19,11 +19,12 @@ package raft
 
 import (
 	//	"bytes"
+	"fmt"
+	"log"
 	"math/rand"
 	"sync"
 	"sync/atomic"
 	"time"
-	"fmt"
 
 	//	"6.824/labgob"
 	"6.824/labrpc"
@@ -70,7 +71,7 @@ type Raft struct {
 	peers     []*labrpc.ClientEnd // RPC end points of all peers
 	persister *Persister          // Object to hold this peer's persisted state
 	me        int                 // this peer's index into peers[]
-	dead      int32               // set by Kill()
+    dead      int32               // set by Kill()
 
 	// Your data here (2A, 2B, 2C).
 	// Look at the paper's Figure 2 for a description of what
@@ -79,7 +80,7 @@ type Raft struct {
 	// Persistent State on all servers
 	serverState   int        // follower, candidate or leader
 	lastHeartBeat time.Time  // keep track of the last time at which a peer heard from the leader
-	voteCount int // keep track of how many total votes we have 
+	voteCount     int        // keep track of how many total votes we have
 	currentTerm   int        // latest term server has seen
 	votedFor      int        // candidateID that received vote in current term
 	log           []LogEntry // log entries
@@ -161,36 +162,35 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 
 // example RequestVote RPC arguments structure.
 // field names must start with capital letters!
+// Arguments passed by candidate for receiving a vote from a server
 type RequestVoteArgs struct {
 	// Your data here (2A, 2B).
-	// 2A 
-	Term int // current term for candidate to update itself 
-	VoteGranted bool // true means received vote
-
+	// 2A
+	Term         int // candidate curent term
+	CandidateID  int // candidate requesting vote
+	LastLogIndex int // index of candidates last log entry
+	LastLogTerm  int // term of candidate's last log entry
 
 }
 
 // example RequestVote RPC reply structure.
 // field names must start with capital letters!
+// Arguments from the server regarding the vote result
 type RequestVoteReply struct {
 	// Your data here (2A).
-	Term int // candidate curent term 
-	CandidateID int // candidate requesting vote 
-	LastLogIndex int // index of candidates last log entry
-	LastLogTerm int // term of candidate's last log entry 
+	Term        int  // current term for candidate to update itself
+	VoteGranted bool // true means received vote
 }
 
-// example RequestVote RPC handler.
-func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) error {
-	// Your code here (2A, 2B).
+// Function to process requests from candidates to servers
+func (rf * Raft) processRequests(server int, args RequestVoteArgs, reply RequestVoteReply) {
+	// send request to server
+	ok := rf.sendRequestVote(server, &args, &reply)
+	if !ok {
+		log.Fatalf("Candidate vote request to server failed!\n")
+	}
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	fmt.Printf("Send a request for votes =>")
-	reply.Term = rf.currentTerm
-	reply.CandidateID = rf.me
-	fmt.Printf("reply term: %v\n", reply.Term)
-	fmt.Printf("reply candidate ID: %v\n", reply.CandidateID)
-	return nil
 }
 
 // example code to send a RequestVote RPC to a server.
@@ -207,12 +207,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) erro
 // Call() sends a request and waits for a reply. If a reply arrives
 // within a timeout interval, Call() returns true; otherwise
 // Call() returns false. Thus Call() may not return for a while.
-// A false return can be caused by a dead server, a live server that
-// can't be reached, a lost request, or a lost reply.
-//
-// Call() is guaranteed to return (perhaps after a delay) *except* if the
-// handler function on the server side does not return.  Thus there
-// is no need to implement your own timeouts around Call().
+// A false return ca	// reply.Term = rf.currentTerm
+// reply.VoteGranted = lement your own timeouts around Call().
 //
 // look at the comments in ../labrpc/labrpc.go for more details.
 //
@@ -224,6 +220,34 @@ func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *Reques
 	ok := rf.peers[server].Call("Raft.RequestVote", args, reply)
 	return ok
 }
+
+// RPC request to request vote information from server that receives a message from candidate
+func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) error {
+	// Your code here (2A, 2B).
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	fmt.Printf("Candidate has requested my vote! =>")
+	fmt.Printf("The candidate information!\n")
+	fmt.Printf("Candidate term: %v\n", args.Term)
+	fmt.Printf("Candidate ID: %v\n", args.CandidateID)
+	fmt.Printf("Candidate lastLogIndex: %v\n", args.LastLogIndex)
+	fmt.Printf("Candidate lastLogTerm: %v\n", args.LastLogTerm)
+
+	// rf refers to the current server
+	// Figure 2 Request Vote RPC Receiver Implementation
+	if (args.Term < rf.currentTerm) {
+		reply.Term = rf.currentTerm
+		reply.VoteGranted = false 
+	}
+
+	if (rf.votedFor == - 1 || rf.votedFor == args.CandidateID) {
+		reply.Term = rf.currentTerm
+		reply.VoteGranted = true
+	}
+	
+	return nil
+}
+
 
 // the service using Raft (e.g. a k/v server) wants to start
 // agreement on the next command to be appended to Raft's log. if this
@@ -288,11 +312,16 @@ func (rf *Raft) ticker() {
 			rf.lastHeartBeat = time.Now()
 			electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
 			rf.voteCount = 1
-			// send request vote rpc to each peer 
-			for i:= 0; i < len(rf.peers); i++{
-				// need a go routine to ping the other servers for their vote 
-
-
+			args := RequestVoteArgs{}
+			args.CandidateID = rf.me
+			args.Term = rf.currentTerm
+			args.LastLogIndex = 0
+			args.LastLogTerm = 0
+			reply := RequestVoteReply{}
+			// send request vote rpc to each peer
+			for i := 0; i < len(rf.peers); i++ {
+				// need a go routine to ping the other servers for their vote
+				go processRequests(i, args, reply)
 			}
 		}
 		rf.mu.Unlock()
