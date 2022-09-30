@@ -23,6 +23,7 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+	"fmt"
 
 	//	"6.824/labgob"
 	"6.824/labrpc"
@@ -70,14 +71,6 @@ type Raft struct {
 	persister *Persister          // Object to hold this peer's persisted state
 	me        int                 // this peer's index into peers[]
 	dead      int32               // set by Kill()
-
-	// // Volatile State on all server
-	// commitIndex int // index of highest log entry known to be committed. initially 0
-	// lastApplied int // index of highest log entry applied to state machine. initially 0
-
-	// // Volatile state on leaders (Reinitialized after election)
-	// nextIndex[] int // for each server, index of the next long entry to send to that server (intiialized to leader last log index + 1)
-	// matchIndex[] int // for each server, index of highest log entry known to be replicated on server (initially 0)
 
 	// Your data here (2A, 2B, 2C).
 	// Look at the paper's Figure 2 for a description of what
@@ -171,10 +164,9 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 type RequestVoteArgs struct {
 	// Your data here (2A, 2B).
 	// 2A 
-	term int // candidate term 
-	candidateID int // candidate requesting vote 
-	lastLogIndex int // index of candidates last log entry 
-	lastLogTerm int // term of candidate last log entry 
+	Term int // current term for candidate to update itself 
+	VoteGranted bool // true means received vote
+
 
 }
 
@@ -182,8 +174,10 @@ type RequestVoteArgs struct {
 // field names must start with capital letters!
 type RequestVoteReply struct {
 	// Your data here (2A).
-	term int // current term for candidate to update itself 
-	voteGranted bool // true means candidate received a vote
+	Term int // candidate curent term 
+	CandidateID int // candidate requesting vote 
+	LastLogIndex int // index of candidates last log entry
+	LastLogTerm int // term of candidate's last log entry 
 }
 
 // example RequestVote RPC handler.
@@ -191,6 +185,11 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) erro
 	// Your code here (2A, 2B).
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	fmt.Printf("Send a request for votes =>")
+	reply.Term = rf.currentTerm
+	reply.CandidateID = rf.me
+	fmt.Printf("reply term: %v\n", reply.Term)
+	fmt.Printf("reply candidate ID: %v\n", reply.CandidateID)
 	return nil
 }
 
