@@ -244,7 +244,6 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) erro
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = true
 	}
-	
 	return nil
 }
 
