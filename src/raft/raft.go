@@ -187,8 +187,11 @@ type RequestVoteReply struct {
 }
 
 // example RequestVote RPC handler.
-func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
+func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) error {
 	// Your code here (2A, 2B).
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	return nil
 }
 
 // example code to send a RequestVote RPC to a server.
@@ -289,6 +292,7 @@ func (rf *Raft) ticker() {
 			// send request vote rpc to each peer 
 			for i:= 0; i < len(rf.peers); i++{
 				// need a go routine to ping the other servers for their vote 
+
 
 			}
 		}
