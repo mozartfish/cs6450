@@ -86,6 +86,7 @@ type Raft struct {
 	// Persistent State on all servers
 	serverState   int        // follower, candidate or leader
 	lastHeartBeat time.Time  // keep track of the last time at which a peer heard from the leader
+	voteCount int // keep track of how many total votes we have 
 	currentTerm   int        // latest term server has seen
 	votedFor      int        // candidateID that received vote in current term
 	log           []LogEntry // log entries
@@ -169,12 +170,20 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 // field names must start with capital letters!
 type RequestVoteArgs struct {
 	// Your data here (2A, 2B).
+	// 2A 
+	term int // candidate term 
+	candidateID int // candidate requesting vote 
+	lastLogIndex int // index of candidates last log entry 
+	lastLogTerm int // term of candidate last log entry 
+
 }
 
 // example RequestVote RPC reply structure.
 // field names must start with capital letters!
 type RequestVoteReply struct {
 	// Your data here (2A).
+	term int // current term for candidate to update itself 
+	voteGranted bool // true means candidate received a vote
 }
 
 // example RequestVote RPC handler.
@@ -276,8 +285,12 @@ func (rf *Raft) ticker() {
 			// reset timer
 			rf.lastHeartBeat = time.Now()
 			electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
+			rf.voteCount = 1
+			// send request vote rpc to each peer 
+			for i:= 0; i < len(rf.peers); i++{
+				// need a go routine to ping the other servers for their vote 
 
-			// send request vote rpc
+			}
 		}
 		rf.mu.Unlock()
 		time.Sleep(10)
@@ -308,6 +321,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	// Lab 2A Initialization
 	rf.serverState = Follower
 	rf.lastHeartBeat = time.Now()
+	rf.voteCount = 0
 
 	// Persistent state on all servers
 	rf.currentTerm = 0
