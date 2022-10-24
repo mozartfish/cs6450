@@ -86,12 +86,12 @@ type Raft struct {
 	log           []LogEntry // the log shared among all peers
 
 	// Volatile State on all servers
-	// commmitIndex int // index of highest log entry known to be committed
-	// lastApplied  int // index of highest log entry applied to state machine
+	commmitIndex int // index of highest log entry known to be committed
+	lastApplied  int // index of highest log entry applied to state machine
 
 	// Volatile State on all laders (applies to leaders only)
-	// nextIndex  []int // index of the next long entry to send to that server
-	// matchIndex []int // for each server, index of highest log entry known to be replicated on server
+	nextIndex  []int // index of the next long entry to send to that server
+	matchIndex []int // for each server, index of highest log entry known to be replicated on server
 
 }
 
@@ -205,12 +205,6 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// 2A
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	// fmt.Printf("Candidate has requested my vote! =>\n")
-	// fmt.Printf("The candidate information!\n")
-	fmt.Printf("Candidate term: %v\n", args.Term)
-	fmt.Printf("Candidate ID: %v\n", args.CandidateID)
-	// fmt.Printf("Candidate lastLogIndex: %v\n", args.LastLogIndex)
-	// fmt.Printf("Candidate lastLogTerm: %v\n", args.LastLogTerm)
 
 	// rf refers to the current server
 	// Figure 2 Request Vote RPC Receiver Implementation
@@ -219,7 +213,6 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	if args.Term < rf.currentTerm {
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = false
-		fmt.Printf("Candidate Term is behind follower term!\n")
 		return
 	}
 
@@ -229,10 +222,6 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		rf.votedFor = -1
 		rf.serverState = Follower
 		rf.voteCount = 0
-		// rf.lastHeartBeat = time.Now() // reset timer
-		// reply.Term = rf.currentTerm
-		// reply.VoteGranted = true
-		fmt.Printf("Candidate term is ahead of the follower\n")
 	}
 
 	// voted for is null or candidate id
@@ -241,7 +230,6 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		rf.votedFor = args.CandidateID
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = true
-		fmt.Printf("voted for is null or candidate id\n")
 		return
 	}
 }
@@ -286,7 +274,6 @@ func (rf *Raft) ProcessRequestVote(server int, args RequestVoteArgs, reply Reque
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
 			if reply.VoteGranted {
 				rf.voteCount++
-				fmt.Printf("Vote count: %v\n", rf.voteCount)
 				if rf.voteCount >= len(rf.peers)/2+1 {
 					rf.serverState = Leader
 				}
@@ -436,7 +423,6 @@ func (rf *Raft) ticker() {
 		}
 		// heart beat + election timeout < current time
 		if rf.serverState == Leader {
-			fmt.Printf("S%v converted to leader\n", rf.me)
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
@@ -451,7 +437,7 @@ func (rf *Raft) ticker() {
 		}
 
 		rf.mu.Unlock()
-		time.Sleep(time.Duration(100) * time.Millisecond)
+		time.Sleep(time.Duration(10) * time.Millisecond)
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
