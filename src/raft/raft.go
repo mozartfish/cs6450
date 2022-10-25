@@ -207,8 +207,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	defer rf.mu.Unlock()
 	// fmt.Printf("Candidate has requested my vote! =>\n")
 	// fmt.Printf("The candidate information!\n")
-	fmt.Printf("Candidate term: %v\n", args.Term)
-	fmt.Printf("Candidate ID: %v\n", args.CandidateID)
+	// fmt.Printf("Candidate term: %v\n", args.Term)
+	// fmt.Printf("Candidate ID: %v\n", args.CandidateID)
 	// fmt.Printf("Candidate lastLogIndex: %v\n", args.LastLogIndex)
 	// fmt.Printf("Candidate lastLogTerm: %v\n", args.LastLogTerm)
 
@@ -219,7 +219,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	if args.Term < rf.currentTerm {
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = false
-		fmt.Printf("Candidate Term is behind follower term!\n")
+		// fmt.Printf("Candidate Term is behind follower term!\n")
 		return
 	}
 
@@ -232,7 +232,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		// rf.lastHeartBeat = time.Now() // reset timer
 		// reply.Term = rf.currentTerm
 		// reply.VoteGranted = true
-		fmt.Printf("Candidate term is ahead of the follower\n")
+		// fmt.Printf("Candidate term is ahead of the follower\n")
 	}
 
 	// voted for is null or candidate id
@@ -241,7 +241,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		rf.votedFor = args.CandidateID
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = true
-		fmt.Printf("voted for is null or candidate id\n")
+		// fmt.Printf("voted for is null or candidate id\n")
 		return
 	}
 }
@@ -286,7 +286,7 @@ func (rf *Raft) ProcessRequestVote(server int, args RequestVoteArgs, reply Reque
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
 			if reply.VoteGranted {
 				rf.voteCount++
-				fmt.Printf("Vote count: %v\n", rf.voteCount)
+				// fmt.Printf("Vote count: %v\n", rf.voteCount)
 				if rf.voteCount >= len(rf.peers)/2+1 {
 					rf.serverState = Leader
 				}
@@ -301,7 +301,7 @@ func (rf *Raft) ProcessRequestVote(server int, args RequestVoteArgs, reply Reque
 func (rf *Raft) ProcessAppendEntries(server int, args AppendEntriesArgs, reply AppendEntriesReply) {
 	ok := rf.sendAppendEntries(server, &args, &reply)
 	if !ok {
-		fmt.Printf("Process Append Entries RPC failed!\n")
+		// fmt.Printf("Process Append Entries RPC failed!\n")
 	}
 	rf.mu.Lock()
 	if reply.Term > rf.currentTerm {
@@ -339,7 +339,7 @@ func (rf *Raft) ProcessAppendEntries(server int, args AppendEntriesArgs, reply A
 // that the caller passes the address of the reply struct with &, not
 // the struct itself.
 func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) bool {
-	fmt.Printf("Server: %v\n", server)
+	// fmt.Printf("Server: %v\n", server)
 	ok := rf.peers[server].Call("Raft.RequestVote", args, reply)
 	if !ok {
 		fmt.Print("Send Request Vote Function RPC Failed!\n")
@@ -436,7 +436,7 @@ func (rf *Raft) ticker() {
 		}
 		// heart beat + election timeout < current time
 		if rf.serverState == Leader {
-			fmt.Printf("S%v converted to leader\n", rf.me)
+			// fmt.Printf("S%v converted to leader\n", rf.me)
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
@@ -451,7 +451,7 @@ func (rf *Raft) ticker() {
 		}
 
 		rf.mu.Unlock()
-		time.Sleep(time.Duration(100) * time.Millisecond)
+		time.Sleep(time.Duration(10) * time.Millisecond)
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
