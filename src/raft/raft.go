@@ -167,7 +167,7 @@ type RequestVoteArgs struct {
 
 	// 2A
 	Term        int // candidate term
-	CandidateID int // candidate requeting vote
+	CandidateID int // candidate requesting vote
 
 	// 2B
 	LastLogIndex int // Index of candidate's last log entry
@@ -301,7 +301,7 @@ func (rf *Raft) ProcessRequestVote(server int, args RequestVoteArgs, reply Reque
 func (rf *Raft) ProcessAppendEntries(server int, args AppendEntriesArgs, reply AppendEntriesReply) {
 	ok := rf.sendAppendEntries(server, &args, &reply)
 	if !ok {
-		// fmt.Printf("Process Append Entries RPC failed!\n")
+		fmt.Printf("Process Append Entries RPC failed!\n")
 	}
 	rf.mu.Lock()
 	if reply.Term > rf.currentTerm {
@@ -399,18 +399,17 @@ func (rf *Raft) killed() bool {
 // The ticker go routine starts a new election if this peer hasn't received
 // heartsbeats recently.
 func (rf *Raft) ticker() {
-	electionTimeOut := time.Duration(rand.Intn(300-150)+150) * time.Millisecond
+	electionTimeOut := time.Duration(rand.Intn(300-150)+150) * time.Millisecond // election time out window
 	for rf.killed() == false {
-		// fmt.Printf("Election Time out: %v\n", electionTimeOut)
 		rf.mu.Lock()
 		if rf.serverState != Leader {
+			// Check to see if we need to start a new election
 			if (rf.lastHeartBeat.Add(electionTimeOut)).Before(time.Now()) {
-				// fmt.Printf("Start an election!\n")
 				rf.currentTerm = rf.currentTerm + 1 // increment current term
 				rf.serverState = Candidate          // change to candidate
 				rf.votedFor = rf.me                 // vote for self
 				rf.lastHeartBeat = time.Now()       // reset timer
-				electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
+				electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond // reset election time out 
 				rf.voteCount = 1
 
 				// Request Vote Args
@@ -429,14 +428,13 @@ func (rf *Raft) ticker() {
 					if i == rf.me {
 						continue
 					}
-					// go rf.sendRequestVote(i, &args, &reply)
 					go rf.ProcessRequestVote(i, args, reply)
 				}
 			}
 		}
 		// heart beat + election timeout < current time
 		if rf.serverState == Leader {
-			// fmt.Printf("S%v converted to leader\n", rf.me)
+			//
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
