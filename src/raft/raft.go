@@ -370,6 +370,9 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 		isLeader = false
 	}
 
+	// Update Leader Log 
+	rf.log = append(rf.log, LogEntry{rf.commitIndex, rf.currentTerm, command})
+
 	index = rf.commitIndex
 	term = rf.currentTerm
 
