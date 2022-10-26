@@ -86,7 +86,7 @@ type Raft struct {
 	log           []LogEntry // the log shared among all peers
 
 	// Volatile State on all servers
-	commmitIndex int // index of highest log entry known to be committed - initialized to 0 and increases monotonically
+	commitIndex int // index of highest log entry known to be committed - initialized to 0 and increases monotonically
 	lastApplied  int // index of highest log entry applied to state machine - initialized to O and increases monotonically
 
 	// Volatile State on all laders (applies to leaders only)
@@ -246,6 +246,12 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		return
 	}
 
+	// if rf.log[args.PrevLogIndex].Term < args.PrevLogTerm {
+	// 	reply.Term = rf.currentTerm
+	// 	reply.Success = false
+	// 	return 
+	// }
+	
 	// leader is ahead of the follower
 	if args.Term >= rf.currentTerm {
 		rf.currentTerm = args.Term
@@ -360,6 +366,13 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	isLeader := true
 
 	// Your code here (2B).
+	if rf.serverState != Leader {
+		isLeader = false
+	}
+
+	index = rf.commitIndex
+	term = rf.currentTerm
+
 
 	return index, term, isLeader
 }
@@ -474,7 +487,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.log = make([]LogEntry, 1)
 
 	// Volatile State on all servers
-	rf.commmitIndex = 0
+	rf.commitIndex = 0
 	rf.lastApplied = 0
 
 	// Volatile State on leaders
