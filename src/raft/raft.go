@@ -282,6 +282,17 @@ func (rf *Raft) ProcessRequestVote(server int, args RequestVoteArgs, reply Reque
 				rf.voteCount++
 				if rf.voteCount >= len(rf.peers)/2+1 {
 					rf.serverState = Leader
+					// Volatile State on leaders 
+					// nextIndex[] - for each server, index of the next long entry to send to that server (leader last log index + 1)
+					rf.nextIndex = make([]int, len(rf.peers))
+					for i := 0; i < len(rf.peers); i++ {
+						rf.nextIndex[i] = len(rf.log)
+					}
+					// matchIndex[] - for each server, index of highest log entry known to be replicated on server
+					rf.matchIndex = make([]int, len(rf.peers))
+					for j := 0; j < len(rf.peers); j++ {
+						rf.matchIndex[j] = 0
+					}
 				}
 			}
 		}
@@ -375,6 +386,9 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	index = len(rf.log) - 1 // first index is always null
 	term = rf.currentTerm
 
+	// update match index 	
+	rf.matchIndex[rf.me]++
+
 
 	return index, term, isLeader
 }
@@ -436,28 +450,15 @@ func (rf *Raft) ticker() {
 		}
 		// heart beat + election timeout < current time
 		if rf.serverState == Leader {
-			// Volatile State on leaders 
-			// nextIndex[] - for each server, index of the next long entry to send to that server (leader last log index + 1)
-			rf.nextIndex = make([]int, len(rf.peers))
-			for i := 0; i < len(rf.peers); i++ {
-				rf.nextIndex[i] = len(rf.log)
-			}
-			
-			// matchIndex[] - for each server, index of highest log entry known to be replicated on server
-			rf.matchIndex = make([]int, len(rf.peers))
-			for j := 0; j < len(rf.peers); j++ {
-				rf.matchIndex[j] = 0
-			}
+	
 
-
-			// rf.nextIndex = make([]int, len(rf.log))
-			// rf.matchIndex = make([]int, 0)
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
 			reply := AppendEntriesReply{}
 			for i := 0; i < len(rf.peers); i++ {
 				// peer cannot append stuff to itself
+				args.
 				if i == rf.me {
 					continue
 				}
