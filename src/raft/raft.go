@@ -366,12 +366,16 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	isLeader := true
 
 	// Your code here (2B).
-	if rf.serverState != Leader {
+	if rf.serverState != Leader || rf.killed() {
 		isLeader = false
 	}
 
 	// Update Leader Log 
 	rf.log = append(rf.log, LogEntry{rf.commitIndex, rf.currentTerm, command})
+	// fmt.Printf("Leader Log: %v\n", rf.log)
+
+	// update nexIndex and matchIndex 
+	
 
 	index = rf.commitIndex
 	term = rf.currentTerm
