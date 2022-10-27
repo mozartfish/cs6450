@@ -89,7 +89,7 @@ type Raft struct {
 	commitIndex int // index of highest log entry known to be committed - initialized to 0 and increases monotonically
 	lastApplied  int // index of highest log entry applied to state machine - initialized to O and increases monotonically
 
-	// Volatile State on all laders (applies to leaders only)
+	// Volatile State on all leaders (applies to leaders only)
 	nextIndex  []int // index of the next long entry to send to that server
 	matchIndex []int // for each server, index of highest log entry known to be replicated on server
 
@@ -372,12 +372,7 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 
 	// Update Leader Log 
 	rf.log = append(rf.log, LogEntry{rf.commitIndex, rf.currentTerm, command})
-	// fmt.Printf("Leader Log: %v\n", rf.log)
-
-	// update nexIndex and matchIndex 
-	
-
-	index = rf.commitIndex
+	index = len(rf.log) - 1 // first index is always null
 	term = rf.currentTerm
 
 
@@ -442,8 +437,21 @@ func (rf *Raft) ticker() {
 		// heart beat + election timeout < current time
 		if rf.serverState == Leader {
 			// Volatile State on leaders 
-			rf.nextIndex = make([]int, len(rf.log))
-			rf.matchIndex = make([]int, 0)
+			// nextIndex[] - for each server, index of the next long entry to send to that server (leader last log index + 1)
+			rf.nextIndex = make([]int, len(rf.peers))
+			for i := 0; i < len(rf.peers); i++ {
+				rf.nextIndex[i] = len(rf.log)
+			}
+			
+			// matchIndex[] - for each server, index of highest log entry known to be replicated on server
+			rf.matchIndex = make([]int, len(rf.peers))
+			for j := 0; j < len(rf.peers); j++ {
+				rf.matchIndex[j] = 0
+			}
+
+
+			// rf.nextIndex = make([]int, len(rf.log))
+			// rf.matchIndex = make([]int, 0)
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
@@ -496,10 +504,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	// Volatile State on all servers
 	rf.commitIndex = 0
 	rf.lastApplied = 0
-
-	// Volatile State on leaders
-	rf.nextIndex = make([]int, len(rf.log))
-	rf.matchIndex = make([]int, 0)
 
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
