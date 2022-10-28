@@ -246,11 +246,11 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		return
 	}
 
-	// if rf.log[args.PrevLogIndex].Term < args.PrevLogTerm {
-	// 	reply.Term = rf.currentTerm
-	// 	reply.Success = false
-	// 	return 
-	// }
+	if rf.log[args.PrevLogIndex].Term < args.PrevLogTerm {
+		reply.Term = rf.currentTerm
+		reply.Success = false
+		return 
+	}
 	
 	// leader is ahead of the follower
 	if args.Term >= rf.currentTerm {
@@ -450,15 +450,16 @@ func (rf *Raft) ticker() {
 		}
 		// heart beat + election timeout < current time
 		if rf.serverState == Leader {
-	
-
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
 			reply := AppendEntriesReply{}
 			for i := 0; i < len(rf.peers); i++ {
 				// peer cannot append stuff to itself
-				args.
+				args.PrevLogIndex = rf.nextIndex[i] - 1
+				args.PrevLogTerm = rf.log[rf.nextIndex[i] - 1].Term
+				args.Entries = rf.log[rf.nextIndex[i] - 1:]
+				args.LeaderCommit = rf.commitIndex
 				if i == rf.me {
 					continue
 				}
