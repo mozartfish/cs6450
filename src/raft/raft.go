@@ -20,6 +20,7 @@ package raft
 import (
 	//	"bytes"
 	"fmt"
+	"math/rand"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -200,15 +201,26 @@ type AppendEntriesReply struct {
 // example RequestVote RPC handler.
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
+	// currentTerm - latest term server has seen
+	// term - candidate's term
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 	// 2A
-	// 1. Reply false if term < current term (Section 5.1)
+	// 1. Reply false if term < currentTerm (Section 5.1)
 	if args.Term < rf.currentTerm {
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = false
 		return
 	}
+
+	// 2a. term > currentTerm
+	if args.Term > rf.currentTerm {
+		rf.currentTerm = args.Term
+		rf.votedFor = -1
+		rf.serverState = Follower
+		rf.voteCount = 0
+	}
+
 	// 2. If votedFor is null or candidateID and candidate's log is at least up-to-date as receiver's
 	// log then grant vote (Section 5.2, 5.4)
 	if rf.votedFor == -1 || rf.votedFor == args.CandidateID {
@@ -278,6 +290,7 @@ func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *Reques
 
 // wrapper function for sendRequestVote to handle race conditions and overriding votes
 func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply RequestVoteReply) {
+	// send request to server
 	ok := rf.sendRequestVote(server, &args, &reply)
 	if ok {
 		rf.mu.Lock()
@@ -388,8 +401,56 @@ func (rf *Raft) killed() bool {
 // The ticker go routine starts a new election if this peer hasn't received
 // heartsbeats recently.
 func (rf *Raft) ticker() {
+	electionTimeOut := time.Duration(rand.Intn(300-150)+150) * time.Millisecond
 	for rf.killed() == false {
+		rf.mu.Lock()
+		if rf.serverState != Leader {
+			if rf.lastHeartBeat.Add(electionTimeOut).Before(time.Now()) {
+				rf.currentTerm = rf.currentTerm + 1
+				rf.serverState = Candidate
+				rf.votedFor = rf.me
+				rf.voteCount = 1
+				rf.lastHeartBeat = time.Now()
+				electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
 
+				// Request Vote Args
+				args := RequestVoteArgs{}
+				args.CandidateID = rf.me
+				args.Term = rf.currentTerm
+				args.LastLogIndex = 0
+				args.LastLogTerm = 0
+
+				// Request Vote Reply
+				reply := RequestVoteReply{}
+
+				// Issue Request Vote RPCs in parallel to each of the other servers in a cluster
+				for i := 0; i < len(rf.peers); i++ {
+					// server cannot vote again for itself
+					if i == rf.me {
+						continue
+					}
+					go rf.processSendRequestVote(i, args, reply)
+				}
+			}
+		}
+		if rf.serverState == Leader {
+			// AppendEntries Args
+			args := AppendEntriesArgs{}
+			args.Term = rf.currentTerm
+			args.LeaderID = rf.me
+
+			// AppendEntries Reply
+			reply := AppendEntriesReply{}
+			for j := 0; j < len(rf.peers); j++ {
+				// server sends heartbeat RPCs to all other servers
+				if j == rf.me {
+					continue
+				}
+				go rf.processSendAppendEntries(j, args, reply)
+			}
+		}
+		rf.mu.Unlock()
+		time.Sleep(time.Duration(10) * time.Millisecond)
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().

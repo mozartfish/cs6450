@@ -1,1125 +1,1199 @@
 Test (2A): initial election ...
-Server: 0
-Server: 1
-Server: 2
-Server: 0
-Server: 1
-Server: 2
-Candidate term: 1
-Candidate ID: 1
-Candidate term: 1
-Candidate ID: 2
-Candidate term: 1
-Candidate ID: 2
-Candidate term: 1
-Candidate ID: 0
-Candidate term: 1
-Candidate ID: 1
-Candidate term: 1
-Candidate ID: 0
-Server: 1
-Server: 2
-Server: 0
-Server: 1
-Server: 2
-Server: 0
-Candidate term: 2
-Candidate ID: 0
-Candidate term: 2
-Candidate ID: 1
-Candidate term: 2
-Candidate ID: 2
-Candidate term: 2
-Candidate ID: 2
-Candidate term: 2
-Candidate ID: 0
-Candidate term: 2
-Candidate ID: 1
-Server: 1
-Server: 0
-Candidate term: 3
-Candidate ID: 2
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate term: 3
-Candidate ID: 2
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Vote count: 2
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-  ... Passed --   3.5  3   66   16484    0
+  ... Passed --   3.0  3  532  146070    0
 Test (2A): election after network failure ...
-Server: 2
-Server: 1
-Server: 0
-Server: 1
-Candidate term: 1
-Candidate ID: 0
-Candidate term: 1
-Candidate ID: 2
-Candidate term: 1
-Candidate ID: 2
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate term: 1
-Candidate ID: 0
-Vote count: 2
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-S2 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S2 converted to leader
-Server: 0
-Server: 2
-Server: 1
-Server: 2
-Candidate term: 2
-Candidate ID: 1
-Candidate term: 2
-Candidate ID: 0
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S2 converted to leader
-S2 converted to leader
-Server: 2
-Server: 0
-Server: 1
-Server: 2
-Candidate term: 3
-Candidate ID: 0
-S2 converted to leader
-Candidate term: 3
-Candidate ID: 1
-S2 converted to leader
-Server: 1
-Server: 2
-Candidate term: 4
-Candidate ID: 0
-Candidate term is ahead of the follower
-voted for is null or candidate id
-S2 converted to leader
-Vote count: 2
-S0 converted to leader
-S2 converted to leader
-S0 converted to leader
-S2 converted to leader
-S0 converted to leader
-S0 converted to leader
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-S0 converted to leader
-S0 converted to leader
-S0 converted to leader
-S0 converted to leader
-Server: 0
-Server: 2
-Server: 1
-Server: 0
-S0 converted to leader
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Server: 2
-Server: 0
-Server: 1
-Server: 0
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Server: 2
-Server: 0
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Server: 0
-Server: 1
-S0 converted to leader
-Server: 0
-Server: 2
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Server: 1
-Server: 0
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Server: 0
-Server: 2
-S0 converted to leader
-S0 converted to leader
-Server: 0
-Server: 1
-S0 converted to leader
-Server: 0
-Server: 2
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Server: 0
-Server: 1
-S0 converted to leader
-Server: 0
-Server: 2
-S0 converted to leader
-S0 converted to leader
-Server: 2
-Server: 0
-Candidate term: 12
-Candidate ID: 1
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Vote count: 2
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-S0 converted to leader
-S0 converted to leader
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S0 converted to leader
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S0 converted to leader
-S1 converted to leader
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-  ... Passed --   4.9  3  150   29600    0
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+  ... Passed --   4.5  3  970  220942    0
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
 Test (2A): multiple elections ...
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Server: 1
-Server: 0
-Server: 3
-Server: 6
-Server: 4
-Server: 5
-Server: 1
-Server: 2
-Server: 3
-Server: 4
-Server: 5
-Server: 6
-Candidate term: 1
-Server: 0
-Candidate term: 1
-Server: 2
-Server: 1
-Server: 3
-Server: 6
-Server: 4
-Candidate term: 1
-Candidate term: 1
-Candidate ID: 2
-Candidate term is ahead of the follower
-Candidate term: 1
-Candidate ID: 0
-Candidate ID: 2
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Candidate term: 1
-Candidate ID: 2
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate term: 1
-Candidate ID: 2
-Candidate ID: 2
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate ID: 2
-Candidate term: 1
-Candidate ID: 0
-Candidate term: 1
-Candidate term: 1
-Candidate ID: 5
-Candidate term: 1
-Candidate term: 1
-Candidate ID: 5
-Candidate term: 1
-Candidate ID: 5
-voted for is null or candidate id
-Candidate ID: 0
-Candidate term: 1
-Candidate ID: 0
-Vote count: 2
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate ID: 0
-Vote count: 3
-Candidate term: 1
-Vote count: 4
-Candidate term: 1
-Candidate ID: 5
-Candidate ID: 5
-Candidate term: 1
-Candidate ID: 0
-S2 converted to leader
-Candidate term: 1
-Candidate ID: 5
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S2 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S2 converted to leader
-S2 converted to leader
-Server: 1
-Server: 0
-Server: 2
-Server: 1
-Server: 3
-Server: 4
-Server: 5
-Server: 2
-Server: 6
-Server: 5
-Server: 4
-Server: 6
-S2 converted to leader
-S2 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Server: 0
-Server: 1
-Server: 4
-Server: 5
-Server: 2
-Server: 6
-S2 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 2
-Server: 1
-Server: 3
-Server: 5
-Server: 4
-Server: 6
-Candidate term: 3
-Candidate ID: 0
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate term: 3
-Candidate ID: 0
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Vote count: 2
-Vote count: 3
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Candidate term: 3
-Candidate ID: 0
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Vote count: 4
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S0 converted to leader
-Server: 6
-Server: 2
-Server: 0
-Server: 1
-Server: 4
-Server: 5
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Server: 0
-Server: 5
-Server: 1
-Server: 2
-Server: 3
-Server: 4
-Server: 0
-Server: 2
-Server: 3
-Server: 4
-Server: 6
-Server: 5
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Server: 0
-Server: 6
-Server: 1
-Server: 2
-Server: 4
-Server: 5
-Server: 0
-Server: 3
-Server: 2
-Server: 5
-Server: 4
-Server: 6
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S0 converted to leader
-Server: 0
-Server: 5
-Server: 2
-Server: 1
-Server: 3
-Server: 4
-Candidate term: 3
-Candidate ID: 6
-Candidate term: 3
-Candidate ID: 6
-Candidate term: 3
-Candidate ID: 6
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 0
-Server: 1
-Server: 5
-Server: 0
-Server: 2
-Server: 4
-Server: 1
-Server: 2
-Server: 6
-Server: 3
-S0 converted to leader
-Server: 6
-Server: 4
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Server: 0
-Server: 1
-Server: 2
-Server: 6
-Server: 5
-Server: 3
-S0 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Server: 0
-Server: 0
-Server: 6
-Server: 2
-Server: 1
-Server: 5
-Server: 4
-Server: 2
-Server: 1
-Server: 4
-Server: 3
-Server: 6
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Server: 0
-Server: 2
-Server: 1
-Server: 5
-Server: 3
-Server: 6
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Server: 0
-Server: 2
-Server: 4
-Server: 1
-Server: 5
-Server: 6
-Candidate term: 8
-Candidate ID: 3
-Candidate term: 8
-Candidate ID: 3
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Send Request Vote Function RPC Failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Candidate term: 8
-Candidate ID: 3
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Vote count: 2
-Process Request Vote RPC failed!
-Vote count: 3
-Vote count: 4
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Server: 0
-Server: 1
-Server: 2
-Server: 0
-Server: 1
-Server: 2
-Server: 3
-Server: 4
-Server: 3
-Server: 5
-Server: 5
-Server: 6
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S0 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S0 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 0
-Server: 5
-Server: 4
-Server: 1
-Server: 2
-Server: 3
-S3 converted to leader
-Candidate term: 5
-Candidate ID: 6
-Candidate Term is behind follower term!
-Candidate term: 5
-Candidate ID: 6
-Candidate Term is behind follower term!
-Candidate term: 5
-Candidate ID: 6
-Candidate Term is behind follower term!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Server: 2
-Server: 3
-Server: 5
-Server: 4
-Server: 6
-Server: 0
-Server: 1
-Server: 0
-Server: 4
-Server: 6
-Server: 5
-Server: 3
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 1
-Server: 3
-Server: 2
-Server: 6
-Server: 4
-Server: 0
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Server: 0
-Server: 1
-Server: 3
-Server: 5
-Server: 4
-Server: 6
-Server: 0
-Server: 2
-Server: 3
-Server: 4
-Server: 5
-Server: 6
-Candidate term: 10
-Candidate ID: 1
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Candidate term: 10
-Candidate ID: 1
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Candidate term: 10
-Candidate term: 10
-Candidate ID: 1
-Candidate term is ahead of the follower
-voted for is null or candidate id
-S3 converted to leader
-Candidate ID: 1
-Candidate term is ahead of the follower
-Send Append Entries function RPC Failed!
-Candidate term: 10
-Candidate ID: 1
-Candidate term is ahead of the follower
-voted for is null or candidate id
-voted for is null or candidate id
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Process Append Entries RPC failed!
-Vote count: 2
-Vote count: 3
-Vote count: 4
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 1
-Server: 0
-Server: 4
-Server: 3
-Server: 6
-Server: 5
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Server: 0
-Server: 1
-Server: 6
-Server: 3
-Server: 5
-Server: 4
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 0
-Server: 4
-Server: 3
-Server: 6
-Server: 5
-Server: 2
-Candidate term: 13
-Candidate ID: 1
-Candidate term is ahead of the follower
-Candidate term: 13
-Candidate term: 13
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Candidate ID: 1
-Candidate ID: 1
-Candidate term is ahead of the follower
-voted for is null or candidate id
-S3 converted to leader
-Candidate term is ahead of the follower
-voted for is null or candidate id
-Send Request Vote Function RPC Failed!
-Vote count: 2
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Vote count: 3
-voted for is null or candidate id
-Process Request Vote RPC failed!
-Vote count: 4
-Server: 1
-Server: 0
-Server: 2
-Server: 3
-Server: 4
-Server: 5
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 0
-Server: 2
-Server: 3
-Server: 5
-Server: 6
-Server: 1
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Process Append Entries RPC failed!
-Server: 0
-Server: 1
-Server: 2
-Server: 4
-Server: 3
-Server: 5
-Candidate term: 12
-Candidate term: 12
-Candidate ID: 6
-Candidate term: 12
-Candidate ID: 6
-Candidate Term is behind follower term!
-Candidate Term is behind follower term!
-Candidate ID: 6
-Candidate Term is behind follower term!
-Candidate term: 12
-Candidate ID: 6
-Candidate Term is behind follower term!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 0
-Server: 1
-Server: 3
-Server: 2
-Server: 6
-Server: 5
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S3 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S3 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Server: 0
-Server: 2
-Server: 6
-Server: 1
-Server: 3
-Server: 5
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-S1 converted to leader
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Request Vote Function RPC Failed!
-Process Request Vote RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-S1 converted to leader
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-Send Append Entries function RPC Failed!
-Process Append Entries RPC failed!
-  ... Passed --   5.3  7  630  122530    0
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+  ... Passed --   5.5  7 3384  805476    0
 PASS
-ok  	6.824/raft	13.793s
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendAppendEntries RPC Failed!
+sendRequestVote RPC Failed!
+sendAppendEntries RPC Failed!
+ok  	6.824/raft	13.116s
