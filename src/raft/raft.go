@@ -21,6 +21,7 @@ import (
 	//	"bytes"
 	"sync"
 	"sync/atomic"
+	"time"
 
 	//	"6.824/labgob"
 	"6.824/labrpc"
@@ -47,20 +48,19 @@ type ApplyMsg struct {
 	SnapshotIndex int
 }
 
-// Server State 
+// Server State
 const (
-	Follower = iota 
-	Candidate 
+	Follower = iota
+	Candidate
 	Leader
 )
 
-// Log Entry 
+// Log Entry
 type LogEntry struct {
-	LogIndex int // position in the state machine log  
-	Term int // term when entry was first received by leader
-	Command interface{} // command for state machine 
+	LogIndex int         // position in the state machine log
+	Term     int         // term when entry was first received by leader
+	Command  interface{} // command for state machine
 }
-
 
 // A Go object implementing a single Raft peer.
 type Raft struct {
@@ -69,11 +69,28 @@ type Raft struct {
 	persister *Persister          // Object to hold this peer's persisted state
 	me        int                 // this peer's index into peers[]
 	dead      int32               // set by Kill()
-
 	// Your data here (2A, 2B, 2C).
 	// Look at the paper's Figure 2 for a description of what
 	// state a Raft server must maintain.
+	// 2A
+	// Persistent State on All Servers (updated on stable storage before responding to RPCs)
+	serverState   int       // Follower, Candidate, or Leader
+	lastHeartBeat time.Time // last time which peer heard from the leader
+	voteCount     int       // number of votes (elections)
+	currentTerm   int       // latest term server has seen (initialized to 0 on first boot, increases monotonically)
+	votedFor      int       // candidateID that received vote in current term (or null if none)
 
+	// 2B
+	log []LogEntry // log entries; each entry contains command for state machine, and term when entry was received by leader (first index is 1)
+
+	// Volatile State on All Servers
+	commitIndex int // index of highest log entry known to be committed (initialized to 0, increases monotonically)
+	lastApplied int // index of highest log entry applied to stadte machine (initialized to 0, increases monotonically)
+
+	// Volatile State on Leaders:
+	// (Reinitialized After Election)
+	nextIndex  []int // for each server, index of the next log entry to send to that server (initialized to leader log + 1)
+	matchIndex []int // for each server, index of highest log entry known to be replicated on server (initialized to 0, increases monotonically)
 }
 
 // return currentTerm and whether this server
