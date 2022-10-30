@@ -275,6 +275,25 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	// Your initialization code here (2A, 2B, 2C).
 
+	// 2A
+	// Persistent State on All Servers
+	rf.serverState = Follower
+	rf.lastHeartBeat = time.Now()
+	rf.voteCount = 0
+	rf.currentTerm = 0
+	rf.votedFor = -1
+
+	// 2B
+	rf.log = make([]LogEntry, 1)
+
+	// Volatile Stateon All Servers
+	rf.commitIndex = 0
+	rf.lastApplied = 0
+
+	// Volatile State on Leaders
+	rf.nextIndex = make([]int, 0)
+	rf.matchIndex = make([]int, 0)
+
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
 
