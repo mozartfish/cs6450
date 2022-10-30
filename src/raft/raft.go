@@ -53,6 +53,15 @@ const (
 	Candidate 
 	Leader
 )
+
+// Log Entry 
+type LogEntry struct {
+	LogIndex int // position in the state machine log  
+	Term int // term when entry was first received by leader
+	Command interface{} // command for state machine 
+}
+
+
 // A Go object implementing a single Raft peer.
 type Raft struct {
 	mu        sync.Mutex          // Lock to protect shared access to this peer's state
