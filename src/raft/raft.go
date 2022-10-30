@@ -19,6 +19,7 @@ package raft
 
 import (
 	//	"bytes"
+	"fmt"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -273,6 +274,74 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) bool {
 	ok := rf.peers[server].Call("Raft.RequestVote", args, reply)
 	return ok
+}
+
+// wrapper function for sendRequestVote to handle race conditions and overriding votes
+func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply RequestVoteReply) {
+	ok := rf.sendRequestVote(server, &args, &reply)
+	if ok {
+		rf.mu.Lock()
+		// If the leader's term (included in its rpc) is at least as large as the candidate's current term
+		// candidate recognizes leader as legitimate and returns to follower state
+		if reply.Term > rf.currentTerm {
+			rf.serverState = Follower
+			rf.currentTerm = reply.Term
+			rf.voteCount = 0
+		}
+		if rf.serverState == Candidate && rf.currentTerm == args.Term {
+			if reply.VoteGranted {
+				rf.voteCount++
+				if rf.voteCount >= len(rf.peers)/2+1 {
+					rf.serverState = Leader
+				}
+			}
+		}
+		rf.mu.Unlock()
+	} else {
+		fmt.Println("sendRequestVote RPC Failed!")
+	}
+}
+
+// AppendEntries RPC to a server
+// server is the index of the target server in rf.peers[].
+// expects RPC arguments in args.
+// fills in *reply with RPC reply, so caller should
+// pass &reply.
+// the types of the args and reply passed to Call() must be
+// the same as the types of the arguments declared in the
+// handler function (including whether they are pointers).
+//
+// The labrpc package simulates a lossy network, in which servers
+// may be unreachable, and in which requests and replies may be lost.
+// Call() sends a request and waits for a reply. If a reply arrives
+// within a timeout interval, Call() returns true; otherwise
+// Call() returns false. Thus Call() may not return for a while.
+// A false return can be caused by a dead server, a live server that
+// can't be reached, a lost request, or a lost reply.
+//
+// Call() is guaranteed to return (perhaps after a delay) *except* if the
+// handler function on the server side does not return.  Thus there
+// is no need to implement your own timeouts around Call().
+//
+// look at the comments in ../labrpc/labrpc.go for more details.
+func (rf *Raft) sendAppendEntries(server int, args *AppendEntriesArgs, reply *AppendEntriesReply) bool {
+	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
+	return ok
+}
+
+// wrapper function for sendAppendEnries to handle race conditions and overriding append entries
+func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, reply AppendEntriesReply) {
+	ok := rf.sendAppendEntries(server, &args, &reply)
+	if ok {
+		rf.mu.Lock()
+		if reply.Term > rf.currentTerm {
+			rf.serverState = Follower
+			rf.currentTerm = reply.Term
+		}
+		rf.mu.Unlock()
+	} else {
+		fmt.Println("sendAppendEntries RPC Failed!")
+	}
 }
 
 // the service using Raft (e.g. a k/v server) wants to start
