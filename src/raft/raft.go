@@ -47,6 +47,12 @@ type ApplyMsg struct {
 	SnapshotIndex int
 }
 
+// Server State 
+const (
+	Follower = iota 
+	Candidate 
+	Leader
+)
 // A Go object implementing a single Raft peer.
 type Raft struct {
 	mu        sync.Mutex          // Lock to protect shared access to this peer's state
