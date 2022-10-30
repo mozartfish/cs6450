@@ -199,6 +199,48 @@ type AppendEntriesReply struct {
 // example RequestVote RPC handler.
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	// 2A
+	// 1. Reply false if term < current term (Section 5.1)
+	if args.Term < rf.currentTerm {
+		reply.Term = rf.currentTerm
+		reply.VoteGranted = false
+		return
+	}
+	// 2. If votedFor is null or candidateID and candidate's log is at least up-to-date as receiver's
+	// log then grant vote (Section 5.2, 5.4)
+	if rf.votedFor == -1 || rf.votedFor == args.CandidateID {
+		rf.lastHeartBeat = time.Now() // reset peer heartbeat time for election
+		rf.votedFor = args.CandidateID
+		reply.Term = rf.currentTerm
+		reply.VoteGranted = true
+		return
+	}
+
+}
+
+// AppendEntries RPC handler
+func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	// 1. Reply false if term < currentTerm
+	if args.Term < rf.currentTerm {
+		reply.Term = rf.currentTerm
+		reply.Success = false
+		return
+	}
+
+	// need to add checks if follower contained entry matching prevLogIndex
+	// and prevLogTerm
+	if args.Term >= rf.currentTerm {
+		rf.currentTerm = args.Term
+		rf.serverState = Follower
+		rf.lastHeartBeat = time.Now()
+		reply.Term = rf.currentTerm
+		reply.Success = true
+		return
+	}
 }
 
 // example code to send a RequestVote RPC to a server.
