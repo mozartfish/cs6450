@@ -19,7 +19,7 @@ package raft
 
 import (
 	//	"bytes"
-	"fmt"
+	// "fmt"
 	"math/rand"
 	"sync"
 	"sync/atomic"
@@ -204,6 +204,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// term - candidate's term
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	Debug(dInfo, "S%d Enter RequestVote RPC", rf.me)
 	// 2A
 	// 1. Reply false if term < currentTerm (Section 5.1)
 	if args.Term < rf.currentTerm {
@@ -218,6 +219,11 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		rf.votedFor = -1
 		rf.serverState = Follower
 		rf.voteCount = 0
+
+		Debug(dTerm, "S%d Current Term", rf.me, rf.currentTerm)
+		Debug(dVote, "S%d Skip Vote %v", rf.me, rf.votedFor)
+		Debug(dInfo, "S%d Become a Follower", rf.me, rf.serverState)
+		Debug(dInfo, "S%d Reset Vote Count", rf.me, rf.voteCount)
 	}
 
 	// 2. If votedFor is null or candidateID and candidate's log is at least up-to-date as receiver's
@@ -225,6 +231,10 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	if rf.votedFor == -1 || rf.votedFor == args.CandidateID {
 		rf.lastHeartBeat = time.Now() // reset peer heartbeat time for election
 		rf.votedFor = args.CandidateID
+
+		Debug(dTerm, "S%d Current Term", rf.me, rf.currentTerm)
+		Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
+
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = true
 		return
@@ -236,6 +246,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	Debug(dInfo, "S%d Enter AppendEntries RPC", rf.me)
 	// 1. Reply false if term < currentTerm
 	if args.Term < rf.currentTerm {
 		reply.Term = rf.currentTerm
@@ -243,28 +254,38 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		return
 	}
 
-	// 2. Reply false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm
-	if rf.log[args.PrevLogIndex].Term != args.PrevLogTerm {
-		reply.Term = rf.currentTerm
-		reply.Success = false
-		return
-	}
+	// // 2. Reply false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm
+	// if rf.log[args.PrevLogIndex].Term != args.PrevLogTerm {
+	// 	reply.Term = rf.currentTerm
+	// 	reply.Success = false
+	// 	return
+	// }
 
-	// 3. if an existing entry conflicts with a new one (same index but different terms), delete 
-	// the existing entry and all that follows it
-	// for i := args.PrevLogIndex; i < len(rf.log); i++ {
-	// 	if rf.log[i].Term != args.Entries[i].Term {
-	// 		rf.log = rf.log[:i]
+	// // check to see if there are entries beyond PrevLogIndex
+	// if len(rf.log) > args.PrevLogIndex {
+	// 	fmt.Printf("length of my log: %v\n", len(rf.log))
+	// 	fmt.Printf("length of arg entries: %v\n", len(args.Entries))
+
+	// 	// need to check if all the log entries match
+	// 	for i := args.PrevLogIndex; i < len(rf.log); i++ {
+	// 		if rf.log[i].Term != args.Entries[i].Term {
+	// 			rf.log = rf.log[:i]
+	// 			break
+	// 		}
 	// 	}
 	// }
 
-	// 4. Append any new entries not already in the log 
-
+	// 4. Append any new entries not already in the log
 
 	if args.Term >= rf.currentTerm {
 		rf.currentTerm = args.Term
 		rf.serverState = Follower
 		rf.lastHeartBeat = time.Now()
+
+		Debug(dTerm, "S%d Current Term", rf.me, rf.currentTerm)
+		Debug(dInfo, "S%d Server State ", rf.me, rf.serverState)
+		Debug(dInfo, "S%d Update Last Heart Beat", rf.me, rf.currentTerm)
+
 		reply.Term = rf.currentTerm
 		reply.Success = true
 		return
@@ -315,12 +336,21 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 			rf.serverState = Follower
 			rf.currentTerm = reply.Term
 			rf.voteCount = 0
+
+			Debug(dInfo, "S%d Return to Follower %v", rf.me, rf.serverState)
+			Debug(dTerm, "S%d Update Current Term %v", rf.me, rf.currentTerm)
+			Debug(dInfo, "S%d Reset Vote Count %v", rf.me, rf.voteCount)
+
 		}
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
 			if reply.VoteGranted {
 				rf.voteCount++
 				if rf.voteCount >= len(rf.peers)/2+1 {
 					rf.serverState = Leader
+					Debug(dLeader, "S%d Become Leader", rf.me)
+					Debug(dTerm, "S%d Become Leader Term %v", rf.me, rf.currentTerm)
+					Debug(dLeader, "S%d Become Leader Server State", rf.me, rf.serverState)
+
 					// Update Volatile State on all leaders
 					// nextIndex
 					for i := 0; i < len(rf.peers); i++ {
@@ -330,12 +360,13 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 					for j := 0; j < len(rf.peers); j++ {
 						rf.matchIndex[j] = 0
 					}
+
+					Debug(dInfo, "S%d Create New Next Index Tracker %v", rf.me, rf.nextIndex)
+					Debug(dInfo, "S%d Create New Match Index Tracker ", rf.me, rf.matchIndex)
 				}
 			}
 		}
 		rf.mu.Unlock()
-	} else {
-		fmt.Println("sendRequestVote RPC Failed!")
 	}
 }
 
@@ -374,10 +405,12 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 		if reply.Term > rf.currentTerm {
 			rf.serverState = Follower
 			rf.currentTerm = reply.Term
+
+			Debug(dInfo, "S%d Enter processSendAppendEntries function", rf.me)
+			Debug(dInfo, "S%d Revert to Follower %v", rf.me, rf.serverState)
+			Debug(dTerm, "S%d Update Current Term %v", rf.me, rf.currentTerm)
 		}
 		rf.mu.Unlock()
-	} else {
-		fmt.Println("sendAppendEntries RPC Failed!")
 	}
 }
 
@@ -404,30 +437,40 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 		isLeader = false
 	}
 
+	Debug(dLeader, "S%d Leader", rf.me)
+	Debug(dTerm, "S%d Leader Current Term %v", rf.me, rf.currentTerm)
+	Debug(dInfo, "S%d Leader Next Index Array %v", rf.me, rf.nextIndex)
+	Debug(dInfo, "S%d Leader Match Index Array %v", rf.me, rf.matchIndex)
+
 	// append command to leader log as a new entry
 	rf.log = append(rf.log, LogEntry{rf.currentTerm, command})
+	Debug(dLog, "S%d Leader Log %v", rf.me, rf.log)
+
 	term = rf.currentTerm
 	index = len(rf.log) - 1
 	rf.matchIndex[rf.me] = rf.matchIndex[rf.me] + 1
 
-	// issue AppendEntries RPC in parallel to each of the other servers
-	// to replicate the entry
-	for i := 0; i < len(rf.peers); i++ {
-		// AppendEntries Args
-		args := AppendEntriesArgs{}
-		args.Term = rf.currentTerm
-		args.LeaderID = rf.me
-		args.PrevLogIndex = rf.nextIndex[i] - 1
-		args.PrevLogTerm = rf.log[rf.nextIndex[i]-1].Term
-		args.Entries = rf.log[rf.nextIndex[i]-1:]
-		args.LeaderCommit = rf.commitIndex
-		// AppendEntriesReply
-		reply := AppendEntriesReply{}
-		if i == rf.me {
-			continue
-		}
-		go rf.processSendAppendEntries(i, args, reply)
-	}
+	Debug(dInfo, "S%d Update Leader Match Index %v", rf.me, rf.matchIndex)
+	Debug(dLog, "S%d Update Leader Log %v", rf.me, rf.log)
+
+	// // issue AppendEntries RPC in parallel to each of the other servers
+	// // to replicate the entry
+	// for i := 0; i < len(rf.peers); i++ {
+	// 	// AppendEntries Args
+	// 	args := AppendEntriesArgs{}
+	// 	args.Term = rf.currentTerm
+	// 	args.LeaderID = rf.me
+	// 	args.PrevLogIndex = rf.nextIndex[i] - 1
+	// 	args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
+	// 	args.Entries = rf.log[rf.nextIndex[i]:]
+	// 	args.LeaderCommit = rf.commitIndex
+	// 	// AppendEntriesReply
+	// 	reply := AppendEntriesReply{}
+	// 	if i == rf.me {
+	// 		continue
+	// 	}
+	// 	go rf.processSendAppendEntries(i, args, reply)
+	// }
 
 	return index, term, isLeader
 }
@@ -464,6 +507,14 @@ func (rf *Raft) ticker() {
 				rf.votedFor = rf.me
 				rf.voteCount = 1
 				rf.lastHeartBeat = time.Now()
+
+				Debug(dInfo, "S%d Enter the ticker function", rf.me)
+				Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
+				Debug(dInfo, "S%d Server State %v", rf.me, rf.serverState)
+				Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
+				Debug(dInfo, "S%d Vote Count", rf.me, rf.voteCount)
+				Debug(dInfo, "S%d Server Heart Beat %v", rf.me, rf.lastHeartBeat)
+				
 				electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
 
 				// Request Vote Args
@@ -559,6 +610,9 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.readPersist(persister.ReadRaftState())
 
 	// start ticker goroutine to start elections
+
+	Debug(dInfo, "S%d Server goes online", rf.me)
+
 	go rf.ticker()
 
 	return rf
