@@ -243,8 +243,24 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		return
 	}
 
-	// need to add checks if follower contained entry matching prevLogIndex
-	// and prevLogTerm
+	// 2. Reply false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm
+	if rf.log[args.PrevLogIndex].Term != args.PrevLogTerm {
+		reply.Term = rf.currentTerm
+		reply.Success = false
+		return
+	}
+
+	// 3. if an existing entry conflicts with a new one (same index but different terms), delete 
+	// the existing entry and all that follows it
+	// for i := args.PrevLogIndex; i < len(rf.log); i++ {
+	// 	if rf.log[i].Term != args.Entries[i].Term {
+	// 		rf.log = rf.log[:i]
+	// 	}
+	// }
+
+	// 4. Append any new entries not already in the log 
+
+
 	if args.Term >= rf.currentTerm {
 		rf.currentTerm = args.Term
 		rf.serverState = Follower
@@ -388,12 +404,30 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 		isLeader = false
 	}
 
-	// append command to leader log as a new entry and issue AppendEntries RPCs
-	// in parallel to each of the other servers to replicate the entry
+	// append command to leader log as a new entry
 	rf.log = append(rf.log, LogEntry{rf.currentTerm, command})
 	term = rf.currentTerm
 	index = len(rf.log) - 1
 	rf.matchIndex[rf.me] = rf.matchIndex[rf.me] + 1
+
+	// issue AppendEntries RPC in parallel to each of the other servers
+	// to replicate the entry
+	for i := 0; i < len(rf.peers); i++ {
+		// AppendEntries Args
+		args := AppendEntriesArgs{}
+		args.Term = rf.currentTerm
+		args.LeaderID = rf.me
+		args.PrevLogIndex = rf.nextIndex[i] - 1
+		args.PrevLogTerm = rf.log[rf.nextIndex[i]-1].Term
+		args.Entries = rf.log[rf.nextIndex[i]-1:]
+		args.LeaderCommit = rf.commitIndex
+		// AppendEntriesReply
+		reply := AppendEntriesReply{}
+		if i == rf.me {
+			continue
+		}
+		go rf.processSendAppendEntries(i, args, reply)
+	}
 
 	return index, term, isLeader
 }
@@ -476,6 +510,13 @@ func (rf *Raft) ticker() {
 
 	}
 }
+
+// func (rf * Raft) applyCommitMsg (){
+// 	rf.mu.Lock()
+
+// 	rf.mu.Unlock()
+// 	time.Sleep(time.Duration(10) * time.Millisecond)
+// }
 
 // the service or tester wants to create a Raft server. the ports
 // of all the Raft servers (including this one) are in peers[]. this
