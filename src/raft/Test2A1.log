@@ -1,0 +1,17 @@
+000001 INFO S0, server starts up
+000002 INFO S1, server starts up
+000003 INFO S2, server starts up
+Test (2A): initial election ...
+002765 TERM S0 Update Current Term 1
+002767 INFO S0 Convert to Candidate
+002767 VOTE S0 Voted for Server 0
+002766 TERM S1 Update Current Term 1
+002769 INFO S1 Convert to Candidate
+002769 VOTE S1 Voted for Server 1
+002774 VOTE S2 Voted for Server 0
+002774 TERM S2 Current Term 1
+002776 LEAD S0 Convert to Leader
+002777 TERM S0 Leader Term 1
+  ... Passed --   3.1  3  536  138944    0
+PASS
+ok  	6.824/raft	3.120s

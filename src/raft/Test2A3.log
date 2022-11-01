@@ -1,0 +1,293 @@
+000001 INFO S0, server starts up
+000003 INFO S1, server starts up
+000003 INFO S2, server starts up
+000004 INFO S3, server starts up
+000004 INFO S4, server starts up
+000005 INFO S5, server starts up
+000005 INFO S6, server starts up
+Test (2A): multiple elections ...
+001656 TERM S0 Update Current Term 1
+001658 INFO S0 Convert to Candidate
+001658 VOTE S0 Voted for Server 0
+001673 VOTE S4 Voted for Server 0
+001676 TERM S4 Current Term 1
+001673 VOTE S6 Voted for Server 0
+001680 VOTE S2 Voted for Server 0
+001682 TERM S2 Current Term 1
+001674 VOTE S1 Voted for Server 0
+001682 TERM S1 Current Term 1
+001675 VOTE S3 Voted for Server 0
+001684 TERM S3 Current Term 1
+001680 VOTE S5 Voted for Server 0
+001687 TERM S5 Current Term 1
+001681 TERM S6 Current Term 1
+001686 LEAD S0 Convert to Leader
+001688 TERM S0 Leader Term 1
+007266 TERM S2 Update Current Term 2
+007268 INFO S2 Convert to Candidate
+007268 VOTE S2 Voted for Server 2
+007475 TERM S6 Update Current Term 2
+007476 INFO S6 Convert to Candidate
+007476 TERM S3 Update Current Term 2
+007477 INFO S3 Convert to Candidate
+007477 VOTE S3 Voted for Server 3
+007476 VOTE S6 Voted for Server 6
+009402 TERM S2 Update Current Term 3
+009403 INFO S2 Convert to Candidate
+009404 VOTE S2 Voted for Server 2
+010078 TERM S6 Update Current Term 3
+010079 INFO S6 Convert to Candidate
+010079 VOTE S6 Voted for Server 6
+010293 TERM S3 Update Current Term 3
+010294 INFO S3 Convert to Candidate
+010295 VOTE S3 Voted for Server 3
+010416 INFO S0 Follower Term 3 > Leader Term 1
+010417 INFO S0 Convert to Follower
+010417 TERM S0 Current Term 3
+010517 TERM S0 Update Current Term 4
+010518 INFO S0 Convert to Candidate
+010518 VOTE S0 Voted for Server 0
+010524 VOTE S3 Voted for Server 0
+010524 TERM S3 Current Term 4
+010525 VOTE S5 Voted for Server 0
+010526 VOTE S2 Voted for Server 0
+010526 TERM S2 Current Term 4
+010526 TERM S5 Current Term 4
+010528 VOTE S6 Voted for Server 0
+010528 TERM S6 Current Term 4
+010531 LEAD S0 Convert to Leader
+010532 TERM S0 Leader Term 4
+012660 TERM S1 Update Current Term 2
+012661 INFO S1 Convert to Candidate
+012661 VOTE S1 Voted for Server 1
+013292 TERM S4 Update Current Term 2
+013294 INFO S4 Convert to Candidate
+013294 VOTE S4 Voted for Server 4
+014784 TERM S1 Update Current Term 3
+014785 INFO S1 Convert to Candidate
+014785 VOTE S1 Voted for Server 1
+016187 TERM S4 Update Current Term 3
+016189 INFO S4 Convert to Candidate
+016189 VOTE S4 Voted for Server 4
+017133 TERM S6 Update Current Term 5
+017134 INFO S6 Convert to Candidate
+017134 VOTE S6 Voted for Server 6
+017762 TERM S4 Update Current Term 4
+017763 INFO S4 Convert to Candidate
+017763 VOTE S4 Voted for Server 4
+018305 TERM S5 Update Current Term 5
+018306 INFO S5 Convert to Candidate
+018307 VOTE S5 Voted for Server 5
+018947 TERM S6 Update Current Term 6
+018948 INFO S6 Convert to Candidate
+018948 VOTE S6 Voted for Server 6
+019823 TERM S4 Update Current Term 5
+019824 INFO S4 Convert to Candidate
+019824 VOTE S4 Voted for Server 4
+020259 INFO S0 Follower Term 5 > Leader Term 4
+020260 INFO S0 Convert to Follower
+020260 TERM S0 Current Term 5
+020360 TERM S0 Update Current Term 6
+020361 INFO S0 Convert to Candidate
+020361 VOTE S0 Voted for Server 0
+020367 VOTE S1 Voted for Server 0
+020367 TERM S1 Current Term 6
+020367 VOTE S2 Voted for Server 0
+020368 TERM S2 Current Term 6
+020367 VOTE S5 Voted for Server 0
+020369 TERM S5 Current Term 6
+020373 LEAD S0 Convert to Leader
+020373 TERM S0 Leader Term 6
+021748 TERM S4 Update Current Term 6
+021749 INFO S4 Convert to Candidate
+021750 VOTE S4 Voted for Server 4
+021756 TERM S6 Update Current Term 7
+021757 INFO S6 Convert to Candidate
+021757 VOTE S6 Voted for Server 6
+023022 TERM S3 Update Current Term 5
+023023 INFO S3 Convert to Candidate
+023023 VOTE S3 Voted for Server 3
+023868 TERM S6 Update Current Term 8
+023869 INFO S6 Convert to Candidate
+023869 VOTE S6 Voted for Server 6
+024084 TERM S4 Update Current Term 7
+024085 INFO S4 Convert to Candidate
+024085 VOTE S4 Voted for Server 4
+025582 INFO S0 Follower Term 8 > Leader Term 6
+025583 INFO S0 Convert to Follower
+025584 TERM S0 Current Term 8
+025675 TERM S0 Update Current Term 9
+025676 INFO S0 Convert to Candidate
+025676 TERM S3 Update Current Term 6
+025677 INFO S3 Convert to Candidate
+025677 VOTE S3 Voted for Server 3
+025676 VOTE S0 Voted for Server 0
+025684 VOTE S6 Voted for Server 0
+025685 TERM S6 Current Term 9
+025685 VOTE S4 Voted for Server 0
+025686 VOTE S5 Voted for Server 0
+025686 TERM S4 Current Term 9
+025686 TERM S5 Current Term 9
+025691 LEAD S0 Convert to Leader
+025691 TERM S0 Leader Term 9
+027132 TERM S1 Update Current Term 7
+027133 INFO S1 Convert to Candidate
+027133 VOTE S1 Voted for Server 1
+027985 TERM S2 Update Current Term 7
+027986 INFO S2 Convert to Candidate
+027986 VOTE S2 Voted for Server 2
+028522 TERM S3 Update Current Term 7
+028524 INFO S3 Convert to Candidate
+028524 VOTE S3 Voted for Server 3
+029479 TERM S1 Update Current Term 8
+029480 INFO S1 Convert to Candidate
+029480 VOTE S1 Voted for Server 1
+029851 TERM S2 Update Current Term 8
+029852 INFO S2 Convert to Candidate
+029852 VOTE S2 Voted for Server 2
+031141 TERM S3 Update Current Term 8
+031142 INFO S3 Convert to Candidate
+031142 VOTE S3 Voted for Server 3
+031155 INFO S3 Server Term 9 > Candidate Term 8
+031155 INFO S3 Convert To Follower
+031155 TERM S9 Current Term
+031564 TERM S1 Update Current Term 9
+031565 INFO S1 Convert to Candidate
+031565 VOTE S1 Voted for Server 1
+032830 TERM S2 Update Current Term 9
+032831 INFO S2 Convert to Candidate
+032832 VOTE S2 Voted for Server 2
+033164 TERM S3 Update Current Term 10
+033165 INFO S3 Convert to Candidate
+033166 VOTE S3 Voted for Server 3
+033169 VOTE S6 Voted for Server 3
+033170 TERM S6 Current Term 10
+033169 VOTE S2 Voted for Server 3
+033172 TERM S2 Current Term 10
+033174 VOTE S4 Voted for Server 3
+033175 TERM S4 Current Term 10
+033176 LEAD S3 Convert to Leader
+033177 TERM S3 Leader Term 10
+033256 TERM S5 Update Current Term 10
+033257 INFO S5 Convert to Candidate
+033257 VOTE S5 Voted for Server 5
+033477 TERM S1 Update Current Term 10
+033477 INFO S1 Convert to Candidate
+033477 VOTE S1 Voted for Server 1
+035500 TERM S1 Update Current Term 11
+035500 INFO S1 Convert to Candidate
+035500 VOTE S1 Voted for Server 1
+035713 TERM S5 Update Current Term 11
+035714 INFO S5 Convert to Candidate
+035714 VOTE S5 Voted for Server 5
+035720 VOTE S0 Voted for Server 5
+035721 TERM S0 Current Term 11
+035725 INFO S3 Follower Term 11 > Leader Term 10
+035726 INFO S3 Convert to Follower
+035726 TERM S3 Current Term 11
+035729 VOTE S2 Voted for Server 5
+035730 TERM S2 Current Term 11
+035825 TERM S3 Update Current Term 12
+035826 INFO S3 Convert to Candidate
+035826 VOTE S3 Voted for Server 3
+035835 VOTE S5 Voted for Server 3
+035836 TERM S5 Current Term 12
+035835 VOTE S2 Voted for Server 3
+035836 TERM S2 Current Term 12
+035835 VOTE S0 Voted for Server 3
+035839 TERM S0 Current Term 12
+035842 LEAD S3 Convert to Leader
+035843 TERM S3 Leader Term 12
+037419 TERM S1 Update Current Term 12
+037420 INFO S1 Convert to Candidate
+037420 VOTE S1 Voted for Server 1
+038271 TERM S6 Update Current Term 11
+038274 INFO S6 Convert to Candidate
+038274 VOTE S6 Voted for Server 6
+038372 TERM S4 Update Current Term 11
+038375 INFO S4 Convert to Candidate
+038376 VOTE S4 Voted for Server 4
+040050 TERM S4 Update Current Term 12
+040051 INFO S4 Convert to Candidate
+040052 VOTE S4 Voted for Server 4
+040061 TERM S1 Update Current Term 13
+040068 INFO S1 Convert to Candidate
+040070 VOTE S1 Voted for Server 1
+041107 TERM S6 Update Current Term 12
+041108 INFO S6 Convert to Candidate
+041108 VOTE S6 Voted for Server 6
+041120 INFO S6 Server Term 13 > Candidate Term 12
+041120 INFO S6 Convert To Follower
+041121 TERM S13 Current Term
+042264 TERM S4 Update Current Term 13
+042265 INFO S4 Convert to Candidate
+042266 VOTE S4 Voted for Server 4
+042583 TERM S1 Update Current Term 14
+042584 INFO S1 Convert to Candidate
+042584 VOTE S1 Voted for Server 1
+042590 VOTE S6 Voted for Server 1
+042590 TERM S6 Current Term 14
+042590 VOTE S0 Voted for Server 1
+042591 TERM S0 Current Term 14
+042591 VOTE S5 Voted for Server 1
+042592 TERM S5 Current Term 14
+042595 LEAD S1 Convert to Leader
+042596 TERM S1 Leader Term 14
+042790 TERM S2 Update Current Term 13
+042791 INFO S2 Convert to Candidate
+042792 VOTE S2 Voted for Server 2
+044293 TERM S4 Update Current Term 14
+044295 INFO S4 Convert to Candidate
+044295 VOTE S4 Voted for Server 4
+044502 TERM S2 Update Current Term 14
+044502 INFO S2 Convert to Candidate
+044503 VOTE S2 Voted for Server 2
+046096 TERM S2 Update Current Term 15
+046099 INFO S2 Convert to Candidate
+046101 VOTE S2 Voted for Server 2
+047713 TERM S0 Update Current Term 15
+047714 INFO S0 Convert to Candidate
+047714 VOTE S0 Voted for Server 0
+047944 TERM S5 Update Current Term 15
+047945 INFO S5 Convert to Candidate
+047945 VOTE S5 Voted for Server 5
+048693 TERM S2 Update Current Term 16
+048694 INFO S2 Convert to Candidate
+048694 VOTE S2 Voted for Server 2
+050658 TERM S0 Update Current Term 16
+050659 INFO S0 Convert to Candidate
+050660 VOTE S0 Voted for Server 0
+050869 INFO S1 Follower Term 16 > Leader Term 14
+050870 INFO S1 Convert to Follower
+050871 TERM S1 Current Term 16
+050967 TERM S1 Update Current Term 17
+050968 INFO S1 Convert to Candidate
+050968 VOTE S1 Voted for Server 1
+050968 TERM S5 Update Current Term 16
+050969 INFO S5 Convert to Candidate
+050969 VOTE S5 Voted for Server 5
+050968 TERM S2 Update Current Term 17
+050974 INFO S2 Convert to Candidate
+050976 VOTE S2 Voted for Server 2
+050979 INFO S5 Server Term 17 > Candidate Term 16
+050980 INFO S5 Convert To Follower
+050980 TERM S17 Current Term
+050980 VOTE S0 Voted for Server 1
+050980 TERM S0 Current Term 17
+050981 VOTE S3 Voted for Server 5
+050982 TERM S3 Current Term 16
+050975 VOTE S6 Voted for Server 5
+050986 TERM S6 Current Term 16
+050989 VOTE S4 Voted for Server 5
+050990 TERM S4 Current Term 16
+050991 VOTE S4 Voted for Server 1
+050992 TERM S4 Current Term 17
+050991 VOTE S6 Voted for Server 1
+050996 TERM S6 Current Term 17
+050999 LEAD S1 Convert to Leader
+051000 TERM S1 Leader Term 17
+051003 VOTE S3 Voted for Server 1
+051003 TERM S3 Current Term 17
+  ... Passed --   5.6  7 3684  804020    0
+PASS
+ok  	6.824/raft	5.591s
