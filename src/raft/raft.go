@@ -244,9 +244,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 
 		rf.lastHeartBeat = time.Now() // reset peer heartbeat time for election
 		rf.votedFor = args.CandidateID
-		Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
 		reply.Term = rf.currentTerm
-		Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
 		// reply.VoteGranted = true
 		return
 	}
@@ -376,11 +374,8 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 		// If the leader's term (included in its rpc) is at least as large as the candidate's current term
 		// candidate recognizes leader as legitimate and returns to follower state
 		if reply.Term > rf.currentTerm {
-			Debug(dInfo, "S%d Server Term %v > Candidate Term %v", rf.me, reply.Term, rf.currentTerm)
 			rf.serverState = Follower
-			Debug(dInfo, "S%d Convert To Follower", rf.me)
 			rf.currentTerm = reply.Term
-			Debug(dTerm, "S%d Current Term", rf.currentTerm)
 			rf.voteCount = 0
 		}
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
@@ -432,11 +427,8 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 	if ok {
 		rf.mu.Lock()
 		if reply.Term > rf.currentTerm {
-			Debug(dInfo, "S%d Follower Term %v > Leader Term %v", rf.me, reply.Term, rf.currentTerm)
 			rf.serverState = Follower
-			Debug(dInfo, "S%d Convert to Follower", rf.me)
 			rf.currentTerm = reply.Term
-			Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
 		}
 
 		if reply.Success {
@@ -513,11 +505,8 @@ func (rf *Raft) ticker() {
 		if rf.serverState != Leader {
 			if rf.lastHeartBeat.Add(electionTimeOut).Before(time.Now()) {
 				rf.currentTerm = rf.currentTerm + 1
-				Debug(dTerm, "S%d Update Current Term %v", rf.me, rf.currentTerm)
 				rf.serverState = Candidate
-				Debug(dInfo, "S%d Convert to Candidate", rf.me)
 				rf.votedFor = rf.me
-				Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
 				rf.voteCount = 1
 				rf.lastHeartBeat = time.Now()
 
@@ -589,6 +578,7 @@ func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 			applymsg.CommandIndex = rf.lastApplied
 		}
 		rf.mu.Unlock()
+		// Debug(dInfo, "S%d Apply Message Result %v\n", rf.me, applymsg)
 		applyCh <- applymsg
 		time.Sleep(time.Duration(10) * time.Millisecond)
 	}
@@ -638,7 +628,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	// start ticker goroutine to start elections
 	go rf.ticker()
 	go rf.applyToStateMachine(applyCh)
-	Debug(dInfo, "S%d, server starts up", rf.me)
 
 	return rf
 }
