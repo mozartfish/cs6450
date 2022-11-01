@@ -1,0 +1,16 @@
+000004 INFO S0, server starts up
+000007 INFO S1, server starts up
+000021 INFO S2, server starts up
+Test (2B): basic agreement ...
+001949 TERM S2 Update Current Term 1
+001950 INFO S2 Convert to Candidate
+001950 VOTE S2 Voted for Server 2
+001966 VOTE S0 Voted for Server 2
+001974 TERM S0 Current Term 1
+001966 VOTE S1 Voted for Server 2
+002018 TERM S1 Current Term 1
+--- FAIL: TestBasicAgree2B (2.22s)
+    config.go:602: one(100) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	2.228s

@@ -22,6 +22,7 @@ import (
 
 	"math"
 	"math/rand"
+	"sort"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -194,8 +195,9 @@ type AppendEntriesArgs struct {
 
 // AppendEntries RPC reply structure
 type AppendEntriesReply struct {
-	Term    int  // currentTerm, for leader to update itself
-	Success bool // true if follower contained entry matching prevLogIndex and prevLogTerm
+	Term      int  // currentTerm, for leader to update itself
+	Success   bool // true if follower contained entry matching prevLogIndex and prevLogTerm
+	NextIndex int  // keep track of nextIndex
 }
 
 // example RequestVote RPC handler.
@@ -242,9 +244,9 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 
 		rf.lastHeartBeat = time.Now() // reset peer heartbeat time for election
 		rf.votedFor = args.CandidateID
-		// Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
+		Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
 		reply.Term = rf.currentTerm
-		// Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
+		Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
 		// reply.VoteGranted = true
 		return
 	}
@@ -262,8 +264,21 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		return
 	}
 
+	if args.PrevLogIndex >= len(rf.log) {
+		reply.NextIndex = len(rf.log)
+		reply.Term = rf.currentTerm
+		reply.Success = false
+		return
+	}
+
 	// // 2. Reply false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm
 	if rf.log[args.PrevLogIndex].Term != args.PrevLogTerm {
+		for i := 0; i < len(rf.log); i++ {
+			if rf.log[i].Term == rf.log[args.PrevLogIndex].Term {
+				reply.NextIndex = i
+				break
+			}
+		}
 		reply.Term = rf.currentTerm
 		reply.Success = false
 		return
@@ -272,6 +287,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	// CASE 1. PrevLogIndex is the index of log entry immediately preceding new ones
 	if args.PrevLogIndex == len(rf.log)-1 {
 		rf.log = append(rf.log, args.Entries...)
+		reply.NextIndex = len(rf.log) - 1
 	}
 
 	if len(args.Entries) < (len(rf.log) - args.PrevLogIndex - 1) {
@@ -282,6 +298,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 			if rf.log[NextLogIndex].Term != args.Entries[entryStartIndex].Term {
 				rf.log = rf.log[:NextLogIndex]
 				rf.log = append(rf.log, args.Entries...)
+				reply.NextIndex = len(rf.log) - 1
 				break
 			}
 			entryStartIndex = entryStartIndex + 1
@@ -295,6 +312,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 			if rf.log[NextLogIndex].Term != args.Entries[entryStartIndex].Term {
 				rf.log = rf.log[:NextLogIndex]
 				rf.log = append(rf.log, args.Entries...)
+				reply.NextIndex = len(rf.log) - 1
 				break
 			}
 			entryStartIndex = entryStartIndex + 1
@@ -358,11 +376,11 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 		// If the leader's term (included in its rpc) is at least as large as the candidate's current term
 		// candidate recognizes leader as legitimate and returns to follower state
 		if reply.Term > rf.currentTerm {
-			// Debug(dInfo, "S%d Server Term %v > Candidate Term %v", rf.me, reply.Term, rf.currentTerm)
+			Debug(dInfo, "S%d Server Term %v > Candidate Term %v", rf.me, reply.Term, rf.currentTerm)
 			rf.serverState = Follower
-			// Debug(dInfo, "S%d Convert To Follower", rf.me)
+			Debug(dInfo, "S%d Convert To Follower", rf.me)
 			rf.currentTerm = reply.Term
-			// Debug(dTerm, "S%d Current Term", rf.currentTerm)
+			Debug(dTerm, "S%d Current Term", rf.currentTerm)
 			rf.voteCount = 0
 		}
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
@@ -370,8 +388,6 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 				rf.voteCount++
 				if rf.voteCount >= len(rf.peers)/2+1 {
 					rf.serverState = Leader
-					rf.nextIndex = make([]int, len(rf.peers))
-					rf.matchIndex = make([]int, len(rf.peers))
 					for i := 0; i < len(rf.peers); i++ {
 						rf.nextIndex[i] = len(rf.log)
 						rf.matchIndex[i] = 0
@@ -416,15 +432,18 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 	if ok {
 		rf.mu.Lock()
 		if reply.Term > rf.currentTerm {
-			// Debug(dInfo, "S%d Follower Term %v > Leader Term %v", rf.me, reply.Term, rf.currentTerm)
+			Debug(dInfo, "S%d Follower Term %v > Leader Term %v", rf.me, reply.Term, rf.currentTerm)
 			rf.serverState = Follower
-			// Debug(dInfo, "S%d Convert to Follower", rf.me)
+			Debug(dInfo, "S%d Convert to Follower", rf.me)
 			rf.currentTerm = reply.Term
-			// Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
+			Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
 		}
 
 		if reply.Success {
-			rf.matchIndex[server] = rf.matchIndex[server] + 1
+			rf.matchIndex[server] = reply.NextIndex
+			rf.nextIndex[server] = reply.NextIndex + 1
+		} else {
+			rf.nextIndex[server] = reply.NextIndex + 1
 		}
 		rf.mu.Unlock()
 	}
@@ -494,11 +513,11 @@ func (rf *Raft) ticker() {
 		if rf.serverState != Leader {
 			if rf.lastHeartBeat.Add(electionTimeOut).Before(time.Now()) {
 				rf.currentTerm = rf.currentTerm + 1
-				// Debug(dTerm, "S%d Update Current Term %v", rf.me, rf.currentTerm)
+				Debug(dTerm, "S%d Update Current Term %v", rf.me, rf.currentTerm)
 				rf.serverState = Candidate
-				// Debug(dInfo, "S%d Convert to Candidate", rf.me)
+				Debug(dInfo, "S%d Convert to Candidate", rf.me)
 				rf.votedFor = rf.me
-				// Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
+				Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
 				rf.voteCount = 1
 				rf.lastHeartBeat = time.Now()
 
@@ -525,6 +544,13 @@ func (rf *Raft) ticker() {
 			}
 		}
 		if rf.serverState == Leader {
+			// find the majority
+			sort.Ints(rf.matchIndex)
+			majorityIndex := rf.matchIndex[len(rf.log)/2+1]
+			if rf.log[majorityIndex].Term == rf.currentTerm {
+				rf.commitIndex = majorityIndex
+			}
+
 			// AppendEntries Args
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
@@ -535,8 +561,6 @@ func (rf *Raft) ticker() {
 			reply := AppendEntriesReply{}
 			for j := 0; j < len(rf.peers); j++ {
 				args.PrevLogIndex = rf.nextIndex[j] - 1
-				args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
-				args.Entries = rf.log[rf.nextIndex[j]:]
 
 				// server sends heartbeat RPCs to all other servers
 				if j == rf.me {
@@ -554,12 +578,22 @@ func (rf *Raft) ticker() {
 	}
 }
 
-// func (rf * Raft) applyCommitMsg (){
-// 	rf.mu.Lock()
+func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
+	for rf.killed() == false {
+		applymsg := ApplyMsg{}
+		rf.mu.Lock()
+		if rf.commitIndex > rf.lastApplied {
+			rf.lastApplied = rf.lastApplied + 1
+			applymsg.CommandValid = true
+			applymsg.Command = rf.log[rf.lastApplied].Command
+			applymsg.CommandIndex = rf.lastApplied
+		}
+		rf.mu.Unlock()
+		applyCh <- applymsg
+		time.Sleep(time.Duration(10) * time.Millisecond)
+	}
 
-// 	rf.mu.Unlock()
-// 	time.Sleep(time.Duration(10) * time.Millisecond)
-// }
+}
 
 // the service or tester wants to create a Raft server. the ports
 // of all the Raft servers (including this one) are in peers[]. this
@@ -594,12 +628,17 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.commitIndex = 0
 	rf.lastApplied = 0
 
+	// Volatile State on Leaders (reinitialized after election)
+	rf.nextIndex = make([]int, len(rf.peers))
+	rf.matchIndex = make([]int, len(rf.peers))
+
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
 
 	// start ticker goroutine to start elections
 	go rf.ticker()
-	// Debug(dInfo, "S%d, server starts up", rf.me)
+	go rf.applyToStateMachine(applyCh)
+	Debug(dInfo, "S%d, server starts up", rf.me)
 
 	return rf
 }
