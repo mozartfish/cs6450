@@ -20,7 +20,7 @@ package raft
 import (
 	//	"bytes"
 
-	"fmt"
+	// "fmt"
 	"math"
 	"math/rand"
 	"sync"
@@ -255,10 +255,10 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	}
 
 	// // check to see if there are entries beyond PrevLogIndex
-	if len(rf.log) > args.PrevLogIndex {
-		fmt.Printf("length of my log: %v\n", len(rf.log))
-		fmt.Printf("length of arg entries: %v\n", len(args.Entries))
-	}
+	// if len(rf.log) > args.PrevLogIndex {
+	// 	fmt.Printf("length of my log: %v\n", len(rf.log))
+	// 	fmt.Printf("length of arg entries: %v\n", len(args.Entries))
+	// }
 
 	// 	// need to check if all the log entries match
 	// 	for i := args.PrevLogIndex; i < len(rf.log); i++ {
@@ -350,9 +350,6 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 		}
 		rf.mu.Unlock()
 	}
-	// } else {
-	// 	fmt.Println("sendRequestVote RPC Failed!")
-	// }
 }
 
 // AppendEntries RPC to a server
@@ -396,9 +393,6 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 		}
 		rf.mu.Unlock()
 	}
-	// } else {
-	// 	// fmt.Println("sendAppendEntries RPC Failed!")
-	// }
 }
 
 // the service using Raft (e.g. a k/v server) wants to start
@@ -427,34 +421,11 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	}
 
 	if rf.serverState == Leader {
-		// fmt.Printf("NextIndex: %v\n", rf.nextIndex)
-		// fmt.Printf("MatchIndex: %v\n", rf.matchIndex)
 		// append command to leader log as a new entry
 		rf.log = append(rf.log, LogEntry{rf.currentTerm, command})
-
 		term = rf.currentTerm
 		index = len(rf.log) - 1
 		rf.matchIndex[rf.me] = rf.matchIndex[rf.me] + 1
-		// fmt.Printf("Update MatchIndex: %v\n", rf.matchIndex)
-
-		// // issue AppendEntries RPC in parallel to each of the other servers
-		// // to replicate the entry
-		for i := 0; i < len(rf.peers); i++ {
-			// AppendEntries Args
-			args := AppendEntriesArgs{}
-			args.Term = rf.currentTerm
-			args.LeaderID = rf.me
-			args.PrevLogIndex = rf.nextIndex[i] - 1
-			args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
-			args.Entries = rf.log[rf.nextIndex[i]:]
-			args.LeaderCommit = rf.commitIndex
-			// AppendEntriesReply
-			reply := AppendEntriesReply{}
-			if i == rf.me {
-				continue
-			}
-			go rf.processSendAppendEntries(i, args, reply)
-		}
 	}
 
 	return index, term, isLeader
@@ -523,10 +494,15 @@ func (rf *Raft) ticker() {
 			args := AppendEntriesArgs{}
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
+			args.LeaderCommit = rf.commitIndex
 
 			// AppendEntries Reply
 			reply := AppendEntriesReply{}
 			for j := 0; j < len(rf.peers); j++ {
+				args.PrevLogIndex = rf.nextIndex[j] - 1
+				args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
+				args.Entries = rf.log[rf.nextIndex[j]:]
+
 				// server sends heartbeat RPCs to all other servers
 				if j == rf.me {
 					continue
