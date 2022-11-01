@@ -20,7 +20,6 @@ package raft
 import (
 	//	"bytes"
 
-	// "fmt"
 	"math"
 	"math/rand"
 	"sync"
@@ -225,12 +224,28 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// 2. If votedFor is null or candidateID and candidate's log is at least up-to-date as receiver's
 	// log then grant vote (Section 5.2, 5.4)
 	if rf.votedFor == -1 || rf.votedFor == args.CandidateID {
+		// Check if logs are more up to date
+		lastLogIndex := len(rf.log) - 1
+		lastLogTerm := rf.log[lastLogIndex].Term
+
+		if lastLogTerm > args.LastLogTerm {
+			reply.VoteGranted = false
+		}
+
+		if lastLogTerm == args.LastLogTerm && args.LastLogIndex < lastLogIndex {
+			reply.VoteGranted = false
+		}
+
+		if lastLogTerm == args.LastLogTerm && args.LastLogIndex >= lastLogIndex {
+			reply.VoteGranted = true
+		}
+
 		rf.lastHeartBeat = time.Now() // reset peer heartbeat time for election
 		rf.votedFor = args.CandidateID
 		// Debug(dVote, "S%d Voted for Server %v", rf.me, rf.votedFor)
 		reply.Term = rf.currentTerm
 		// Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
-		reply.VoteGranted = true
+		// reply.VoteGranted = true
 		return
 	}
 
@@ -254,26 +269,42 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		return
 	}
 
-	// // check to see if there are entries beyond PrevLogIndex
-	// if len(rf.log) > args.PrevLogIndex {
-	// 	fmt.Printf("length of my log: %v\n", len(rf.log))
-	// 	fmt.Printf("length of arg entries: %v\n", len(args.Entries))
-	// }
+	// CASE 1. PrevLogIndex is the index of log entry immediately preceding new ones
+	if args.PrevLogIndex == len(rf.log)-1 {
+		rf.log = append(rf.log, args.Entries...)
+	}
 
-	// 	// need to check if all the log entries match
-	// 	for i := args.PrevLogIndex; i < len(rf.log); i++ {
-	// 		if rf.log[i].Term != args.Entries[i].Term {
-	// 			rf.log = rf.log[:i]
-	// 			break
-	// 		}
-	// 	}
-	// }
+	if len(args.Entries) < (len(rf.log) - args.PrevLogIndex - 1) {
+		entryStartIndex := 0
+		NextLogIndex := args.PrevLogIndex + 1
 
-	// 4. Append any new entries not already in the log
-	
+		for entryStartIndex < len(args.Entries) {
+			if rf.log[NextLogIndex].Term != args.Entries[entryStartIndex].Term {
+				rf.log = rf.log[:NextLogIndex]
+				rf.log = append(rf.log, args.Entries...)
+				break
+			}
+			entryStartIndex = entryStartIndex + 1
+			NextLogIndex = NextLogIndex + 1
+		}
+	} else {
+		entryStartIndex := 0
+		NextLogIndex := args.PrevLogIndex + 1
+
+		for NextLogIndex < len(rf.log) {
+			if rf.log[NextLogIndex].Term != args.Entries[entryStartIndex].Term {
+				rf.log = rf.log[:NextLogIndex]
+				rf.log = append(rf.log, args.Entries...)
+				break
+			}
+			entryStartIndex = entryStartIndex + 1
+			NextLogIndex = NextLogIndex + 1
+		}
+	}
+
 	// 5. If leaderCommit > commitINdex set commitINdex = min(leaderCommit, index of last new Entry)
 	if args.LeaderCommit > rf.commitIndex {
-		rf.commitIndex = int(math.Min(float64(args.LeaderCommit), float64(len(args.Entries))))
+		rf.commitIndex = int(math.Min(float64(args.LeaderCommit), float64(len(args.Entries)-1)))
 	}
 
 	if args.Term >= rf.currentTerm {
@@ -391,6 +422,10 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 			rf.currentTerm = reply.Term
 			// Debug(dTerm, "S%d Current Term %v", rf.me, rf.currentTerm)
 		}
+
+		if reply.Success {
+			rf.matchIndex[server] = rf.matchIndex[server] + 1
+		}
 		rf.mu.Unlock()
 	}
 }
@@ -473,8 +508,8 @@ func (rf *Raft) ticker() {
 				args := RequestVoteArgs{}
 				args.CandidateID = rf.me
 				args.Term = rf.currentTerm
-				args.LastLogIndex = 0
-				args.LastLogTerm = 0
+				args.LastLogIndex = len(rf.log) - 1
+				args.LastLogTerm = rf.log[args.LastLogIndex].Term
 
 				// Request Vote Reply
 				reply := RequestVoteReply{}
