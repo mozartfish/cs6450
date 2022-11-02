@@ -294,24 +294,28 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 	ok := rf.sendRequestVote(server, &args, &reply)
 	if ok {
 		rf.mu.Lock()
+		defer rf.mu.Unlock()
 		// If the leader's term (included in its rpc) is at least as large as the candidate's current term
 		// candidate recognizes leader as legitimate and returns to follower state
 		if reply.Term > rf.currentTerm {
 			rf.serverState = Follower
 			rf.currentTerm = reply.Term
 			rf.voteCount = 0
+			rf.votedFor = -1
+			return
 		}
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
 			if reply.VoteGranted {
 				rf.voteCount++
 				if rf.voteCount >= len(rf.peers)/2+1 {
 					rf.serverState = Leader
+					for i := 0; i < len(rf.peers); i++ {
+						rf.nextIndex[i] = len(rf.log)
+						rf.matchIndex[i] = 0
+					}
 				}
 			}
 		}
-		rf.mu.Unlock()
-	} else {
-		fmt.Println("sendRequestVote RPC Failed!")
 	}
 }
 
@@ -347,13 +351,21 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 	ok := rf.sendAppendEntries(server, &args, &reply)
 	if ok {
 		rf.mu.Lock()
+		defer rf.mu.Unlock()
 		if reply.Term > rf.currentTerm {
 			rf.serverState = Follower
 			rf.currentTerm = reply.Term
+			rf.voteCount = 0
+			rf.votedFor = -1
+			return
 		}
-		rf.mu.Unlock()
-	} else {
-		fmt.Println("sendAppendEntries RPC Failed!")
+		if reply.Success {
+			rf.matchIndex[server] = args.PrevLogIndex + args.PrevLogIndex + len(args.Entries)
+			rf.nextIndex[server] = rf.matchIndex[server] + 1
+		} else {
+			fmt.Printf("Success Failed!\n")
+			// need to handle case where append entries fails because of log incosistency - decrement nextIndex and retry
+		}
 	}
 }
 
