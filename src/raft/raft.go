@@ -458,6 +458,26 @@ func (rf *Raft) ticker() {
 	}
 }
 
+// Appply Commands to State Machine
+func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
+	for rf.killed() == false {
+		applymsg := ApplyMsg{}
+		rf.mu.Lock()
+		fmt.Printf("Server %v, apply to state machine %v, %v\n", rf.me, rf.commitIndex, rf.lastApplied)
+		if rf.commitIndex > rf.lastApplied {
+			rf.lastApplied = rf.lastApplied + 1
+			applymsg.CommandValid = true
+			applymsg.Command = rf.log[rf.lastApplied].Command
+			applymsg.CommandIndex = rf.lastApplied
+			rf.mu.Unlock()
+			applyCh <- applymsg
+		} else {
+			rf.mu.Unlock()
+		}
+	}
+	time.Sleep(time.Duration(10) * time.Millisecond)
+}
+
 // the service or tester wants to create a Raft server. the ports
 // of all the Raft servers (including this one) are in peers[]. this
 // server's port is peers[me]. all the servers' peers[] arrays
@@ -500,6 +520,9 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	// start ticker goroutine to start elections
 	go rf.ticker()
+
+	// start apply channel goroutine to apply a command to state machine
+	// go rf.applyToStateMachine(applyCh)
 
 	return rf
 }
