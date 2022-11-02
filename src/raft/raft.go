@@ -21,6 +21,7 @@ import (
 	//	"bytes"
 	"fmt"
 	"math/rand"
+	"sort"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -417,8 +418,8 @@ func (rf *Raft) ticker() {
 				args := RequestVoteArgs{}
 				args.CandidateID = rf.me
 				args.Term = rf.currentTerm
-				args.LastLogIndex = 0
-				args.LastLogTerm = 0
+				args.LastLogIndex = len(rf.log) - 1
+				args.LastLogTerm = rf.log[args.LastLogIndex].Term
 
 				// Request Vote Reply
 				reply := RequestVoteReply{}
@@ -439,6 +440,18 @@ func (rf *Raft) ticker() {
 			args.Term = rf.currentTerm
 			args.LeaderID = rf.me
 
+			// Set commit index - Professor Stutsman method - sort match index and take the median
+			matchIndexCopy := make([]int, len(rf.matchIndex))
+			copy(matchIndexCopy, rf.matchIndex)
+			sort.Ints(matchIndexCopy)
+			majorityIndex := matchIndexCopy[len(matchIndexCopy)/2+2]
+			fmt.Printf("MatchIndex: %v, MatchIndexCopy: %v, NextIndex: %v, Log: %v, CurrentTerm: %v\n", rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm)
+
+			if majorityIndex > rf.commitIndex && rf.log[majorityIndex].Term == rf.currentTerm {
+				fmt.Printf("Time to Commit Index: %v\n", majorityIndex)
+				args.LeaderCommit = rf.commitIndex
+			}
+
 			// AppendEntries Reply
 			reply := AppendEntriesReply{}
 			for j := 0; j < len(rf.peers); j++ {
@@ -446,6 +459,12 @@ func (rf *Raft) ticker() {
 				if j == rf.me {
 					continue
 				}
+				args.PrevLogIndex = rf.nextIndex[j] - 1
+				args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
+				entries := rf.log[rf.nextIndex[j]:]
+				fmt.Printf("Sending Entries: %v, index: %v\n", entries, rf.nextIndex[j])
+				args.Entries = make([]LogEntry, len(entries))
+				copy(args.Entries, entries) // send a copy in case entries change
 				go rf.processSendAppendEntries(j, args, reply)
 			}
 		}
