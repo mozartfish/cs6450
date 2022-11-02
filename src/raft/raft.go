@@ -272,7 +272,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	reply.Term = rf.currentTerm
 	rf.lastHeartBeat = time.Now()
 
-	if args.PrevLogIndex > len(rf.log) {
+	if args.PrevLogIndex >= len(rf.log) {
 		// reply.NextIndex = len(rf.log)
 		fmt.Printf("PrevLogIndex: %v > Len(Log): %v\n", args.PrevLogIndex, len(rf.log))
 		reply.Term = rf.currentTerm
@@ -578,8 +578,9 @@ func (rf *Raft) ticker() {
 				}
 				args.PrevLogIndex = rf.nextIndex[j] - 1
 				args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
+				fmt.Printf("PreviousLogIndex arg: %v, PrevLogTerm arg: %v\n", args.PrevLogIndex, args.PrevLogTerm)
 				entries := rf.log[rf.nextIndex[j]:]
-				fmt.Printf("Entries:%v, Next Log Entry Index: %v", entries, rf.nextIndex[j])
+				fmt.Printf("Entries:%v, Next Log Entry Index: %v\n", entries, rf.nextIndex[j])
 				args.Entries = make([]LogEntry, len(entries))
 				copy(args.Entries, entries) // make a deep copy of entry to as entries
 				fmt.Printf("Sending Heartbeat Args: %v, Log State: %v\n", args, rf.log)
