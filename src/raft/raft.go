@@ -553,7 +553,7 @@ func (rf *Raft) ticker() {
 			// Professor Stutsman Trick: Sort and then pick median
 			matchIndexCopy := make([]int, len(rf.matchIndex))
 			copy(matchIndexCopy, rf.matchIndex)
-			sort.Ints(matchIndexCopy)
+			sort.Sort(sort.Reverse(sort.IntSlice(matchIndexCopy))) // sort from largest to smalles and pick median
 
 			majorityIndex := matchIndexCopy[len(matchIndexCopy)/2+1]
 
