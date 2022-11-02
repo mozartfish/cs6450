@@ -60,9 +60,8 @@ const (
 
 // Log Entry
 type LogEntry struct {
-	LogIndex int         // position in the state machine log
-	Term     int         // term when entry was first received by leader
-	Command  interface{} // command for state machine
+	Term    int         // term when entry was first received by leader
+	Command interface{} // command for state machine
 }
 
 // A Go object implementing a single Raft peer.
@@ -371,9 +370,22 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 // term. the third return value is true if this server believes it is
 // the leader.
 func (rf *Raft) Start(command interface{}) (int, int, bool) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
 	index := -1
 	term := -1
 	isLeader := true
+	if rf.serverState != Leader || rf.killed() {
+		isLeader = false
+	}
+
+	if rf.serverState == Leader {
+		// append command to leader log as new entry
+		rf.log = append(rf.log, LogEntry{rf.currentTerm, command})
+		term = rf.currentTerm
+		index = len(rf.log) - 1
+		rf.matchIndex[rf.me] = rf.matchIndex[rf.me] + 1
+	}
 
 	// Your code here (2B).
 
@@ -531,8 +543,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.lastApplied = 0
 
 	// Volatile State on Leaders
-	rf.nextIndex = make([]int, 0)
-	rf.matchIndex = make([]int, 0)
+	rf.nextIndex = make([]int, len(rf.peers))
+	rf.matchIndex = make([]int, len(rf.peers))
 
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
