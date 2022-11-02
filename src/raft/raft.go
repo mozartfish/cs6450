@@ -23,10 +23,10 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
+	"sort"
 	"sync"
 	"sync/atomic"
 	"time"
-	"sort"
 
 	//	"6.824/labgob"
 	"6.824/labrpc"
@@ -196,9 +196,11 @@ type AppendEntriesArgs struct {
 
 // AppendEntries RPC reply structure
 type AppendEntriesReply struct {
-	Term      int  // currentTerm, for leader to update itself
-	Success   bool // true if follower contained entry matching prevLogIndex and prevLogTerm
-	NextIndex int  // keep track of nextIndex
+	Term          int  // currentTerm, for leader to update itself
+	Success       bool // true if follower contained entry matching prevLogIndex and prevLogTerm
+	ConflictIndex int  // keep track of conflicting indexes
+	ConflictTerm  int  // term for the conflicting index
+	// NextIndex int // keep track of nextIndex
 }
 
 // example RequestVote RPC handler.
@@ -246,7 +248,6 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		rf.lastHeartBeat = time.Now() // reset peer heartbeat time for election
 		rf.votedFor = args.CandidateID
 		reply.Term = rf.currentTerm
-		// reply.VoteGranted = true
 		return
 	}
 
@@ -272,33 +273,30 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	rf.lastHeartBeat = time.Now()
 
 	if args.PrevLogIndex > len(rf.log) {
-		reply.NextIndex = len(rf.log)
+		// reply.NextIndex = len(rf.log)
+		fmt.Printf("PrevLogIndex: %v > Len(Log): %v\n", args.PrevLogIndex, len(rf.log))
 		reply.Term = rf.currentTerm
+		reply.ConflictIndex = len(rf.log)
+		reply.ConflictTerm = -1
 		reply.Success = false
-		fmt.Printf("log is smaller %v, ind %v\n", rf.log, args.PrevLogIndex)
 		return
 	}
 
 	// // 2. Reply false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm
 	if rf.log[args.PrevLogIndex].Term != args.PrevLogTerm {
+		reply.ConflictTerm = rf.log[args.PrevLogIndex].Term
 		for i := 0; i < len(rf.log); i++ {
 			if rf.log[i].Term == rf.log[args.PrevLogIndex].Term {
-				reply.NextIndex = i
+				reply.ConflictIndex = i
 				break
 			}
 		}
 		reply.Term = rf.currentTerm
 		reply.Success = false
 		rf.log = rf.log[:args.PrevLogIndex]
-		fmt.Printf("disagreement %v, ind %v\n", rf.log, args.PrevLogIndex)
-
+		fmt.Printf("Conflict Term: %v, Conflict Index: %v\n", reply.ConflictTerm, reply.ConflictIndex)
 		return
 	}
-
-	// CASE 1. PrevLogIndex is the index of log entry immediately preceding new ones
-	// if args.PrevLogIndex == len(rf.log)-1 {
-	// 	rf.log = append(rf.log, args.Entries...)
-	// }
 
 	if len(args.Entries) < (len(rf.log) - args.PrevLogIndex - 1) {
 		entryStartIndex := 0
@@ -334,7 +332,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 
 	reply.Success = true
 
-	// 5. If leaderCommit > commitINdex set commitINdex = min(leaderCommit, index of last new Entry)
+	// 5. If leaderCommit > commitIndex set commitINdex = min(leaderCommit, index of last new Entry)
 	if args.LeaderCommit > rf.commitIndex {
 		rf.commitIndex = int(math.Min(float64(args.LeaderCommit), float64(len(rf.log)-1)))
 	}
@@ -386,6 +384,7 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 			rf.serverState = Follower
 			rf.currentTerm = reply.Term
 			rf.voteCount = 0
+			rf.votedFor = -1
 			return
 		}
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
@@ -440,7 +439,7 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 		if reply.Term > rf.currentTerm {
 			rf.serverState = Follower
 			rf.currentTerm = reply.Term
-			rf.voteCount = 0
+			rf.voteCount = -1
 			return
 		}
 
@@ -448,7 +447,12 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 			rf.matchIndex[server] = args.PrevLogIndex + len(args.Entries)
 			rf.nextIndex[server] = rf.matchIndex[server] + 1
 		} else {
-			rf.nextIndex[server] = reply.NextIndex + 1
+			for i := 0; i < len(rf.log); i++ {
+				if rf.log[i].Term == reply.ConflictTerm {
+					rf.nextIndex[server] = len(rf.log) + 1
+				}
+			}
+			rf.nextIndex[server] = reply.ConflictIndex
 		}
 	}
 }
@@ -546,19 +550,16 @@ func (rf *Raft) ticker() {
 		}
 		if rf.serverState == Leader {
 			// find the majority
-			mi := []int{}
+			// Professor Stutsman Trick: Sort and then pick median
+			matchIndexCopy := make([]int, len(rf.matchIndex))
+			copy(matchIndexCopy, rf.matchIndex)
+			sort.Ints(matchIndexCopy)
 
-			for i := 0; i < len(rf.matchIndex); i++ {
-				mi = append(mi, rf.matchIndex[i])
-			}
+			majorityIndex := matchIndexCopy[len(matchIndexCopy)/2+1]
 
-			sort.Ints(mi)
-
-			majorityIndex := mi[len(mi)/2+1]
-
-			fmt.Printf("match index %v, mi %v, next Index %v, log %v, term %v\n", rf.matchIndex, mi, rf.nextIndex, rf.log, rf.currentTerm)
+			fmt.Printf("matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v\n", rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm)
 			if majorityIndex > rf.commitIndex && rf.log[majorityIndex].Term == rf.currentTerm {
-				fmt.Println("time to commit", majorityIndex)
+				fmt.Printf("Time to commit Index: %v\n", majorityIndex)
 				rf.commitIndex = majorityIndex
 			}
 
@@ -575,15 +576,13 @@ func (rf *Raft) ticker() {
 				if j == rf.me {
 					continue
 				}
-
 				args.PrevLogIndex = rf.nextIndex[j] - 1
 				args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
 				entries := rf.log[rf.nextIndex[j]:]
-				fmt.Printf("entries %v, index %v", entries, rf.nextIndex[j])
+				fmt.Printf("Entries:%v, Next Log Entry Index: %v", entries, rf.nextIndex[j])
 				args.Entries = make([]LogEntry, len(entries))
-				copy(args.Entries, entries)
-
-				fmt.Printf("sending hb %v, log %v\n", args, rf.log)
+				copy(args.Entries, entries) // make a deep copy of entry to as entries
+				fmt.Printf("Sending Heartbeat Args: %v, Log State: %v\n", args, rf.log)
 				go rf.processSendAppendEntries(j, args, reply)
 			}
 		}
@@ -600,21 +599,18 @@ func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 	for rf.killed() == false {
 		applymsg := ApplyMsg{}
 		rf.mu.Lock()
-		fmt.Printf("%v, time to apply %v, %v\n", rf.me, rf.commitIndex, rf.lastApplied)
-
+		fmt.Printf("Server: %v, Time to Commit Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
 		if rf.commitIndex > rf.lastApplied {
 			rf.lastApplied = rf.lastApplied + 1
 			applymsg.CommandValid = true
 			applymsg.Command = rf.log[rf.lastApplied].Command
 			applymsg.CommandIndex = rf.lastApplied
 			rf.mu.Unlock()
-		fmt.Printf("%v, applying %v\n", rf.me, applymsg)
-
+			fmt.Printf("Server: %v, Applying Command: %v\n", rf.me, applymsg)
 			applyCh <- applymsg
 		} else {
 			rf.mu.Unlock()
 		}
-		// Debug(dInfo, "S%d Apply Message Result %v\n", rf.me, applymsg)
 		time.Sleep(time.Duration(10) * time.Millisecond)
 	}
 
@@ -666,4 +662,3 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	return rf
 }
-
