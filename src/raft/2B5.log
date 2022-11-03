@@ -3,26 +3,8 @@ Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines:
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Test (2B): concurrent Start()s ...
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
@@ -30,103 +12,110 @@ Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines:
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
@@ -135,169 +124,1324 @@ PreviousLogIndex arg: 0, PrevLogTerm arg: 0
 Entries:[], Next Log Entry Index: 1
 Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 PreviousLogIndex arg: 0, PrevLogTerm arg: 0
 Entries:[], Next Log Entry Index: 1
 Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+2 starting command is 1
+2 starting command is 100
+2 starting command is 101
+2 starting command is 102
+2 starting command is 103
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+2 starting command is 104
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
 Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 6 0], matchIndexCopy: [6 0 0], nextIndex: [1 1 1], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[{1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [{1 1} {1 100} {1 102} {1 101} {1 104} {1 103}] 0}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Entries:[{1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], Next Log Entry Index: 1
-Sending Heartbeat Args: {1 1 0 0 [{1 1} {1 100} {1 102} {1 101} {1 104} {1 103}] 0}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [6 6 6], matchIndexCopy: [6 6 6], nextIndex: [7 1 7], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Successful RPC
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Successful RPC
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 5
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [] 0}, Log State: [{0 <nil>}]
+Successful RPC
+Successful RPC
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+1 starting command is 1
+1 starting command is 100
+1 starting command is 101
+1 starting command is 103
+1 starting command is 102
+1 starting command is 104
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+matchIndex: [0 6 0], matchIndexCopy: [0 0 6], nextIndex: [1 1 1], log: [{0 <nil>} {5 1} {5 100} {5 101} {5 103} {5 102} {5 104}], currentTerm: 5
 Time to commit Index: 6
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 0
-Server: 0, Applying Command: {true 1 1 false [] 0 0}
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[{5 1} {5 100} {5 101} {5 103} {5 102} {5 104}], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [{5 1} {5 100} {5 101} {5 103} {5 102} {5 104}] 6}, Log State: [{0 <nil>} {5 1} {5 100} {5 101} {5 103} {5 102} {5 104}]
+PreviousLogIndex arg: 0, PrevLogTerm arg: 0
+Entries:[{5 1} {5 100} {5 101} {5 103} {5 102} {5 104}], Next Log Entry Index: 1
+Sending Heartbeat Args: {5 1 0 0 [{5 1} {5 100} {5 101} {5 103} {5 102} {5 104}] 6}, Log State: [{0 <nil>} {5 1} {5 100} {5 101} {5 103} {5 102} {5 104}]
 Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 0
+Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 0
 Server: 1, Applying Command: {true 1 1 false [] 0 0}
+Server: 0, Applying Command: {true 1 1 false [] 0 0}
+Successful RPC
+Successful RPC
 Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 0
-matchIndex: [6 6 6], matchIndexCopy: [6 6 6], nextIndex: [7 1 7], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
 Server: 2, Applying Command: {true 1 1 false [] 0 0}
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
 Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 1
 Server: 0, Applying Command: {true 100 2 false [] 0 0}
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
+Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 1
+Server: 1, Applying Command: {true 100 2 false [] 0 0}
 Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 1
 Server: 2, Applying Command: {true 100 2 false [] 0 0}
 Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 2
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 1
-Server: 1, Applying Command: {true 100 2 false [] 0 0}
-Server: 0, Applying Command: {true 102 3 false [] 0 0}
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 3
-Server: 0, Applying Command: {true 101 4 false [] 0 0}
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 2
-Server: 2, Applying Command: {true 102 3 false [] 0 0}
-matchIndex: [6 6 6], matchIndexCopy: [6 6 6], nextIndex: [7 1 7], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 4
-Server: 0, Applying Command: {true 104 5 false [] 0 0}
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 3
+Server: 0, Applying Command: {true 101 3 false [] 0 0}
 Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 2
-Server: 1, Applying Command: {true 102 3 false [] 0 0}
-Server: 2, Applying Command: {true 101 4 false [] 0 0}
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 5
-matchIndex: [6 6 6], matchIndexCopy: [6 6 6], nextIndex: [7 1 7], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Server: 0, Applying Command: {true 103 6 false [] 0 0}
-Entries:[], Next Log Entry Index: 7
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 4
-Server: 2, Applying Command: {true 104 5 false [] 0 0}
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 5
+Server: 1, Applying Command: {true 101 3 false [] 0 0}
+Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 2
+Server: 2, Applying Command: {true 101 3 false [] 0 0}
+Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 3
+Server: 0, Applying Command: {true 103 4 false [] 0 0}
 Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 3
-Server: 1, Applying Command: {true 101 4 false [] 0 0}
-Server: 2, Applying Command: {true 103 6 false [] 0 0}
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-matchIndex: [6 6 6], matchIndexCopy: [6 6 6], nextIndex: [7 1 7], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
+Server: 1, Applying Command: {true 103 4 false [] 0 0}
+Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 3
+Server: 2, Applying Command: {true 103 4 false [] 0 0}
+Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 4
 Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-Server: 1, Applying Command: {true 104 5 false [] 0 0}
-matchIndex: [6 6 6], matchIndexCopy: [6 6 6], nextIndex: [7 1 7], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
+Server: 0, Applying Command: {true 102 5 false [] 0 0}
+Server: 1, Applying Command: {true 102 5 false [] 0 0}
+Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 4
+Server: 2, Applying Command: {true 102 5 false [] 0 0}
 Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 5
-Server: 1, Applying Command: {true 103 6 false [] 0 0}
-matchIndex: [6 6 6], matchIndexCopy: [6 6 6], nextIndex: [7 1 7], log: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}], currentTerm: 1
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
-PreviousLogIndex arg: 6, PrevLogTerm arg: 1
-Entries:[], Next Log Entry Index: 7
-Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
+Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 5
+Server: 1, Applying Command: {true 104 6 false [] 0 0}
+Server: 0, Applying Command: {true 104 6 false [] 0 0}
+Server: 2, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 5
+Server: 2, Applying Command: {true 104 6 false [] 0 0}
 Server: 0, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-Sending Heartbeat Args: {1 1 6 1 [] 6}, Log State: [{0 <nil>} {1 1} {1 100} {1 102} {1 101} {1 104} {1 103}]
 Server: 1, Time to Commit Index: 6, Highest Log Entry Applied to State Machines: 6
-  ... Passed --   0.8  3   42   12442    6
+  ... Passed --   4.1  3   70   19576    6
 PASS
-ok  	6.824/raft	0.817s
+ok  	6.824/raft	4.150s

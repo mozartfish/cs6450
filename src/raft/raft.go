@@ -272,7 +272,8 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	reply.Term = rf.currentTerm
 	rf.lastHeartBeat = time.Now()
 
-	if args.PrevLogIndex >= len(rf.log) {
+	if args.PrevLogIndex > len(rf.log)-
+		1 {
 		// reply.NextIndex = len(rf.log)
 		fmt.Printf("PrevLogIndex: %v > Len(Log): %v\n", args.PrevLogIndex, len(rf.log))
 		reply.Term = rf.currentTerm
@@ -387,6 +388,11 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 			rf.votedFor = -1
 			return
 		}
+
+		if args.Term != rf.currentTerm {
+			return
+		}
+
 		if rf.serverState == Candidate && rf.currentTerm == args.Term {
 			if reply.VoteGranted {
 				rf.voteCount++
@@ -443,16 +449,27 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 			return
 		}
 
+		if args.Term != rf.currentTerm {
+			return
+		}
+
 		if reply.Success {
+			fmt.Println("Successful RPC")
 			rf.matchIndex[server] = args.PrevLogIndex + len(args.Entries)
 			rf.nextIndex[server] = rf.matchIndex[server] + 1
 		} else {
-			for i := 0; i < len(rf.log); i++ {
-				if rf.log[i].Term == reply.ConflictTerm {
-					rf.nextIndex[server] = len(rf.log) + 1
+			index := 0
+			for j := len(rf.log) - 1; j > 0; j-- {
+				if rf.log[j].Term == reply.ConflictTerm {
+					index = j
+					break
 				}
 			}
-			rf.nextIndex[server] = reply.ConflictIndex
+			if index > 0 {
+				rf.nextIndex[server] = index + 1
+			} else {
+				rf.nextIndex[server] = reply.ConflictIndex
+			}
 		}
 	}
 }
@@ -483,6 +500,7 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	}
 
 	if rf.serverState == Leader {
+		fmt.Printf("%v starting command is %v\n", rf.me, command)
 		// append command to leader log as a new entry
 		rf.log = append(rf.log, LogEntry{rf.currentTerm, command})
 		term = rf.currentTerm
@@ -518,15 +536,18 @@ func (rf *Raft) ticker() {
 	electionTimeOut := time.Duration(rand.Intn(300-150)+150) * time.Millisecond
 	for rf.killed() == false {
 		rf.mu.Lock()
-		if rf.serverState != Leader {
-			if rf.lastHeartBeat.Add(electionTimeOut).Before(time.Now()) {
+		state := rf.serverState
+		rf.mu.Unlock()
+		if state != Leader {
+			rf.mu.Lock()
+			startEection := rf.lastHeartBeat.Add(electionTimeOut).Before(time.Now())
+			electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
+			if startEection {
 				rf.currentTerm = rf.currentTerm + 1
 				rf.serverState = Candidate
 				rf.votedFor = rf.me
 				rf.voteCount = 1
 				rf.lastHeartBeat = time.Now()
-
-				electionTimeOut = time.Duration(rand.Intn(300-150)+150) * time.Millisecond
 
 				// Request Vote Args
 				args := RequestVoteArgs{}
@@ -547,13 +568,16 @@ func (rf *Raft) ticker() {
 					go rf.processSendRequestVote(i, args, reply)
 				}
 			}
+			rf.mu.Unlock()
+			time.Sleep(electionTimeOut)
 		}
-		if rf.serverState == Leader {
+		if state == Leader {
+			rf.mu.Lock()
 			// find the majority
 			// Professor Stutsman Trick: Sort and then pick median
 			matchIndexCopy := make([]int, len(rf.matchIndex))
 			copy(matchIndexCopy, rf.matchIndex)
-			sort.Sort(sort.Reverse(sort.IntSlice(matchIndexCopy))) // sort from largest to smalles and pick median
+			sort.Ints(matchIndexCopy) // sort from largest to smalles and pick median
 
 			majorityIndex := matchIndexCopy[len(matchIndexCopy)/2+1]
 
@@ -586,9 +610,10 @@ func (rf *Raft) ticker() {
 				fmt.Printf("Sending Heartbeat Args: %v, Log State: %v\n", args, rf.log)
 				go rf.processSendAppendEntries(j, args, reply)
 			}
+			rf.mu.Unlock()
+
+			time.Sleep(time.Duration(100) * time.Millisecond)
 		}
-		rf.mu.Unlock()
-		time.Sleep(time.Duration(10) * time.Millisecond)
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
