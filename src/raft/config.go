@@ -519,7 +519,7 @@ func (cfg *config) nCommitted(index int) (int, interface{}) {
 		}
 	}
 
-	fmt.Println("cfg ", cfg.logs)
+	// fmt.Println("cfg ", cfg.logs)
 	return count, cmd
 }
 

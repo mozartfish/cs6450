@@ -227,7 +227,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	}
 
 	rf.lastHeartBeat = time.Now() // reset peer heartbeat time for election
-
+	reply.Term = rf.currentTerm
 	// 2. If votedFor is null or candidateID and candidate's log is at least up-to-date as receiver's
 	// log then grant vote (Section 5.2, 5.4)
 	if rf.votedFor == -1 || rf.votedFor == args.CandidateID {
@@ -237,22 +237,17 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 
 		if lastLogTerm > args.LastLogTerm {
 			reply.VoteGranted = false
+			return
 		}
 
 		if lastLogTerm == args.LastLogTerm && args.LastLogIndex < lastLogIndex {
 			reply.VoteGranted = false
+			return
 		}
 
-		if lastLogTerm >= args.LastLogTerm && args.LastLogIndex >= lastLogIndex {
-			reply.VoteGranted = true
-		}
-
-		if reply.VoteGranted {
-			rf.votedFor = args.CandidateID
-		}
+		rf.votedFor = args.CandidateID
+		reply.VoteGranted = true
 	}
-
-	reply.Term = rf.currentTerm
 
 }
 
@@ -302,13 +297,12 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		return
 	}
 
-
 	var a int = args.PrevLogIndex + 1
 	var b int = 0
 
-	for ; a < len(rf.log) && b < len(args.Entries); a, b = a + 1, b + 1 {
-		if rf.log[a] != args.Entries[b] {
-	rf.log = rf.log[:a]
+	for ; a < len(rf.log) && b < len(args.Entries); a, b = a+1, b+1 {
+		if rf.log[a].Term != args.Entries[b].Term {
+			rf.log = rf.log[:a]
 
 			break
 		}
@@ -483,33 +477,35 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 			return
 		}
 
-		if reply.Success {
-			rf.matchIndex[server] = args.PrevLogIndex + len(args.Entries)
-			rf.nextIndex[server] = rf.matchIndex[server] + 1
+		if rf.serverState == Leader {
+			if reply.Success {
+				rf.matchIndex[server] = args.PrevLogIndex + len(args.Entries)
+				rf.nextIndex[server] = rf.matchIndex[server] + 1
 
-			matchIndexCopy := make([]int, len(rf.matchIndex))
-			copy(matchIndexCopy, rf.matchIndex)
-			sort.Ints(matchIndexCopy) // sort and pick median for majority
-			majorityIndex := matchIndexCopy[len(matchIndexCopy)/2]
-			fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm)
-			if majorityIndex > rf.commitIndex && rf.log[majorityIndex].Term == rf.currentTerm {
-				fmt.Printf("leader Server: %v, Time to commit Index: %v\n", rf.me, majorityIndex)
-				fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v, majorityIndex : %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm, majorityIndex)
-				rf.commitIndex = majorityIndex
-			}
-		} else {
-			// implement Raft Student Guide Optimization
-			index := 0
-			for j := len(rf.log) - 1; j > 0; j-- {
-				if rf.log[j].Term == reply.ConflictTerm {
-					index = j
-					break
+				matchIndexCopy := make([]int, len(rf.matchIndex))
+				copy(matchIndexCopy, rf.matchIndex)
+				sort.Ints(matchIndexCopy) // sort and pick median for majority
+				majorityIndex := matchIndexCopy[len(matchIndexCopy)/2]
+				fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm)
+				if majorityIndex > rf.commitIndex && rf.log[majorityIndex].Term == rf.currentTerm {
+					fmt.Printf("leader Server: %v, Time to commit Index: %v\n", rf.me, majorityIndex)
+					fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v, majorityIndex : %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm, majorityIndex)
+					rf.commitIndex = majorityIndex
 				}
-			}
-			if index > 0 {
-				rf.nextIndex[server] = index + 1
 			} else {
-				rf.nextIndex[server] = reply.ConflictIndex
+				// implement Raft Student Guide Optimization
+				index := 0
+				for j := len(rf.log) - 1; j > 0; j-- {
+					if rf.log[j].Term == reply.ConflictTerm {
+						index = j
+						break
+					}
+				}
+				if index > 0 {
+					rf.nextIndex[server] = index + 1
+				} else {
+					rf.nextIndex[server] = reply.ConflictIndex
+				}
 			}
 		}
 	}
@@ -579,8 +575,12 @@ func (rf *Raft) ticker() {
 	electionTimeOut := time.Duration(rand.Intn(150)+150) * time.Millisecond
 	for !rf.killed() {
 		rf.mu.Lock()
-		if rf.serverState != Leader {
-			if rf.lastHeartBeat.Add(electionTimeOut).Before(time.Now()) {
+		serverState := rf.serverState
+		lastHeartBeat := rf.lastHeartBeat
+		rf.mu.Unlock()
+		if serverState != Leader {
+			if lastHeartBeat.Add(electionTimeOut).Before(time.Now()) {
+				rf.mu.Lock()
 				fmt.Printf("%v starting new elction\n", rf.me)
 				rf.currentTerm = rf.currentTerm + 1
 				rf.serverState = Candidate
@@ -608,17 +608,19 @@ func (rf *Raft) ticker() {
 					}
 					go rf.processSendRequestVote(i, args, reply)
 				}
+				rf.mu.Unlock()
 			}
 		}
-		if rf.serverState == Leader {
+		if serverState == Leader {
 			// find the majority
 			// Professor Stutsman Trick: Sort and then pick median
 
 			// AppendEntries Args
+			rf.mu.Lock()
 			rf.sendAppendEnriesRPC()
+			rf.mu.Unlock()
+			time.Sleep(time.Duration(100) * time.Millisecond)
 		}
-		rf.mu.Unlock()
-		time.Sleep(time.Duration(10) * time.Millisecond)
 		// Your code here to check if a leader election should
 		// be started and to randomize sleeping time using
 		// time.Sleep().
@@ -670,29 +672,6 @@ func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 		time.Sleep(time.Duration(10) * time.Millisecond)
 	}
 
-	// for !rf.killed() {
-	// 	rf.mu.Lock()
-	// 	commitIndex := rf.commitIndex
-	// 	lastApplied := rf.lastApplied
-	// 	rf.mu.Unlock()
-
-	// 	// fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
-	// 	for commitIndex > lastApplied {
-	// 		rf.mu.Lock()
-	// 		applymsg := ApplyMsg{}
-	// 		lastApplied = lastApplied + 1
-	// 		applymsg.Command = rf.log[lastApplied].Command
-	// 		applymsg.CommandValid = true
-	// 		applymsg.CommandIndex = rf.lastApplied
-	// 		fmt.Printf("applied Server: %v, Command: %v, CommandIndex: %v, commit index: %v, log : %v\n", rf.me, applymsg.Command, applymsg.CommandIndex, commitIndex, rf.log)
-
-	// 		rf.lastApplied = lastApplied
-	// 		rf.mu.Unlock()
-	// 		applyCh <- applymsg
-	// 	}
-
-	// 	time.Sleep(time.Duration(10) * time.Millisecond)
-	// }
 }
 
 // the service or tester wants to create a Raft server. the ports

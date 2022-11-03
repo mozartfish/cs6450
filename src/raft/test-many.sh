@@ -15,7 +15,7 @@ sum=0
 rm output*
 
 for i in $(seq 1 $runs); do
-    if ! go test -race -run 2A > output.log 2>&1; then
+    if ! go test -race -run 2B > output.log 2>&1; then
         sum=$((sum + 1))
         echo '***' FAILED TESTS IN TRIAL $i
         echo '***' FAILED $sum TESTS THUS FAR

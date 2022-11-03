@@ -1,77 +1,53 @@
 Test (2B): rejoin of partitioned leader ...
 1 starting new elction
 1 reply in rv from 0, ok: true, reply {1 true}
-1 reply in rv from 2, ok: true, reply {1 true}
 1 checking votes term  1, vc 1, state 1 
-1 vote count is 21 checking votes term  1, vc 0, state 2 
+1 vote count is 21 reply in rv from 2, ok: true, reply {1 true}
+1 checking votes term  1, vc 0, state 2 
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
+1 reply in ae from 2, ok: true
 Server: 1 starting command is 101 at index 1
 cfg  [map[] map[] map[]]
+Server: 1, matchIndex: [0 1 0], matchIndexCopy: [0 0 1], nextIndex: [1 1 1], log: [{0 <nil>} {1 101}], currentTerm: 1
 0 adding [{1 101}] to log [{0 <nil>}]
 2 adding [{1 101}] to log [{0 <nil>}]
 1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 0], matchIndexCopy: [0 1 1], nextIndex: [2 1 1], log: [{0 <nil>} {1 101}], currentTerm: 1
-leader Server: 1, Time to commit Index: 1
+1 reply in ae from 2, ok: true
 1 reply in ae from 2, ok: true
 1 reply in ae from 0, ok: true
+leader Server: 1, Time to commit Index: 1
 Server: 1, matchIndex: [1 1 0], matchIndexCopy: [0 1 1], nextIndex: [2 1 1], log: [{0 <nil>} {1 101}], currentTerm: 1, majorityIndex : 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 applied Server: 1, Command: 101, CommandIndex: 1
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 0 commiting 1 in log [{0 <nil>} {1 101}]
 2 commiting 1 in log [{0 <nil>} {1 101}]
-1 reply in ae from 0, ok: true
-cfg  [map[] map[1:101] map[]]
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+cfg  [map[] map[1:101] map[]]
+1 reply in ae from 0, ok: true
 1 reply in ae from 2, ok: true
+applied Server: 0, Command: 101, CommandIndex: 1
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 applied Server: 2, Command: 101, CommandIndex: 1
-applied Server: 0, Command: 101, CommandIndex: 1
-1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
-1 reply in ae from 0, ok: true
 1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 cfg  [map[1:101] map[1:101] map[1:101]]
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
@@ -82,111 +58,11 @@ Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log
 1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
 1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
@@ -205,25 +81,13 @@ Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
 1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 0, ok: true
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 0, ok: true
-Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
-1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
@@ -233,784 +97,1796 @@ Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log
 1 reply in ae from 2, ok: true
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
 Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
 Server: 1 starting command is 102 at index 2
 Server: 1 starting command is 103 at index 3
+Server: 1, matchIndex: [1 3 1], matchIndexCopy: [1 1 3], nextIndex: [2 1 2], log: [{0 <nil>} {1 101} {1 102} {1 103}], currentTerm: 1
 Server: 1 starting command is 104 at index 4
 1 reply in ae from 2, ok: false
-1 reply in ae from 0, ok: false
-0 starting new elction
-0 reply in rv from 2, ok: true, reply {2 true}
-0 checking votes term  2, vc 1, state 1 
-0 vote count is 20 reply in ae from 2, ok: true
-Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
-1 reply in ae from 0, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
-Server: 0 starting command is 103 at index 2
+1 reply in ae from 2, ok: false
+2 starting new elction
+2 reply in rv from 0, ok: true, reply {2 true}
+2 checking votes term  2, vc 1, state 1 
+2 vote count is 2Server: 2 starting command is 103 at index 2
 cfg  [map[1:101] map[1:101] map[1:101]]
-2 adding [{2 103}] to log [{0 <nil>} {1 101}]
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 1], matchIndexCopy: [0 1 2], nextIndex: [2 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-leader Server: 0, Time to commit Index: 2
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2, majorityIndex : 2
-0 reply in ae from 1, ok: false
-applied Server: 0, Command: 103, CommandIndex: 2
-2 commiting 2 in log [{0 <nil>} {1 101} {2 103}]
-cfg  [map[1:101 2:103] map[1:101] map[1:101]]
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 adding [{2 103}] to log [{0 <nil>} {1 101}]
+2 reply in ae from 0, ok: true
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+leader Server: 2, Time to commit Index: 2
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2, majorityIndex : 2
 applied Server: 2, Command: 103, CommandIndex: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+cfg  [map[1:101] map[1:101] map[1:101]]
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 commiting 2 in log [{0 <nil>} {1 101} {2 103}]
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+applied Server: 0, Command: 103, CommandIndex: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 1, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-1 reply in ae from 0, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-1 reply in ae from 0, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-1 reply in ae from 0, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 1, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-1 reply in ae from 0, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
 1 reply in ae from 2, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 0, ok: false
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 0, ok: false
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
 1 reply in ae from 2, ok: false
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
-0 reply in ae from 2, ok: true
-Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 0, ok: false
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+2 reply in ae from 0, ok: true
+Server: 2, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [3 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
 Server: 1 starting command is 104 at index 5
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: false
 1 starting new elction
-1 reply in rv from 2, ok: true, reply {3 true}
+1 reply in rv from 0, ok: true, reply {3 false}
 1 checking votes term  3, vc 1, state 1 
-1 vote count is 2Ser: 2, PrevLogIndex: 5 > Len(Log): 3
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
 1 reply in ae from 2, ok: false
-Server: 2, Conflict Term: 2, Conflict Index: 2
-1 reply in ae from 2, ok: true
-2 adding [{1 102} {1 103} {1 104} {1 104}] to log [{0 <nil>} {1 101}]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
 1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
 1 reply in ae from 0, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
 1 reply in ae from 2, ok: false
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
 1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 starting new elction
+1 reply in rv from 0, ok: true, reply {4 false}
+1 checking votes term  4, vc 1, state 1 
 1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
 1 reply in ae from 0, ok: false
-0 reply in ae from 1, ok: false
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
 cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+2 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 starting new elction
+0 reply in rv from 1, ok: true, reply {5 true}
+0 checking votes term  5, vc 1, state 1 
+1 reply in ae from 0, ok: false
+0 vote count is 2Server: 1, Conflict Term: 1, Conflict Index: 1
+0 reply in ae from 1, ok: true
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 adding [{2 103}] to log [{0 <nil>} {1 101}]
+1 commiting 2 in log [{0 <nil>} {1 101} {2 103}]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+applied Server: 1, Command: 103, CommandIndex: 2
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in rv from 1, ok: false, reply {0 false}
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+1 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+1 reply in rv from 2, ok: false, reply {0 false}
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
 0 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
 1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
 1 reply in ae from 0, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+1 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 0, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in rv from 2, ok: false, reply {0 false}
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
 0 reply in ae from 2, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-0 reply in ae from 1, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
 1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 1 reply in ae from 0, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
 0 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: false
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-1 reply in ae from 0, ok: false
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
 1 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in rv from 0, ok: false, reply {0 false}
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [0 2 0], matchIndexCopy: [0 0 2], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 5
+Server: 0 starting command is 104 at index 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+0 reply in ae from 1, ok: true
+1 adding [{5 104}] to log [{0 <nil>} {1 101} {2 103}]
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 2 0], matchIndexCopy: [0 2 3], nextIndex: [3 3 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+leader Server: 0, Time to commit Index: 3
 1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5, majorityIndex : 3
+applied Server: 0, Command: 104, CommandIndex: 3
+cfg  [map[1:101 2:103] map[1:101 2:103] map[1:101 2:103]]
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 commiting 3 in log [{0 <nil>} {1 101} {2 103} {5 104}]
+2 reply in ae from 0, ok: false
+applied Server: 1, Command: 104, CommandIndex: 3
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103]]
+Server: 2 starting command is 105 at index 3
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: true
+2 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: true
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103]]
+1 reply in rv from 2, ok: false, reply {0 false}
+2 adding [{5 104}] to log [{0 <nil>} {1 101} {2 103}]
+2 commiting 3 in log [{0 <nil>} {1 101} {2 103} {5 104}]
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 1, ok: true
+applied Server: 2, Command: 104, CommandIndex: 3
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 0], matchIndexCopy: [0 3 3], nextIndex: [3 4 3], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
 1 reply in ae from 2, ok: false
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+2 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
 1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 2, ok: false
-1 reply in ae from 0, ok: false
+2 reply in ae from 0, ok: false
 1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-0 reply in ae from 1, ok: false
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
 1 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
 0 reply in ae from 2, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 0, ok: false
-0 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: false
-0 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 1, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 0, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-0 reply in ae from 2, ok: false
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
 0 reply in ae from 2, ok: false
 1 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
-Server: 1 starting command is 104 at index 6
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-2 adding [{3 104}] to log [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}]
-0 reply in ae from 1, ok: false
-1 reply in ae from 0, ok: false
-1 reply in ae from 2, ok: true
-Server: 1, matchIndex: [0 6 6], matchIndexCopy: [0 6 6], nextIndex: [6 6 7], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}], currentTerm: 3
-leader Server: 1, Time to commit Index: 6
-Server: 1, matchIndex: [0 6 6], matchIndexCopy: [0 6 6], nextIndex: [6 6 7], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}], currentTerm: 3, majorityIndex : 6
-1 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
 0 reply in ae from 2, ok: false
-1 reply in ae from 2, ok: true
-applied Server: 1, Command: 102, CommandIndex: 2
-cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
-0 reply in ae from 1, ok: false
-1: log map[1:101]; server map[1:101 2:103]
-Server: 1, matchIndex: [0 6 6], matchIndexCopy: [0 6 6], nextIndex: [6 6 7], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}], currentTerm: 3
-2 commiting 6 in log [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}]
-1: log map[1:101]; server map[1:101 2:103]
-apply error: commit index=2 server=1 102 != server=2 103
-exit status 1
-FAIL	6.824/raft	3.773s
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+1 reply in ae from 0, ok: false
+2 reply in ae from 0, ok: false
+1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: false
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+2 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: true
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+1 reply in ae from 2, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 2, ok: false
+2 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+1 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+1 reply in ae from 0, ok: false
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [3 3 3], matchIndexCopy: [3 3 3], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104}], currentTerm: 5
+0 reply in ae from 2, ok: true
+2 reply in ae from 1, ok: false
+Server: 0 starting command is 105 at index 4
+2 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+Server: 0, matchIndex: [4 3 3], matchIndexCopy: [3 3 4], nextIndex: [3 4 4], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+2 reply in ae from 0, ok: false
+2 adding [{5 105}] to log [{0 <nil>} {1 101} {2 103} {5 104}]
+1 adding [{5 105}] to log [{0 <nil>} {1 101} {2 103} {5 104}]
+2 reply in ae from 1, ok: false
+2 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [4 3 4], matchIndexCopy: [3 4 4], nextIndex: [3 4 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+leader Server: 0, Time to commit Index: 4
+Server: 0, matchIndex: [4 3 4], matchIndexCopy: [3 4 4], nextIndex: [3 4 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5, majorityIndex : 4
+applied Server: 0, Command: 105, CommandIndex: 4
+2 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [4 4 4], matchIndexCopy: [4 4 4], nextIndex: [3 5 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [4 4 4], matchIndexCopy: [4 4 4], nextIndex: [3 5 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+cfg  [map[1:101 2:103 3:104] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: false
+2 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+1 commiting 4 in log [{0 <nil>} {1 101} {2 103} {5 104} {5 105}]
+2 commiting 4 in log [{0 <nil>} {1 101} {2 103} {5 104} {5 105}]
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: true
+2 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: false
+2 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [4 4 4], matchIndexCopy: [4 4 4], nextIndex: [3 5 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+applied Server: 1, Command: 105, CommandIndex: 4
+0 reply in ae from 1, ok: true
+applied Server: 2, Command: 105, CommandIndex: 4
+0 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103 3:104 4:105] map[1:101 2:103 3:104] map[1:101 2:103 3:104]]
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: false
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [4 4 4], matchIndexCopy: [4 4 4], nextIndex: [3 5 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+0 reply in ae from 1, ok: true
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: true
+2 reply in ae from 1, ok: false
+2 reply in ae from 0, ok: false
+Server: 0, matchIndex: [4 4 4], matchIndexCopy: [4 4 4], nextIndex: [3 5 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+0 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103 3:104 4:105] map[1:101 2:103 3:104 4:105] map[1:101 2:103 3:104 4:105]]
+  ... Passed --   5.8  3 1400  359254    4
+Server: 0, matchIndex: [4 4 4], matchIndexCopy: [4 4 4], nextIndex: [3 5 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+2 reply in ae from 1, ok: false
+PASS
+2 reply in ae from 1, ok: false
+Server: 0, matchIndex: [4 4 4], matchIndexCopy: [4 4 4], nextIndex: [3 5 5], log: [{0 <nil>} {1 101} {2 103} {5 104} {5 105}], currentTerm: 5
+2 reply in ae from 1, ok: false
+ok  	6.824/raft	5.831s

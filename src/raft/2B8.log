@@ -1,140 +1,271 @@
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Test (2B): RPC counts aren't too high ...
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+0 starting new elction
+0 reply in rv from 1, ok: true, reply {1 true}
+0 checking votes term  1, vc 1, state 1 
+0 vote count is 20 reply in rv from 2, ok: true, reply {1 true}
+0 checking votes term  1, vc 0, state 2 
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 2, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 1, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 2, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 1, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+0 reply in ae from 2, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
+0 reply in ae from 1, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
 Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 0, Entries:[], Next Log Entry Index: 1
-Server: 0, Sending Heartbeat Args: {1 0 0 0 [] 0}, Log State: [{0 <nil>}]
---- FAIL: TestCount2B (0.45s)
-    test_test.go:592: too many or few RPCs (36) to elect initial leader
-FAIL
-exit status 1
-FAIL	6.824/raft	0.462s
+Server: 0, matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 1
+Server: 0 starting command is 1 at index 1
+Server: 0 starting command is 730459894 at index 2
+Server: 0 starting command is 1284770301 at index 3
+2 adding [{1 1}] to log [{0 <nil>}]
+1 adding [{1 1}] to log [{0 <nil>}]
+Server: 0 starting command is 1512563943 at index 4
+2 adding [{1 730459894}] to log [{0 <nil>} {1 1}]
+2 adding [{1 1284770301}] to log [{0 <nil>} {1 1} {1 730459894}]
+0 reply in ae from 1, ok: true
+1 adding [{1 730459894}] to log [{0 <nil>} {1 1}]
+1 adding [{1 1284770301}] to log [{0 <nil>} {1 1} {1 730459894}]
+0 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: true
+2 adding [{1 1512563943}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301}]
+0 reply in ae from 2, ok: true
+Server: 0 starting command is 745488091 at index 5
+Server: 0 starting command is 1807391106 at index 6
+1 adding [{1 1512563943}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301}]
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+2 adding [{1 745488091}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943}]
+Server: 0, matchIndex: [6 1 0], matchIndexCopy: [0 1 6], nextIndex: [1 2 1], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}], currentTerm: 1
+leader Server: 0, Time to commit Index: 1
+0 reply in ae from 1, ok: true
+2 adding [{1 1807391106}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091}]
+0 reply in ae from 2, ok: true
+1 adding [{1 745488091}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943}]
+Server: 0, matchIndex: [6 1 0], matchIndexCopy: [0 1 6], nextIndex: [1 2 1], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}], currentTerm: 1, majorityIndex : 1
+0 reply in ae from 2, ok: true
+1 adding [{1 1807391106}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091}]
+0 reply in ae from 1, ok: true
+applied Server: 0, Command: 1, CommandIndex: 1
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [6 1 1], matchIndexCopy: [1 1 6], nextIndex: [1 2 2], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}], currentTerm: 1
+Server: 0, matchIndex: [6 1 2], matchIndexCopy: [1 2 6], nextIndex: [1 2 3], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}], currentTerm: 1
+leader Server: 0, Time to commit Index: 2
+Server: 0, matchIndex: [6 1 2], matchIndexCopy: [1 2 6], nextIndex: [1 2 3], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}], currentTerm: 1, majorityIndex : 2
+Server: 0, matchIndex: [6 1 3], matchIndexCopy: [1 3 6], nextIndex: [1 2 4], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}], currentTerm: 1
+leader Server: 0, Time to commit Index: 3
+Server: 0, matchIndex: [6 1 3], matchIndexCopy: [1 3 6], nextIndex: [1 2 4], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}], currentTerm: 1, majorityIndex : 3
+Server: 0 starting command is 361975504 at index 7
+Server: 0, matchIndex: [7 3 3], matchIndexCopy: [3 3 7], nextIndex: [1 4 4], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+1 adding [{1 361975504}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}]
+2 adding [{1 361975504}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106}]
+2 commiting 3 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}]
+1 commiting 3 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}]
+Server: 0, matchIndex: [7 3 4], matchIndexCopy: [3 4 7], nextIndex: [1 4 5], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+leader Server: 0, Time to commit Index: 4
+Server: 0, matchIndex: [7 3 4], matchIndexCopy: [3 4 7], nextIndex: [1 4 5], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1, majorityIndex : 4
+applied Server: 1, Command: 1, CommandIndex: 1
+0 reply in ae from 1, ok: true
+applied Server: 2, Command: 1, CommandIndex: 1
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [7 2 4], matchIndexCopy: [2 4 7], nextIndex: [1 3 5], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+Server: 0, matchIndex: [7 4 4], matchIndexCopy: [4 4 7], nextIndex: [1 5 5], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+Server: 0, matchIndex: [7 4 5], matchIndexCopy: [4 5 7], nextIndex: [1 5 6], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+applied Server: 1, Command: 730459894, CommandIndex: 2
+leader Server: 0, Time to commit Index: 5
+applied Server: 2, Command: 730459894, CommandIndex: 2
+Server: 0, matchIndex: [7 4 5], matchIndexCopy: [4 5 7], nextIndex: [1 5 6], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1, majorityIndex : 5
+Server: 0, matchIndex: [7 4 6], matchIndexCopy: [4 6 7], nextIndex: [1 5 7], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+leader Server: 0, Time to commit Index: 6
+Server: 0, matchIndex: [7 4 6], matchIndexCopy: [4 6 7], nextIndex: [1 5 7], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1, majorityIndex : 6
+applied Server: 1, Command: 1284770301, CommandIndex: 3
+Server: 0, matchIndex: [7 5 6], matchIndexCopy: [5 6 7], nextIndex: [1 6 7], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+applied Server: 2, Command: 1284770301, CommandIndex: 3
+Server: 0, matchIndex: [7 6 6], matchIndexCopy: [6 6 7], nextIndex: [1 7 7], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}], currentTerm: 1
+applied Server: 0, Command: 730459894, CommandIndex: 2
+Server: 0 starting command is 911060828 at index 8
+Server: 0, matchIndex: [8 7 6], matchIndexCopy: [6 7 8], nextIndex: [1 8 7], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}], currentTerm: 1
+leader Server: 0, Time to commit Index: 7
+1 adding [{1 911060828}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}]
+1 commiting 6 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}]
+Server: 0, matchIndex: [8 7 6], matchIndexCopy: [6 7 8], nextIndex: [1 8 7], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}], currentTerm: 1, majorityIndex : 7
+2 adding [{1 911060828}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504}]
+2 commiting 6 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}]
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [8 7 7], matchIndexCopy: [7 7 8], nextIndex: [1 8 8], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}], currentTerm: 1
+applied Server: 1, Command: 1512563943, CommandIndex: 4
+0 reply in ae from 2, ok: true
+Server: 0 starting command is 1304524027 at index 9
+applied Server: 0, Command: 1284770301, CommandIndex: 3
+1 commiting 7 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}]
+2 commiting 7 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}]
+Server: 0, matchIndex: [9 8 7], matchIndexCopy: [7 8 9], nextIndex: [1 9 8], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027}], currentTerm: 1
+leader Server: 0, Time to commit Index: 8
+1 adding [{1 1304524027}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}]
+applied Server: 2, Command: 1512563943, CommandIndex: 4
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [9 8 7], matchIndexCopy: [7 8 9], nextIndex: [1 9 8], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027}], currentTerm: 1, majorityIndex : 8
+0 reply in ae from 1, ok: true
+applied Server: 1, Command: 745488091, CommandIndex: 5
+0 reply in ae from 1, ok: true
+2 adding [{1 1304524027}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828}]
+Server: 0, matchIndex: [9 8 8], matchIndexCopy: [8 8 9], nextIndex: [1 9 9], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027}], currentTerm: 1
+0 reply in ae from 2, ok: true
+Server: 0 starting command is 2115351105 at index 10
+applied Server: 0, Command: 1512563943, CommandIndex: 4
+applied Server: 2, Command: 745488091, CommandIndex: 5
+1 adding [{1 2115351105}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027}]
+Server: 0, matchIndex: [10 8 8], matchIndexCopy: [8 8 10], nextIndex: [1 9 9], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}], currentTerm: 1
+2 adding [{1 2115351105}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027}]
+2 commiting 8 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}]
+Server: 0, matchIndex: [10 8 8], matchIndexCopy: [8 8 10], nextIndex: [1 9 9], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}], currentTerm: 1
+1 commiting 8 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}]
+applied Server: 2, Command: 1807391106, CommandIndex: 6
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [10 9 8], matchIndexCopy: [8 9 10], nextIndex: [1 10 9], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}], currentTerm: 1
+leader Server: 0, Time to commit Index: 9
+Server: 0, matchIndex: [10 9 8], matchIndexCopy: [8 9 10], nextIndex: [1 10 9], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}], currentTerm: 1, majorityIndex : 9
+applied Server: 1, Command: 1807391106, CommandIndex: 6
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [10 9 9], matchIndexCopy: [9 9 10], nextIndex: [1 10 10], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}], currentTerm: 1
+Server: 0 starting command is 1330044643 at index 11
+applied Server: 2, Command: 361975504, CommandIndex: 7
+applied Server: 0, Command: 745488091, CommandIndex: 5
+1 adding [{1 1330044643}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}]
+1 commiting 9 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643}]
+2 adding [{1 1330044643}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105}]
+2 commiting 9 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643}]
+applied Server: 1, Command: 361975504, CommandIndex: 7
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [11 9 10], matchIndexCopy: [9 10 11], nextIndex: [1 10 11], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643}], currentTerm: 1
+leader Server: 0, Time to commit Index: 10
+0 reply in ae from 2, ok: true
+applied Server: 2, Command: 911060828, CommandIndex: 8
+Server: 0, matchIndex: [11 9 10], matchIndexCopy: [9 10 11], nextIndex: [1 10 11], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643}], currentTerm: 1, majorityIndex : 10
+Server: 0, matchIndex: [11 10 10], matchIndexCopy: [10 10 11], nextIndex: [1 11 11], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643}], currentTerm: 1
+applied Server: 1, Command: 911060828, CommandIndex: 8
+Server: 0 starting command is 770213546 at index 12
+applied Server: 2, Command: 1304524027, CommandIndex: 9
+applied Server: 0, Command: 1807391106, CommandIndex: 6
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828]]
+1 adding [{1 770213546}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643}]
+1 commiting 10 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}]
+Server: 0, matchIndex: [12 11 10], matchIndexCopy: [10 11 12], nextIndex: [1 12 11], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027]]
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027]]
+applied Server: 1, Command: 1304524027, CommandIndex: 9
+0 reply in ae from 1, ok: true
+leader Server: 0, Time to commit Index: 11
+2 adding [{1 770213546}] to log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643}]
+2 commiting 10 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}]
+Server: 0, matchIndex: [12 11 10], matchIndexCopy: [10 11 12], nextIndex: [1 12 11], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1, majorityIndex : 11
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027]]
+0 reply in ae from 2, ok: true
+applied Server: 2, Command: 2115351105, CommandIndex: 10
+Server: 0, matchIndex: [12 11 11], matchIndexCopy: [11 11 12], nextIndex: [1 12 12], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+applied Server: 1, Command: 2115351105, CommandIndex: 10
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027]]
+applied Server: 0, Command: 361975504, CommandIndex: 7
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105]]
+Server: 0, matchIndex: [12 12 11], matchIndexCopy: [11 12 12], nextIndex: [1 13 12], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+leader Server: 0, Time to commit Index: 12
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105]]
+Server: 0, matchIndex: [12 12 11], matchIndexCopy: [11 12 12], nextIndex: [1 13 12], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1, majorityIndex : 12
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105]]
+1 commiting 12 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}]
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+applied Server: 0, Command: 911060828, CommandIndex: 8
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105]]
+0 reply in ae from 1, ok: true
+applied Server: 1, Command: 1330044643, CommandIndex: 11
+2 commiting 12 in log [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}]
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105]]
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+applied Server: 0, Command: 1304524027, CommandIndex: 9
+applied Server: 2, Command: 1330044643, CommandIndex: 11
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105]]
+0 reply in ae from 2, ok: true
+applied Server: 1, Command: 770213546, CommandIndex: 12
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643]]
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+applied Server: 2, Command: 770213546, CommandIndex: 12
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643]]
+applied Server: 0, Command: 2115351105, CommandIndex: 10
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546]]
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546]]
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546]]
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546]]
+applied Server: 0, Command: 1330044643, CommandIndex: 11
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546]]
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546]]
+cfg  [map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546] map[1:1 2:730459894 3:1284770301 4:1512563943 5:745488091 6:1807391106 7:361975504 8:911060828 9:1304524027 10:2115351105 11:1330044643 12:770213546]]
+applied Server: 0, Command: 770213546, CommandIndex: 12
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+0 reply in ae from 1, ok: true
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+Server: 0, matchIndex: [12 12 12], matchIndexCopy: [12 12 12], nextIndex: [1 13 13], log: [{0 <nil>} {1 1} {1 730459894} {1 1284770301} {1 1512563943} {1 745488091} {1 1807391106} {1 361975504} {1 911060828} {1 1304524027} {1 2115351105} {1 1330044643} {1 770213546}], currentTerm: 1
+  ... Passed --   2.5  3   68   21208   12
+PASS
+ok  	6.824/raft	2.513s
