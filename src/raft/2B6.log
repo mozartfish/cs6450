@@ -1,1210 +1,1016 @@
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
 Test (2B): rejoin of partitioned leader ...
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-2 starting command is 101
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Successful RPC
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Successful RPC
-Successful RPC
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 0 0], matchIndexCopy: [0 0 0], nextIndex: [1 1 1], log: [{0 <nil>}], currentTerm: 3
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [] 0}, Log State: [{0 <nil>}]
-Successful RPC
-Successful RPC
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-1 starting command is 101
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 2, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 1, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-Server: 0, Time to Commit Index: 0, Highest Log Entry Applied to State Machines: 0
-matchIndex: [0 1 0], matchIndexCopy: [0 0 1], nextIndex: [1 1 1], log: [{0 <nil>} {3 101}], currentTerm: 3
-Time to commit Index: 1
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[{3 101}], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [{3 101}] 1}, Log State: [{0 <nil>} {3 101}]
-PreviousLogIndex arg: 0, PrevLogTerm arg: 0
-Entries:[{3 101}], Next Log Entry Index: 1
-Sending Heartbeat Args: {3 1 0 0 [{3 101}] 1}, Log State: [{0 <nil>} {3 101}]
-Successful RPC
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 0
-Server: 2, Applying Command: {true 101 1 false [] 0 0}
-Successful RPC
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 0
-Server: 1, Applying Command: {true 101 1 false [] 0 0}
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 0
-Server: 0, Applying Command: {true 101 1 false [] 0 0}
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {3 101}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-Successful RPC
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Successful RPC
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {3 101}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {3 101}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-Successful RPC
-Successful RPC
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {3 101}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-Successful RPC
-Successful RPC
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {3 101}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [] 1}, Log State: [{0 <nil>} {3 101}]
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Successful RPC
-Successful RPC
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-1 starting command is 102
-1 starting command is 103
-1 starting command is 104
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 4 1], matchIndexCopy: [1 1 4], nextIndex: [2 1 2], log: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}], currentTerm: 3
-Time to commit Index: 4
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 1
-Server: 1, Applying Command: {true 102 2 false [] 0 0}
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 2
-Server: 1, Applying Command: {true 103 3 false [] 0 0}
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 3
-Server: 1, Applying Command: {true 104 4 false [] 0 0}
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-matchIndex: [1 4 1], matchIndexCopy: [1 1 4], nextIndex: [2 1 2], log: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-2 starting command is 103
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 4 1], matchIndexCopy: [1 1 4], nextIndex: [2 1 2], log: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 4 1], matchIndexCopy: [1 1 4], nextIndex: [2 1 2], log: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 4 1], matchIndexCopy: [1 1 4], nextIndex: [2 1 2], log: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {3 101} {4 103}], currentTerm: 4
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{4 103}], Next Log Entry Index: 2
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Sending Heartbeat Args: {4 2 1 3 [{4 103}] 1}, Log State: [{0 <nil>} {3 101} {4 103}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{4 103}], Next Log Entry Index: 2
-Sending Heartbeat Args: {4 2 1 3 [{4 103}] 1}, Log State: [{0 <nil>} {3 101} {4 103}]
-Successful RPC
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [1 4 1], matchIndexCopy: [1 1 4], nextIndex: [2 1 2], log: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}], currentTerm: 3
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{3 102} {3 103} {3 104}], Next Log Entry Index: 2
-Sending Heartbeat Args: {3 1 1 3 [{3 102} {3 103} {3 104}] 4}, Log State: [{0 <nil>} {3 101} {3 102} {3 103} {3 104}]
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-matchIndex: [2 0 1], matchIndexCopy: [0 1 2], nextIndex: [3 2 2], log: [{0 <nil>} {3 101} {4 103}], currentTerm: 4
-Time to commit Index: 2
-PreviousLogIndex arg: 2, PrevLogTerm arg: 4
-Entries:[], Next Log Entry Index: 3
-Sending Heartbeat Args: {4 2 2 4 [] 2}, Log State: [{0 <nil>} {3 101} {4 103}]
-PreviousLogIndex arg: 1, PrevLogTerm arg: 3
-Entries:[{4 103}], Next Log Entry Index: 2
-Sending Heartbeat Args: {4 2 1 3 [{4 103}] 2}, Log State: [{0 <nil>} {3 101} {4 103}]
-Server: 0, Time to Commit Index: 1, Highest Log Entry Applied to State Machines: 1
-Successful RPC
-Server: 1, Time to Commit Index: 4, Highest Log Entry Applied to State Machines: 4
-Server: 2, Time to Commit Index: 2, Highest Log Entry Applied to State Machines: 1
-Server: 2, Applying Command: {true 103 2 false [] 0 0}
-2: log map[1:101]; server map[1:101 2:102 3:103 4:104]
-apply error: commit index=2 server=2 103 != server=1 102
+1 starting new elction
+1 reply in rv from 0, ok: true, reply {1 true}
+1 reply in rv from 2, ok: true, reply {1 true}
+1 checking votes term  1, vc 1, state 1 
+1 vote count is 21 checking votes term  1, vc 0, state 2 
+Server: 1 starting command is 101 at index 1
+cfg  [map[] map[] map[]]
+0 adding [{1 101}] to log [{0 <nil>}]
+2 adding [{1 101}] to log [{0 <nil>}]
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 0], matchIndexCopy: [0 1 1], nextIndex: [2 1 1], log: [{0 <nil>} {1 101}], currentTerm: 1
+leader Server: 1, Time to commit Index: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 0], matchIndexCopy: [0 1 1], nextIndex: [2 1 1], log: [{0 <nil>} {1 101}], currentTerm: 1, majorityIndex : 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+applied Server: 1, Command: 101, CommandIndex: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+0 commiting 1 in log [{0 <nil>} {1 101}]
+2 commiting 1 in log [{0 <nil>} {1 101}]
+1 reply in ae from 0, ok: true
+cfg  [map[] map[1:101] map[]]
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+applied Server: 2, Command: 101, CommandIndex: 1
+applied Server: 0, Command: 101, CommandIndex: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+cfg  [map[1:101] map[1:101] map[1:101]]
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+1 reply in ae from 0, ok: true
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1, matchIndex: [1 1 1], matchIndexCopy: [1 1 1], nextIndex: [2 1 2], log: [{0 <nil>} {1 101}], currentTerm: 1
+Server: 1 starting command is 102 at index 2
+Server: 1 starting command is 103 at index 3
+Server: 1 starting command is 104 at index 4
+1 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+0 starting new elction
+0 reply in rv from 2, ok: true, reply {2 true}
+0 checking votes term  2, vc 1, state 1 
+0 vote count is 20 reply in ae from 2, ok: true
+Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [0 0 1], matchIndexCopy: [0 0 1], nextIndex: [2 2 2], log: [{0 <nil>} {1 101}], currentTerm: 2
+Server: 0 starting command is 103 at index 2
+cfg  [map[1:101] map[1:101] map[1:101]]
+2 adding [{2 103}] to log [{0 <nil>} {1 101}]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 1], matchIndexCopy: [0 1 2], nextIndex: [2 2 2], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+leader Server: 0, Time to commit Index: 2
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2, majorityIndex : 2
+0 reply in ae from 1, ok: false
+applied Server: 0, Command: 103, CommandIndex: 2
+2 commiting 2 in log [{0 <nil>} {1 101} {2 103}]
+cfg  [map[1:101 2:103] map[1:101] map[1:101]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+applied Server: 2, Command: 103, CommandIndex: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+0 reply in ae from 2, ok: true
+Server: 0, matchIndex: [2 0 2], matchIndexCopy: [0 2 2], nextIndex: [2 2 3], log: [{0 <nil>} {1 101} {2 103}], currentTerm: 2
+Server: 1 starting command is 104 at index 5
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: true
+1 starting new elction
+1 reply in rv from 2, ok: true, reply {3 true}
+1 checking votes term  3, vc 1, state 1 
+1 vote count is 2Ser: 2, PrevLogIndex: 5 > Len(Log): 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: false
+Server: 2, Conflict Term: 2, Conflict Index: 2
+1 reply in ae from 2, ok: true
+2 adding [{1 102} {1 103} {1 104} {1 104}] to log [{0 <nil>} {1 101}]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: false
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+0 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: false
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+1 reply in ae from 0, ok: false
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in rv from 0, ok: false, reply {0 false}
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+1 reply in ae from 2, ok: false
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+0 reply in ae from 1, ok: false
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+0 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: false
+0 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 1, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 0, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 0 5], matchIndexCopy: [0 0 5], nextIndex: [6 6 6], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}], currentTerm: 3
+Server: 1 starting command is 104 at index 6
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+2 adding [{3 104}] to log [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104}]
+0 reply in ae from 1, ok: false
+1 reply in ae from 0, ok: false
+1 reply in ae from 2, ok: true
+Server: 1, matchIndex: [0 6 6], matchIndexCopy: [0 6 6], nextIndex: [6 6 7], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}], currentTerm: 3
+leader Server: 1, Time to commit Index: 6
+Server: 1, matchIndex: [0 6 6], matchIndexCopy: [0 6 6], nextIndex: [6 6 7], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}], currentTerm: 3, majorityIndex : 6
+1 reply in ae from 2, ok: true
+0 reply in ae from 2, ok: false
+1 reply in ae from 2, ok: true
+applied Server: 1, Command: 102, CommandIndex: 2
+cfg  [map[1:101 2:103] map[1:101] map[1:101 2:103]]
+0 reply in ae from 1, ok: false
+1: log map[1:101]; server map[1:101 2:103]
+Server: 1, matchIndex: [0 6 6], matchIndexCopy: [0 6 6], nextIndex: [6 6 7], log: [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}], currentTerm: 3
+2 commiting 6 in log [{0 <nil>} {1 101} {1 102} {1 103} {1 104} {1 104} {3 104}]
+1: log map[1:101]; server map[1:101 2:103]
+apply error: commit index=2 server=1 102 != server=2 103
 exit status 1
-FAIL	6.824/raft	3.420s
+FAIL	6.824/raft	3.773s
