@@ -18,8 +18,7 @@ package raft
 //
 
 import (
-	//	"bytes"
-
+	"bytes"
 	"fmt"
 	"math"
 	"math/rand"
@@ -29,6 +28,7 @@ import (
 	"time"
 
 	//	"6.824/labgob"
+	"6.824/labgob"
 	"6.824/labrpc"
 )
 
@@ -116,8 +116,8 @@ func (rf *Raft) GetState() (int, bool) {
 func (rf *Raft) persist() {
 	// Your code here (2C).
 	// Example:
-	// w := new(bytes.Buffer)
-	// e := labgob.NewEncoder(w)
+	w := new(bytes.Buffer)
+	e := labgob.NewEncoder(w)
 	// e.Encode(rf.xxx)
 	// e.Encode(rf.yyy)
 	// data := w.Bytes()
@@ -272,7 +272,6 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	rf.lastHeartBeat = time.Now()
 
 	if args.PrevLogIndex > len(rf.log)-1 {
-		// reply.NextIndex = len(rf.log)
 		fmt.Printf("Ser: %v, PrevLogIndex: %v > Len(Log): %v\n", rf.me, args.PrevLogIndex, len(rf.log))
 		reply.Term = rf.currentTerm
 		reply.ConflictIndex = len(rf.log)
@@ -309,36 +308,6 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	}
 
 	args.Entries = args.Entries[b:]
-
-	// if len(args.Entries) < (len(rf.log) - args.PrevLogIndex - 1) {
-	// 	entryStartIndex := 0
-	// 	NextLogIndex := args.PrevLogIndex + 1
-
-	// 	for entryStartIndex < len(args.Entries) {
-	// 		if rf.log[NextLogIndex].Term != args.Entries[entryStartIndex].Term {
-	// 			break
-	// 		}
-	// 		entryStartIndex = entryStartIndex + 1
-	// 		NextLogIndex = NextLogIndex + 1
-	// 	}
-
-	// 	rf.log = rf.log[:NextLogIndex]
-	// 	args.Entries = args.Entries[entryStartIndex:]
-	// } else {
-	// 	entryStartIndex := 0
-	// 	NextLogIndex := args.PrevLogIndex + 1
-
-	// 	for NextLogIndex < len(rf.log) {
-	// 		if rf.log[NextLogIndex].Term != args.Entries[entryStartIndex].Term {
-	// 			break
-	// 		}
-	// 		entryStartIndex = entryStartIndex + 1
-	// 		NextLogIndex = NextLogIndex + 1
-	// 	}
-
-	// 	rf.log = rf.log[:NextLogIndex]
-	// 	args.Entries = args.Entries[entryStartIndex:]
-	// }
 
 	if len(args.Entries) > 0 {
 		fmt.Printf("%v adding %v to log %v\n", rf.me, args.Entries, rf.log)
