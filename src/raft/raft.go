@@ -570,7 +570,7 @@ func (rf *Raft) ticker() {
 
 		if state != Leader {
 			if lastHeartbeat.Add(electionTimeOut).Before(time.Now()) {
-				fmt.Printf("Server:%v starting new elction, my log is %v\n", rf.me, rf.log)
+				// fmt.Printf("Server:%v starting new elction, my log is %v\n", rf.me, rf.log)
 				rf.mu.Lock()
 				rf.currentTerm = rf.currentTerm + 1
 				rf.serverState = Candidate
@@ -631,12 +631,12 @@ func (rf *Raft) AppendEntriesRPC() {
 		}
 		args.PrevLogIndex = rf.nextIndex[j] - 1
 		args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
-		fmt.Printf("Server: %v, PreviousLogIndex arg: %v, PrevLogTerm arg: %v\n", rf.me, args.PrevLogIndex, args.PrevLogTerm)
+		// fmt.Printf("Server: %v, PreviousLogIndex arg: %v, PrevLogTerm arg: %v\n", rf.me, args.PrevLogIndex, args.PrevLogTerm)
 		entries := rf.log[rf.nextIndex[j]:]
-		fmt.Printf("Server: %v, Entries:%v, Next Log Entry Index: %v\n", rf.me, entries, rf.nextIndex[j])
+		// fmt.Printf("Server: %v, Entries:%v, Next Log Entry Index: %v\n", rf.me, entries, rf.nextIndex[j])
 		args.Entries = make([]LogEntry, len(entries))
 		copy(args.Entries, entries) // make a copy of entries to avoid mutating data when sending AppendEntries RPCS
-		fmt.Printf("Server: %v, Sending Heartbeat Args: %v, Log State: %v\n", rf.me, args, rf.log)
+		// fmt.Printf("Server: %v, Sending Heartbeat Args: %v, Log State: %v\n", rf.me, args, rf.log)
 		go rf.processSendAppendEntries(j, args, reply)
 	}
 }
@@ -647,13 +647,13 @@ func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 	for !rf.killed() {
 		applymsg := ApplyMsg{}
 		rf.mu.Lock()
-		fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
+		// fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
 		if rf.commitIndex > rf.lastApplied {
 			rf.lastApplied = rf.lastApplied + 1
 			applymsg.CommandValid = true
 			applymsg.Command = rf.log[rf.lastApplied].Command
 			applymsg.CommandIndex = rf.lastApplied
-			fmt.Printf("Applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
+			// fmt.Printf("Applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
 			rf.mu.Unlock()
 			applyCh <- applymsg
 		} else {
