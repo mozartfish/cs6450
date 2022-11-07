@@ -278,6 +278,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 		rf.currentTerm = args.Term
 		rf.serverState = Follower
 		rf.voteCount = 0
+		// rf.votedFor = -1
 	}
 
 	reply.Term = rf.currentTerm
@@ -324,13 +325,14 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	if len(args.Entries) > 0 {
 		// fmt.Printf("%v adding %v to log %v\n", rf.me, args.Entries, rf.log)
 		rf.log = append(rf.log, args.Entries...)
+		Debug(dLog2, "S%d Update my log: %v", rf.me, rf.log)
 	}
 
 	reply.Success = true
 
 	// fmt.Printf("%v my log in ae is %v\n", rf.me, rf.log)
 
-	// 5. If leaderCommit > commitIndex set commitINdex = min(leaderCommit, index of last new Entry)
+	// 5. If leaderCommit > commitIndex set commitIndex = min(leaderCommit, index of last new Entry)
 	if args.LeaderCommit > rf.commitIndex {
 		// fmt.Printf("%v commiting %v in log %v\n", rf.me, args.LeaderCommit, rf.log)
 		rf.commitIndex = int(math.Min(float64(args.LeaderCommit), float64(len(rf.log)-1)))
@@ -445,7 +447,9 @@ func (rf *Raft) sendAppendEntries(server int, args *AppendEntriesArgs, reply *Ap
 // wrapper function for sendAppendEnries to handle race conditions and overriding append entries
 func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, reply AppendEntriesReply) {
 	ok := rf.sendAppendEntries(server, &args, &reply)
-
+	// Debug(dTerm, "S%d current term: %v\n", rf.me, args.Term)
+	// Debug(dLog, "S%d Entries: %v\n", rf.me, args.Entries)
+	// Debug(args)
 	if ok {
 		rf.mu.Lock()
 		defer rf.mu.Unlock()
@@ -455,6 +459,7 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 			rf.serverState = Follower
 			rf.currentTerm = reply.Term
 			rf.voteCount = 0
+			// rf.votedFor = -1
 			return
 		}
 
@@ -473,12 +478,14 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 				// sort and pick median for majority
 				sort.Ints(matchIndexCopy)
 				majorityIndex := matchIndexCopy[len(matchIndexCopy)/2]
+				Debug(dInfo, "S%d Majority Index: %v", rf.me, majorityIndex)
 
 				// fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm)
 				if majorityIndex > rf.commitIndex && rf.log[majorityIndex].Term == rf.currentTerm {
 					// fmt.Printf("leader Server: %v, Time to commit Index: %v\n", rf.me, majorityIndex)
 					// fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v, majorityIndex : %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm, majorityIndex)
 					rf.commitIndex = majorityIndex
+					Debug(dCommit, "S%d Update CommitIndex and notify servers to apply command\n", rf.me)
 				}
 			} else {
 				// implement Raft Student Guide Optimization
@@ -531,6 +538,9 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	term = rf.currentTerm
 	index = len(rf.log) - 1
 	rf.matchIndex[rf.me] = len(rf.log) - 1
+	Debug(dTerm, "S%d Current Term: %v\n", rf.me, rf.currentTerm)
+	Debug(dClient, "S%d Get command %v from client\n", rf.me, command)
+	Debug(dLog, "S%d, Leader log: %v\n", rf.me, rf.log)
 	// fmt.Printf("Server: %v starting command is %v at index %v in log %v\n", rf.me, command, index, rf.log)
 	// Send out AppendEntries RPCS after receiving command from client
 	rf.AppendEntriesRPC()
@@ -570,6 +580,7 @@ func (rf *Raft) ticker() {
 
 		if state != Leader {
 			if lastHeartbeat.Add(electionTimeOut).Before(time.Now()) {
+				Debug(dInfo, "S%d start new election", rf.me)
 				// fmt.Printf("Server:%v starting new elction, my log is %v\n", rf.me, rf.log)
 				rf.mu.Lock()
 				rf.currentTerm = rf.currentTerm + 1
@@ -594,7 +605,8 @@ func (rf *Raft) ticker() {
 					if i == rf.me {
 						continue
 					}
-					fmt.Printf("Server: %v RequestVote From %v, log is %v\n", rf.me, i, rf.log)
+					Debug(dVote, "S%d Request Vote from server: %v\n", rf.me, i)
+					// fmt.Printf("Server: %v RequestVote From %v, log is %v\n", rf.me, i, rf.log)
 					go rf.processSendRequestVote(i, args, reply)
 				}
 				rf.persist()
@@ -603,7 +615,9 @@ func (rf *Raft) ticker() {
 		}
 		if state == Leader {
 			rf.mu.Lock()
+			Debug(dLeader, "S%d Become Leader. Current Term %v\n", rf.me, rf.currentTerm)
 			rf.AppendEntriesRPC()
+			// Debug(dPersist, "S%d, Persist")
 			rf.persist()
 			rf.mu.Unlock()
 			time.Sleep(time.Duration(100) * time.Millisecond) // Change sleep time to 100 for RAFT optimization
@@ -619,8 +633,10 @@ func (rf *Raft) AppendEntriesRPC() {
 	// AppendEntries Args
 	args := AppendEntriesArgs{}
 	args.Term = rf.currentTerm
+	Debug(dTerm, "S%d Current Term: %v\n", rf.me, args.Term)
 	args.LeaderID = rf.me
 	args.LeaderCommit = rf.commitIndex
+	// Debug(dInfo, "S%d LeaderCommitIndex: %v\n", rf.me, args.LeaderCommit)
 	// AppendEntries Reply
 	reply := AppendEntriesReply{}
 	// Issue AppendEntries RPCS to each of the other servers in a cluster
@@ -630,12 +646,15 @@ func (rf *Raft) AppendEntriesRPC() {
 			continue
 		}
 		args.PrevLogIndex = rf.nextIndex[j] - 1
+		// Debug(dInfo, "S%d, PrevLogIndex: %v\n", rf.me, args.PrevLogIndex)
 		args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
 		// fmt.Printf("Server: %v, PreviousLogIndex arg: %v, PrevLogTerm arg: %v\n", rf.me, args.PrevLogIndex, args.PrevLogTerm)
 		entries := rf.log[rf.nextIndex[j]:]
 		// fmt.Printf("Server: %v, Entries:%v, Next Log Entry Index: %v\n", rf.me, entries, rf.nextIndex[j])
 		args.Entries = make([]LogEntry, len(entries))
+		// Debug(dInfo, "S%d Send Entries to Server %v\n", rf.me, rf.nextIndex[j])
 		copy(args.Entries, entries) // make a copy of entries to avoid mutating data when sending AppendEntries RPCS
+		// Debug(dLog, "S%d LeaderLog: %v\n", rf.me, rf.log)
 		// fmt.Printf("Server: %v, Sending Heartbeat Args: %v, Log State: %v\n", rf.me, args, rf.log)
 		go rf.processSendAppendEntries(j, args, reply)
 	}
@@ -650,9 +669,11 @@ func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 		// fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
 		if rf.commitIndex > rf.lastApplied {
 			rf.lastApplied = rf.lastApplied + 1
+			// Debug(dCommit, "S%d Update lastAppliedIndex: %v\n", rf.me, rf.lastApplied)
 			applymsg.CommandValid = true
 			applymsg.Command = rf.log[rf.lastApplied].Command
 			applymsg.CommandIndex = rf.lastApplied
+			// Debug(dCommit, "S%d Commit value at index: %v\n", rf.me, applymsg.CommandIndex)
 			// fmt.Printf("Applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
 			rf.mu.Unlock()
 			applyCh <- applymsg
