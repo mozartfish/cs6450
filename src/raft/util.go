@@ -9,7 +9,7 @@ import (
 )
 
 // Debugging
-const debug = 1
+const debug = 0
 
 // Retrieve the verbosity level from an environment variable
 func getVerbosity() int {
