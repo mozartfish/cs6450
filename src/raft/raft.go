@@ -143,7 +143,7 @@ func (rf *Raft) readPersist(data []byte) {
 	if d.Decode(&currentTerm) != nil ||
 		d.Decode(&votedFor) != nil ||
 		d.Decode(&log) != nil {
-		fmt.Printf("CurrentTerm: %v, votedFor: %v, log: %v\n", currentTerm, votedFor, log)
+		// fmt.Printf("CurrentTerm: %v, votedFor: %v, log: %v\n", currentTerm, votedFor, log)
 	} else {
 		rf.currentTerm = currentTerm
 		rf.votedFor = votedFor
@@ -325,7 +325,7 @@ func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply
 	if len(args.Entries) > 0 {
 		// fmt.Printf("%v adding %v to log %v\n", rf.me, args.Entries, rf.log)
 		rf.log = append(rf.log, args.Entries...)
-		Debug(dLog2, "S%d Update my log: %v", rf.me, rf.log)
+		// Debug(dLog2, "S%d Update my log: %v", rf.me, rf.log)
 	}
 
 	reply.Success = true
@@ -478,14 +478,14 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 				// sort and pick median for majority
 				sort.Ints(matchIndexCopy)
 				majorityIndex := matchIndexCopy[len(matchIndexCopy)/2]
-				Debug(dInfo, "S%d Majority Index: %v", rf.me, majorityIndex)
+				// Debug(dInfo, "S%d Majority Index: %v", rf.me, majorityIndex)
 
 				// fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm)
 				if majorityIndex > rf.commitIndex && rf.log[majorityIndex].Term == rf.currentTerm {
 					// fmt.Printf("leader Server: %v, Time to commit Index: %v\n", rf.me, majorityIndex)
 					// fmt.Printf("Server: %v, matchIndex: %v, matchIndexCopy: %v, nextIndex: %v, log: %v, currentTerm: %v, majorityIndex : %v\n", rf.me, rf.matchIndex, matchIndexCopy, rf.nextIndex, rf.log, rf.currentTerm, majorityIndex)
 					rf.commitIndex = majorityIndex
-					Debug(dCommit, "S%d Update CommitIndex and notify servers to apply command\n", rf.me)
+					// Debug(dCommit, "S%d Update CommitIndex and notify servers to apply command\n", rf.me)
 				}
 			} else {
 				// implement Raft Student Guide Optimization
@@ -538,10 +538,10 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	term = rf.currentTerm
 	index = len(rf.log) - 1
 	rf.matchIndex[rf.me] = len(rf.log) - 1
-	Debug(dTerm, "S%d Current Term: %v\n", rf.me, rf.currentTerm)
-	Debug(dClient, "S%d Get command %v from client\n", rf.me, command)
-	Debug(dLog, "S%d, Leader log: %v\n", rf.me, rf.log)
-	// fmt.Printf("Server: %v starting command is %v at index %v in log %v\n", rf.me, command, index, rf.log)
+	// Debug(dTerm, "S%d Current Term: %v\n", rf.me, rf.currentTerm)
+	// Debug(dClient, "S%d Get command %v from client\n", rf.me, command)
+	// Debug(dLog, "S%d, Leader log: %v\n", rf.me, rf.log)
+	// // fmt.Printf("Server: %v starting command is %v at index %v in log %v\n", rf.me, command, index, rf.log)
 	// Send out AppendEntries RPCS after receiving command from client
 	rf.AppendEntriesRPC()
 
@@ -580,7 +580,7 @@ func (rf *Raft) ticker() {
 
 		if state != Leader {
 			if lastHeartbeat.Add(electionTimeOut).Before(time.Now()) {
-				Debug(dInfo, "S%d start new election", rf.me)
+				// Debug(dInfo, "S%d start new election", rf.me)
 				// fmt.Printf("Server:%v starting new elction, my log is %v\n", rf.me, rf.log)
 				rf.mu.Lock()
 				rf.currentTerm = rf.currentTerm + 1
@@ -605,7 +605,7 @@ func (rf *Raft) ticker() {
 					if i == rf.me {
 						continue
 					}
-					Debug(dVote, "S%d Request Vote from server: %v\n", rf.me, i)
+					// Debug(dVote, "S%d Request Vote from server: %v\n", rf.me, i)
 					// fmt.Printf("Server: %v RequestVote From %v, log is %v\n", rf.me, i, rf.log)
 					go rf.processSendRequestVote(i, args, reply)
 				}
@@ -615,7 +615,7 @@ func (rf *Raft) ticker() {
 		}
 		if state == Leader {
 			rf.mu.Lock()
-			Debug(dLeader, "S%d Become Leader. Current Term %v\n", rf.me, rf.currentTerm)
+			// Debug(dLeader, "S%d Become Leader. Current Term %v\n", rf.me, rf.currentTerm)
 			rf.AppendEntriesRPC()
 			// Debug(dPersist, "S%d, Persist")
 			rf.persist()
@@ -633,7 +633,7 @@ func (rf *Raft) AppendEntriesRPC() {
 	// AppendEntries Args
 	args := AppendEntriesArgs{}
 	args.Term = rf.currentTerm
-	Debug(dTerm, "S%d Current Term: %v\n", rf.me, args.Term)
+	// Debug(dTerm, "S%d Current Term: %v\n", rf.me, args.Term)
 	args.LeaderID = rf.me
 	args.LeaderCommit = rf.commitIndex
 	// Debug(dInfo, "S%d LeaderCommitIndex: %v\n", rf.me, args.LeaderCommit)
@@ -679,24 +679,6 @@ func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 			applyCh <- applyMsgs[i]
 		}
 		time.Sleep(time.Duration(10) * time.Millisecond)
-
-		// applymsg := ApplyMsg{}
-		// rf.mu.Lock()
-		// // fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
-		// if rf.commitIndex > rf.lastApplied {
-		// 	rf.lastApplied = rf.lastApplied + 1
-		// 	// Debug(dCommit, "S%d Update lastAppliedIndex: %v\n", rf.me, rf.lastApplied)
-		// 	applymsg.CommandValid = true
-		// 	applymsg.Command = rf.log[rf.lastApplied].Command
-		// 	applymsg.CommandIndex = rf.lastApplied
-		// 	// Debug(dCommit, "S%d Commit value at index: %v\n", rf.me, applymsg.CommandIndex)
-		// 	// fmt.Printf("Applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
-		// 	rf.mu.Unlock()
-		// 	applyCh <- applymsg
-		// } else {
-		// 	rf.mu.Unlock()
-		// }
-		// time.Sleep(time.Duration(10) * time.Millisecond)
 	}
 }
 
