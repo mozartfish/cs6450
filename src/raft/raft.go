@@ -664,23 +664,39 @@ func (rf *Raft) AppendEntriesRPC() {
 // machine (in log order) once it has been notified a log entry has been committed by the leader
 func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 	for !rf.killed() {
-		applymsg := ApplyMsg{}
+		var applyMsgs = []ApplyMsg{}
 		rf.mu.Lock()
-		// fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
-		if rf.commitIndex > rf.lastApplied {
+		for rf.lastApplied < rf.commitIndex {
+			applymsg := ApplyMsg{}
 			rf.lastApplied = rf.lastApplied + 1
-			// Debug(dCommit, "S%d Update lastAppliedIndex: %v\n", rf.me, rf.lastApplied)
 			applymsg.CommandValid = true
 			applymsg.Command = rf.log[rf.lastApplied].Command
 			applymsg.CommandIndex = rf.lastApplied
-			// Debug(dCommit, "S%d Commit value at index: %v\n", rf.me, applymsg.CommandIndex)
-			// fmt.Printf("Applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
-			rf.mu.Unlock()
-			applyCh <- applymsg
-		} else {
-			rf.mu.Unlock()
+			applyMsgs = append(applyMsgs, applymsg)
+		}
+		rf.mu.Unlock()
+		for i := 0; i < len(applyMsgs); i++ {
+			applyCh <- applyMsgs[i]
 		}
 		time.Sleep(time.Duration(10) * time.Millisecond)
+
+		// applymsg := ApplyMsg{}
+		// rf.mu.Lock()
+		// // fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
+		// if rf.commitIndex > rf.lastApplied {
+		// 	rf.lastApplied = rf.lastApplied + 1
+		// 	// Debug(dCommit, "S%d Update lastAppliedIndex: %v\n", rf.me, rf.lastApplied)
+		// 	applymsg.CommandValid = true
+		// 	applymsg.Command = rf.log[rf.lastApplied].Command
+		// 	applymsg.CommandIndex = rf.lastApplied
+		// 	// Debug(dCommit, "S%d Commit value at index: %v\n", rf.me, applymsg.CommandIndex)
+		// 	// fmt.Printf("Applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
+		// 	rf.mu.Unlock()
+		// 	applyCh <- applymsg
+		// } else {
+		// 	rf.mu.Unlock()
+		// }
+		// time.Sleep(time.Duration(10) * time.Millisecond)
 	}
 }
 
