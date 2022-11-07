@@ -20,6 +20,8 @@ package raft
 import (
 	//	"bytes"
 
+	"bytes"
+	"fmt"
 	"math"
 	"math/rand"
 	"sort"
@@ -28,6 +30,7 @@ import (
 	"time"
 
 	//	"6.824/labgob"
+	"6.824/labgob"
 	"6.824/labrpc"
 )
 
@@ -115,13 +118,14 @@ func (rf *Raft) GetState() (int, bool) {
 func (rf *Raft) persist() {
 	// Your code here (2C).
 	// Example:
-w := new(bytes.Buffer)
+	w := new(bytes.Buffer)
 	e := labgob.NewEncoder(w)
 	e.Encode(rf.currentTerm)
 	e.Encode(rf.votedFor)
 	e.Encode(rf.log)
 	data := w.Bytes()
 	rf.persister.SaveRaftState(data)
+}
 
 // restore previously persisted state.
 func (rf *Raft) readPersist(data []byte) {
@@ -213,6 +217,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// term - candidate's term
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	defer rf.persist()
 	// 2A
 	// 1. Reply false if term < currentTerm (Section 5.1)
 	if args.Term < rf.currentTerm {
@@ -261,6 +266,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 func (rf *Raft) AppendEntries(args *AppendEntriesArgs, reply *AppendEntriesReply) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	defer rf.persist()
 	// 1. Reply false if term < currentTerm
 	if args.Term < rf.currentTerm {
 		reply.Term = rf.currentTerm
@@ -373,6 +379,7 @@ func (rf *Raft) processSendRequestVote(server int, args RequestVoteArgs, reply R
 	if ok {
 		rf.mu.Lock()
 		defer rf.mu.Unlock()
+		defer rf.persist()
 
 		// If the leader's term (included in its rpc) is at least as large as the candidate's current term
 		// candidate recognizes leader as legitimate and returns to follower state
@@ -442,6 +449,7 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 	if ok {
 		rf.mu.Lock()
 		defer rf.mu.Unlock()
+		defer rf.persist()
 
 		if reply.Term > rf.currentTerm {
 			rf.serverState = Follower
@@ -459,7 +467,7 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 			if reply.Success {
 				rf.matchIndex[server] = args.PrevLogIndex + len(args.Entries)
 				rf.nextIndex[server] = rf.matchIndex[server] + 1
-				// Professor Stutsman trick: Sort match index and select median from sorted list 
+				// Professor Stutsman trick: Sort match index and select median from sorted list
 				matchIndexCopy := make([]int, len(rf.matchIndex))
 				copy(matchIndexCopy, rf.matchIndex) // make a deep copy of data to sort and find majority without manipulating original data
 				// sort and pick median for majority
@@ -506,6 +514,7 @@ func (rf *Raft) processSendAppendEntries(server int, args AppendEntriesArgs, rep
 func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
+	defer rf.persist()
 	index := -1
 	term := -1
 	isLeader := true
@@ -556,11 +565,12 @@ func (rf *Raft) ticker() {
 		rf.mu.Lock()
 		state := rf.serverState
 		lastHeartbeat := rf.lastHeartBeat
+		rf.persist()
 		rf.mu.Unlock()
 
 		if state != Leader {
 			if lastHeartbeat.Add(electionTimeOut).Before(time.Now()) {
-				// fmt.Printf("%v starting new elction, my log is %v\n", rf.me, rf.log)
+				fmt.Printf("Server:%v starting new elction, my log is %v\n", rf.me, rf.log)
 				rf.mu.Lock()
 				rf.currentTerm = rf.currentTerm + 1
 				rf.serverState = Candidate
@@ -584,15 +594,17 @@ func (rf *Raft) ticker() {
 					if i == rf.me {
 						continue
 					}
-					// fmt.Printf("%v rv to %v, log is %v\n", rf.me, i, rf.log)
+					fmt.Printf("Server: %v RequestVote From %v, log is %v\n", rf.me, i, rf.log)
 					go rf.processSendRequestVote(i, args, reply)
 				}
+				rf.persist()
 				rf.mu.Unlock()
 			}
 		}
 		if state == Leader {
 			rf.mu.Lock()
 			rf.AppendEntriesRPC()
+			rf.persist()
 			rf.mu.Unlock()
 			time.Sleep(time.Duration(100) * time.Millisecond) // Change sleep time to 100 for RAFT optimization
 		}
@@ -619,12 +631,12 @@ func (rf *Raft) AppendEntriesRPC() {
 		}
 		args.PrevLogIndex = rf.nextIndex[j] - 1
 		args.PrevLogTerm = rf.log[args.PrevLogIndex].Term
-		// fmt.Printf("Server: %v, PreviousLogIndex arg: %v, PrevLogTerm arg: %v\n", rf.me, args.PrevLogIndex, args.PrevLogTerm)
+		fmt.Printf("Server: %v, PreviousLogIndex arg: %v, PrevLogTerm arg: %v\n", rf.me, args.PrevLogIndex, args.PrevLogTerm)
 		entries := rf.log[rf.nextIndex[j]:]
-		// fmt.Printf("Server: %v, Entries:%v, Next Log Entry Index: %v\n", rf.me, entries, rf.nextIndex[j])
+		fmt.Printf("Server: %v, Entries:%v, Next Log Entry Index: %v\n", rf.me, entries, rf.nextIndex[j])
 		args.Entries = make([]LogEntry, len(entries))
 		copy(args.Entries, entries) // make a copy of entries to avoid mutating data when sending AppendEntries RPCS
-		// fmt.Printf("Server: %v, Sending Heartbeat Args: %v, Log State: %v\n", rf.me, args, rf.log)
+		fmt.Printf("Server: %v, Sending Heartbeat Args: %v, Log State: %v\n", rf.me, args, rf.log)
 		go rf.processSendAppendEntries(j, args, reply)
 	}
 }
@@ -635,13 +647,13 @@ func (rf *Raft) applyToStateMachine(applyCh chan ApplyMsg) {
 	for !rf.killed() {
 		applymsg := ApplyMsg{}
 		rf.mu.Lock()
-		// fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
+		fmt.Printf("Server: %v, Time to apply Index: %v, Highest Log Entry Applied to State Machines: %v\n", rf.me, rf.commitIndex, rf.lastApplied)
 		if rf.commitIndex > rf.lastApplied {
 			rf.lastApplied = rf.lastApplied + 1
 			applymsg.CommandValid = true
 			applymsg.Command = rf.log[rf.lastApplied].Command
 			applymsg.CommandIndex = rf.lastApplied
-			// fmt.Printf("applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
+			fmt.Printf("Applied Server: %v, Command: %v, CommandIndex: %v\n", rf.me, applymsg.Command, applymsg.CommandIndex)
 			rf.mu.Unlock()
 			applyCh <- applymsg
 		} else {
