@@ -143,7 +143,7 @@ func (rf *Raft) readPersist(data []byte) {
 	if d.Decode(&currentTerm) != nil ||
 		d.Decode(&votedFor) != nil ||
 		d.Decode(&log) != nil {
-		// fmt.Printf("CurrentTerm: %v, votedFor: %v, log: %v\n", currentTerm, votedFor, log)
+		fmt.Printf("CurrentTerm: %v, votedFor: %v, log: %v\n", currentTerm, votedFor, log)
 	} else {
 		rf.currentTerm = currentTerm
 		rf.votedFor = votedFor
