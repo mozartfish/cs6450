@@ -84,6 +84,39 @@ func (ck *Clerk) Get(key string) string {
 // arguments. and reply must be passed as a pointer.
 func (ck *Clerk) PutAppend(key string, value string, op string) {
 	// You will have to modify this function.
+	ck.mu.Lock()
+	clerkID := ck.clerkID
+	requestID := ck.requestID
+	requestID += 1
+	ck.mu.Unlock()
+	i := ck.kvID
+	for {
+		// PutAppend Args
+		args := PutAppendArgs{}
+		if op == "Put" {
+			args.Op = op
+		} else if op == "Append" {
+			args.Op = op
+		}
+		args.Key = key
+		args.Value = value
+		args.ClerkID = clerkID
+		args.RequestID = requestID
+
+		// PutAppend Reply
+		reply := PutAppendReply{}
+
+		ok := ck.servers[i].Call("KVServer.PutAppend", &args, &reply)
+
+		if ok && reply.Err == "OK" {
+			ck.mu.Lock()
+			ck.kvID = i
+			ck.mu.Unlock()
+			return
+		}
+		i = (i + 1) % len(ck.servers)
+	}
+
 }
 
 func (ck *Clerk) Put(key string, value string) {
