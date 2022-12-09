@@ -11,10 +11,10 @@ import (
 type Clerk struct {
 	servers []*labrpc.ClientEnd
 	// You will have to modify this struct.
-	kvID      int // server ID which turned out to be leader. Raft Peers are mapped to kv servers one to one
-	clerkID   int // unique clerk that sends a request to key value servers
-	requestID int // unique request associated with a unique clerk
-	mu        sync.Mutex
+	leaderServer int // server ID which turned out to be leader. Raft Peers are mapped to kv servers one to one
+	clientID     int // unique clerk that sends a request to key value servers
+	requestID    int // unique request associated with a unique clerk
+	mu           sync.Mutex
 }
 
 func nrand() int64 {
@@ -28,8 +28,8 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.servers = servers
 	// You'll have to add code here.
-	ck.kvID = 0
-	ck.clerkID = int(nrand())
+	ck.leaderServer = 0
+	ck.clientID = int(nrand())
 	ck.requestID = 0
 	return ck
 }
@@ -48,11 +48,11 @@ func (ck *Clerk) Get(key string) string {
 	// You will have to modify this function.
 	var currentValue = ""
 	ck.mu.Lock()
-	clerkID := ck.clerkID
+	clerkID := ck.clientID
 	requestID := ck.requestID
 	requestID += 1
 	ck.mu.Unlock()
-	i := ck.kvID
+	i := ck.leaderServer
 	for {
 		// Get Args
 		args := GetArgs{}
@@ -62,9 +62,9 @@ func (ck *Clerk) Get(key string) string {
 		// Get Reply
 		reply := GetReply{}
 		ok := ck.servers[i].Call("KVServer.Get", &args, &reply)
-		if ok && reply.Err == "OK" {
+		if ok && reply.Err == OK {
 			ck.mu.Lock()
-			ck.kvID = i
+			ck.leaderServer = i
 			ck.mu.Unlock()
 			currentValue = reply.Value
 			break
@@ -85,11 +85,11 @@ func (ck *Clerk) Get(key string) string {
 func (ck *Clerk) PutAppend(key string, value string, op string) {
 	// You will have to modify this function.
 	ck.mu.Lock()
-	clerkID := ck.clerkID
+	clerkID := ck.clientID
 	requestID := ck.requestID
 	requestID += 1
 	ck.mu.Unlock()
-	i := ck.kvID
+	i := ck.leaderServer
 	for {
 		// PutAppend Args
 		args := PutAppendArgs{}
@@ -108,9 +108,9 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 
 		ok := ck.servers[i].Call("KVServer.PutAppend", &args, &reply)
 
-		if ok && reply.Err == "OK" {
+		if ok && reply.Err == OK {
 			ck.mu.Lock()
-			ck.kvID = i
+			ck.leaderServer = i
 			ck.mu.Unlock()
 			return
 		}

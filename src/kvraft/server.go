@@ -1,12 +1,14 @@
 package kvraft
 
 import (
+	"log"
+	"strconv"
+	"sync"
+	"sync/atomic"
+
 	"6.824/labgob"
 	"6.824/labrpc"
 	"6.824/raft"
-	"log"
-	"sync"
-	"sync/atomic"
 )
 
 const Debug = false
@@ -18,11 +20,14 @@ func DPrintf(format string, a ...interface{}) (n int, err error) {
 	return
 }
 
-
 type Op struct {
 	// Your definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
+	ClerkRequestName string
+	Key              string
+	Value            string
+	Operation        string // op - Get, Put, Append
 }
 
 type KVServer struct {
@@ -35,18 +40,51 @@ type KVServer struct {
 	maxraftstate int // snapshot if log grows this big
 
 	// Your definitions here.
+	store map[string]string // key-value store data structure
+	requestStore map[string]string // data structure for handling multiple requests for the same command 
 }
-
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	// Your code here.
+	op := Op{}
+	op.ClerkRequestName = strconv.Itoa(args.ClerkID) + "-" + strconv.Itoa(args.RequestID)
+	op.Key = args.Key
+	op.Value = ""
+	op.Operation = "Get"
+
+	_, _, isLeader := kv.rf.Start(op)
+	if !isLeader {
+		reply.Err = "FAIL"
+		return
+	}
+	value := <-kv.applyCh
+	cmd := value.Command.(Op)
+	reply.Value = kv.store[cmd.Key]
 }
 
 func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
+	op := Op{}
+	op.ClerkRequestName = strconv.Itoa(args.ClerkID) + "-" + strconv.Itoa(args.RequestID)
+	op.Key = args.Key
+	op.Value = ""
+	op.Operation = args.Op
+	if args.Op == "Put" {
+		op.Operation = "Put"
+	} else if op.Operation == "Append" {
+		op.Operation = "Append"
+	}
+	_, _, isLeader := kv.rf.Start(op)
+	if !isLeader {
+		reply.Err = "FAIL"
+		return
+	}
+	OK =
+	// value := <-kv.applyCh
+	// cmd := value.Command.(Op)
+	// reply.Value = kv.store[cmd.Key]
 }
 
-//
 // the tester calls Kill() when a KVServer instance won't
 // be needed again. for your convenience, we supply
 // code to set rf.dead (without needing a lock),
@@ -55,7 +93,6 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 // code to Kill(). you're not required to do anything
 // about this, but it may be convenient (for example)
 // to suppress debug output from a Kill()ed instance.
-//
 func (kv *KVServer) Kill() {
 	atomic.StoreInt32(&kv.dead, 1)
 	kv.rf.Kill()
@@ -67,7 +104,6 @@ func (kv *KVServer) killed() bool {
 	return z == 1
 }
 
-//
 // servers[] contains the ports of the set of
 // servers that will cooperate via Raft to
 // form the fault-tolerant key/value service.
@@ -80,7 +116,6 @@ func (kv *KVServer) killed() bool {
 // you don't need to snapshot.
 // StartKVServer() must return quickly, so it should start goroutines
 // for any long-running work.
-//
 func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persister, maxraftstate int) *KVServer {
 	// call labgob.Register on structures you want
 	// Go's RPC library to marshall/unmarshall.
@@ -94,6 +129,8 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 
 	kv.applyCh = make(chan raft.ApplyMsg)
 	kv.rf = raft.Make(servers, me, persister, kv.applyCh)
+	kv.store = make(map[string]string)
+	kv.requestStore = make(map[string]string)
 
 	// You may need initialization code here.
 
