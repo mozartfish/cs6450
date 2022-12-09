@@ -1,11 +1,13 @@
 package kvraft
 
 import (
+	"fmt"
 	"log"
 	"strconv"
 	"sync"
 	"sync/atomic"
 	"time"
+
 	"6.824/labgob"
 	"6.824/labrpc"
 	"6.824/raft"
@@ -40,7 +42,7 @@ type KVServer struct {
 	maxraftstate int // snapshot if log grows this big
 
 	// Your definitions here.
-	store        map[string]string // key-value store data structure
+	store       map[string]string // key-value store data structure
 	lastApplied map[string]bool   // data structure for handling multiple requests for the same command
 }
 
@@ -53,41 +55,45 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	op.Operation = "Get"
 
 	_, _, isLeader := kv.rf.Start(op)
+
 	if !isLeader {
 		reply.Err = ErrWrongLeader
 		return
 	}
+	fmt.Printf("START RAFT GET AGREEMENT\n")
 
 	kv.mu.Lock()
 	kv.lastApplied[op.ClerkRequestName] = false
 	kv.mu.Unlock()
 
 	startTime := time.Now()
-	for !kv.killed(){
+	for !kv.killed() {
 		_, isLeader = kv.rf.GetState()
 		kv.mu.Lock()
 		if kv.lastApplied[op.ClerkRequestName] && isLeader {
-			kv.mu.Lock()
 			reply.Err = OK
-			value := <-kv.applyCh
-			cmd := value.Command.(Op)
-			reply.Value = kv.store[cmd.Key]
-			kv.mu.Unlock()
-			return
-		}
-		
-		if !isLeader {
-			reply.Err = ErrWrongLeader
+			reply.Value = kv.store[args.Key]
+			fmt.Printf("GET SUCCESS\n")
+			fmt.Printf("KV STORE: %v\n", kv.store)
 			kv.mu.Unlock()
 			return
 		}
 
-		if time.Since(startTime) >= (25 * time.Millisecond) {
+		if !isLeader {
+			reply.Err = ErrWrongLeader
+			fmt.Printf("LEADER CHANGED GET, KV STORE: %v\n", kv.store)
+			kv.mu.Unlock()
+			return
+		}
+
+		if time.Since(startTime) >= (300 * time.Millisecond) {
 			reply.Err = ErrNoKey
+			fmt.Printf("GET TIME OUT\n")
+			kv.mu.Unlock()
 			return
 		}
 		kv.mu.Unlock()
-		time.Sleep(1 * time.Millisecond)
+		time.Sleep(10 * time.Millisecond)
 	}
 
 	// reply.Err = OK
@@ -102,20 +108,22 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	op := Op{}
 	op.ClerkRequestName = strconv.Itoa(args.ClerkID) + "-" + strconv.Itoa(args.RequestID)
 	op.Key = args.Key
-	op.Value = ""
+	op.Value = args.Value
 	op.Operation = args.Op
-	if args.Op == "Put" {
-		op.Operation = "Put"
-	} 
-	
-	if op.Operation == "Append" {
-		op.Operation = "Append"
-	}
+	// if args.Op == "Put" {
+	// 	op.Operation = "Put"
+	// }
+
+	// if op.Operation == "Append" {
+	// 	op.Operation = "Append"
+	// }
 	_, _, isLeader := kv.rf.Start(op)
 	if !isLeader {
 		reply.Err = ErrWrongLeader
 		return
 	}
+
+	fmt.Printf("START RAFT PUTAPPEND AGREEMENT\n")
 	kv.mu.Lock()
 	kv.lastApplied[op.ClerkRequestName] = false
 	kv.mu.Unlock()
@@ -126,53 +134,54 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 		kv.mu.Lock()
 		if kv.lastApplied[op.ClerkRequestName] && isLeader {
 			reply.Err = OK
-			kv.mu.Unlock()
-			return
-		}
-		
-		if !isLeader {
-			reply.Err = ErrWrongLeader
+			fmt.Printf("PUTAPPEND SUCCESS\n")
+			fmt.Printf("KV STORE: %v\n", kv.store)
 			kv.mu.Unlock()
 			return
 		}
 
-		if time.Since(startTime) >= (25 * time.Millisecond) {
+		if !isLeader {
+			reply.Err = ErrWrongLeader
+			fmt.Printf("LEADER CHANGED PUTAPPEND, KV STORE: %v\n", kv.store)
+			kv.mu.Unlock()
+			return
+		}
+
+		if time.Since(startTime) >= (300 * time.Millisecond) {
 			reply.Err = ErrNoKey
+			fmt.Printf("PUTAPPEND TIME OUT\n")
 			kv.mu.Unlock()
 			return
 		}
 		kv.mu.Unlock()
-		time.Sleep(1 * time.Millisecond)
+		time.Sleep(10 * time.Millisecond)
 	}
 
 }
 
-// The ReadApplyMsg go routine starts a background go routine to apply commands and operations from commands 
+// The ReadApplyMsg go routine starts a background go routine to apply commands and operations from commands
 // that have been replicated and applied on all the servers
-func (kv *KVServer) ReadApplyMsg(){ 
+func (kv *KVServer) ReadApplyMsg() {
 	for {
 		msg := <-kv.applyCh
-		// if !msg.CommandValid {
-		// 	continue
-		// }
+		fmt.Printf("GOT VALUE ON APPLY CHANNEL, %v\n", msg)
 		op := msg.Command.(Op)
 		kv.mu.Lock()
 		if !kv.lastApplied[op.ClerkRequestName] {
 			switch op.Operation {
 			case "Get":
-				op.Value = kv.store[op.Key]
+				// op.Value = kv.store[op.Key]
 			case "Put":
 				kv.store[op.Key] = op.Value
 			case "Append":
 				kv.store[op.Key] += op.Value
 			}
-			kv.lastApplied[op.ClerkRequestName] = true 
+			kv.lastApplied[op.ClerkRequestName] = true
 		}
 		kv.mu.Unlock()
-		time.Sleep(time.Duration(1) * time.Millisecond)
+		// time.Sleep(time.Duration(1) * time.Millisecond)
 	}
 }
-
 
 // the tester calls Kill() when a KVServer instance won't
 // be needed again. for your convenience, we supply

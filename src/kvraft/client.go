@@ -53,12 +53,12 @@ func (ck *Clerk) Get(key string) string {
 	requestID += 1
 	ck.mu.Unlock()
 	i := ck.leaderServer
+	// Get Args
+	args := GetArgs{}
+	args.Key = key
+	args.ClerkID = clerkID
+	args.RequestID = requestID
 	for {
-		// Get Args
-		args := GetArgs{}
-		args.Key = key
-		args.ClerkID = clerkID
-		args.RequestID = requestID
 		// Get Reply
 		reply := GetReply{}
 		ok := ck.servers[i].Call("KVServer.Get", &args, &reply)
@@ -90,19 +90,20 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 	requestID += 1
 	ck.mu.Unlock()
 	i := ck.leaderServer
-	for {
-		// PutAppend Args
-		args := PutAppendArgs{}
-		if op == "Put" {
-			args.Op = op
-		} else if op == "Append" {
-			args.Op = op
-		}
-		args.Key = key
-		args.Value = value
-		args.ClerkID = clerkID
-		args.RequestID = requestID
+	// PutAppend Args
+	args := PutAppendArgs{}
+	// if op == "Put" {
+	// 	args.Op = op
+	// } else if op == "Append" {
+	// 	args.Op = op
+	// }
+	args.Op = op
+	args.Key = key
+	args.Value = value
+	args.ClerkID = clerkID
+	args.RequestID = requestID
 
+	for {
 		// PutAppend Reply
 		reply := PutAppendReply{}
 
