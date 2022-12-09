@@ -18,11 +18,14 @@ func DPrintf(format string, a ...interface{}) (n int, err error) {
 	return
 }
 
-
 type Op struct {
 	// Your definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
+	ClerkName string 
+	Key string 
+	Value string
+	Op string
 }
 
 type KVServer struct {
