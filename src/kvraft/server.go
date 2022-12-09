@@ -54,9 +54,11 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 
 	_, _, isLeader := kv.rf.Start(op)
 	if !isLeader {
-		reply.Err = "FAIL"
+		reply.Err = ErrWrongLeader
 		return
 	}
+	reply.Err = OK 
+
 	value := <-kv.applyCh
 	cmd := value.Command.(Op)
 	reply.Value = kv.store[cmd.Key]
@@ -76,14 +78,29 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	}
 	_, _, isLeader := kv.rf.Start(op)
 	if !isLeader {
-		reply.Err = "FAIL"
+		reply.Err = ErrWrongLeader
 		return
 	}
-	OK =
-	// value := <-kv.applyCh
-	// cmd := value.Command.(Op)
-	// reply.Value = kv.store[cmd.Key]
+
+	reply.Err = OK
+
 }
+
+// Function to wait KV Servers to wait for Raft to agreement
+// func (kv *KVServer) ReachAgreement(op Op)(bool, Op) {
+// 	index, _, isLeader := kv.rf.Start(op)
+
+// 	if !isLeader {
+// 		return false, op
+// 	}
+
+// 	kv.mu.Lock()
+// 	opCh, ok := kv.result[index]
+// 	if !ok {
+
+// 	}
+// 	kv.mu.Unlock()
+// }
 
 // the tester calls Kill() when a KVServer instance won't
 // be needed again. for your convenience, we supply
