@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"sync"
 	"sync/atomic"
-
+	"time"
 	"6.824/labgob"
 	"6.824/labrpc"
 	"6.824/raft"
@@ -40,8 +40,8 @@ type KVServer struct {
 	maxraftstate int // snapshot if log grows this big
 
 	// Your definitions here.
-	store map[string]string // key-value store data structure
-	requestStore map[string]string // data structure for handling multiple requests for the same command 
+	store        map[string]string // key-value store data structure
+	lastApplied map[string]bool   // data structure for handling multiple requests for the same command
 }
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
@@ -57,11 +57,44 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		reply.Err = ErrWrongLeader
 		return
 	}
-	reply.Err = OK 
 
-	value := <-kv.applyCh
-	cmd := value.Command.(Op)
-	reply.Value = kv.store[cmd.Key]
+	kv.mu.Lock()
+	kv.lastApplied[op.ClerkRequestName] = false
+	kv.mu.Unlock()
+
+	startTime := time.Now()
+	for !kv.killed(){
+		_, isLeader = kv.rf.GetState()
+		kv.mu.Lock()
+		if kv.lastApplied[op.ClerkRequestName] && isLeader {
+			kv.mu.Lock()
+			reply.Err = OK
+			value := <-kv.applyCh
+			cmd := value.Command.(Op)
+			reply.Value = kv.store[cmd.Key]
+			kv.mu.Unlock()
+			return
+		}
+		
+		if !isLeader {
+			reply.Err = ErrWrongLeader
+			kv.mu.Unlock()
+			return
+		}
+
+		if time.Since(startTime) >= (25 * time.Millisecond) {
+			reply.Err = ErrNoKey
+			return
+		}
+		kv.mu.Unlock()
+		time.Sleep(1 * time.Millisecond)
+	}
+
+	// reply.Err = OK
+
+	// value := <-kv.applyCh
+	// cmd := value.Command.(Op)
+	// reply.Value = kv.store[cmd.Key]
 }
 
 func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
@@ -73,7 +106,9 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	op.Operation = args.Op
 	if args.Op == "Put" {
 		op.Operation = "Put"
-	} else if op.Operation == "Append" {
+	} 
+	
+	if op.Operation == "Append" {
 		op.Operation = "Append"
 	}
 	_, _, isLeader := kv.rf.Start(op)
@@ -81,26 +116,63 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 		reply.Err = ErrWrongLeader
 		return
 	}
+	kv.mu.Lock()
+	kv.lastApplied[op.ClerkRequestName] = false
+	kv.mu.Unlock()
 
-	reply.Err = OK
+	startTime := time.Now()
+	for !kv.killed() {
+		_, isLeader = kv.rf.GetState()
+		kv.mu.Lock()
+		if kv.lastApplied[op.ClerkRequestName] && isLeader {
+			reply.Err = OK
+			kv.mu.Unlock()
+			return
+		}
+		
+		if !isLeader {
+			reply.Err = ErrWrongLeader
+			kv.mu.Unlock()
+			return
+		}
+
+		if time.Since(startTime) >= (25 * time.Millisecond) {
+			reply.Err = ErrNoKey
+			kv.mu.Unlock()
+			return
+		}
+		kv.mu.Unlock()
+		time.Sleep(1 * time.Millisecond)
+	}
 
 }
 
-// Function to wait KV Servers to wait for Raft to agreement
-// func (kv *KVServer) ReachAgreement(op Op)(bool, Op) {
-// 	index, _, isLeader := kv.rf.Start(op)
+// The ReadApplyMsg go routine starts a background go routine to apply commands and operations from commands 
+// that have been replicated and applied on all the servers
+func (kv *KVServer) ReadApplyMsg(){ 
+	for {
+		msg := <-kv.applyCh
+		// if !msg.CommandValid {
+		// 	continue
+		// }
+		op := msg.Command.(Op)
+		kv.mu.Lock()
+		if !kv.lastApplied[op.ClerkRequestName] {
+			switch op.Operation {
+			case "Get":
+				op.Value = kv.store[op.Key]
+			case "Put":
+				kv.store[op.Key] = op.Value
+			case "Append":
+				kv.store[op.Key] += op.Value
+			}
+			kv.lastApplied[op.ClerkRequestName] = true 
+		}
+		kv.mu.Unlock()
+		time.Sleep(time.Duration(1) * time.Millisecond)
+	}
+}
 
-// 	if !isLeader {
-// 		return false, op
-// 	}
-
-// 	kv.mu.Lock()
-// 	opCh, ok := kv.result[index]
-// 	if !ok {
-
-// 	}
-// 	kv.mu.Unlock()
-// }
 
 // the tester calls Kill() when a KVServer instance won't
 // be needed again. for your convenience, we supply
@@ -147,7 +219,8 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 	kv.applyCh = make(chan raft.ApplyMsg)
 	kv.rf = raft.Make(servers, me, persister, kv.applyCh)
 	kv.store = make(map[string]string)
-	kv.requestStore = make(map[string]string)
+	kv.lastApplied = make(map[string]bool)
+	go kv.ReadApplyMsg()
 
 	// You may need initialization code here.
 
