@@ -7,7 +7,13 @@ import "math/big"
 
 type Clerk struct {
 	servers []*labrpc.ClientEnd
+	kvID int // server ID which turned out to be leader. Raft Peers are mapped to kv servers
+	clerkID int // unique clerk that sends a request to key value servers
+	requestID int // unique request associated with a unique clerk 
 	// You will have to modify this struct.
+	// unique id 
+	// lastNode - leader 
+	// unique clerk id 
 }
 
 func nrand() int64 {
