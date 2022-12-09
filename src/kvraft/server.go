@@ -6,6 +6,7 @@ import (
 	"6.824/raft"
 	"log"
 	"sync"
+	"strconv"
 	"sync/atomic"
 )
 
@@ -22,10 +23,10 @@ type Op struct {
 	// Your definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
-	ClerkName string 
+	ClerkName string // client-server name 
 	Key string 
 	Value string
-	Op string
+	OpType string // operation - Put, Append, Get
 }
 
 type KVServer struct {
@@ -36,6 +37,7 @@ type KVServer struct {
 	dead    int32 // set by Kill()
 
 	maxraftstate int // snapshot if log grows this big
+	store map[string]string // key-value store result
 
 	// Your definitions here.
 }
@@ -43,10 +45,44 @@ type KVServer struct {
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	// Your code here.
+	op := Op{}
+	op.ClerkName = strconv.Itoa(args.ClerkID) + "-" + strconv.Itoa(args.RequestID)
+	op.Key = args.Key
+	op.Value = ""
+	op.OpType = "Get"
+
+	_, _, isLeader := kv.rf.Start(op)
+
+	if !isLeader {
+		reply.Err = "FAIL"
+		return
+	}
+
+	value := <- kv.applyCh
+	cmd := value.Command.(Op)
+	reply.Value = kv.store[cmd.Key]
+	return
 }
 
 func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
+	op := Op{}
+	op.ClerkName = strconv.Itoa(args.ClerkID) + "-" + strconv.Itoa(args.RequestID)
+	op.Key = args.Key
+	op.Value = ""
+	op.OpType = args.Op
+
+	_, _, isLeader := kv.rf.Start(op)
+
+	if !isLeader {
+		reply.Err = "FAIL"
+		return
+	}
+
+	value := <- kv.applyCh
+	cmd := value.Command.(Op)
+	// reply.Value = kv.store[cmd.Key]
+	return
 }
 
 //
@@ -97,6 +133,7 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 
 	kv.applyCh = make(chan raft.ApplyMsg)
 	kv.rf = raft.Make(servers, me, persister, kv.applyCh)
+	kv.store = make(map[string]string)
 
 	// You may need initialization code here.
 
