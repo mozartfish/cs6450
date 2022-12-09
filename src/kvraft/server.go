@@ -54,17 +54,33 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	op.Value = ""
 	op.Operation = "Get"
 
-	_, _, isLeader := kv.rf.Start(op)
+	kv.mu.Lock()
+	value, ok := kv.lastApplied[op.ClerkRequestName]
+	isLeader := false
+	if !ok {
+		_, _, isLeader = kv.rf.Start(op)
+		if isLeader {
+			kv.lastApplied[op.ClerkRequestName] = false
+			value = false
+		}
+	}
+	kv.mu.Unlock()
 
+	if value {
+		kv.mu.Lock()
+		reply.Err = OK
+		reply.Value = kv.store[args.Key]
+		kv.mu.Unlock()
+		return
+	}
+
+	_, isLeader = kv.rf.GetState()
 	if !isLeader {
 		reply.Err = ErrWrongLeader
 		return
 	}
-	fmt.Printf("START RAFT GET AGREEMENT\n")
 
-	kv.mu.Lock()
-	kv.lastApplied[op.ClerkRequestName] = false
-	kv.mu.Unlock()
+	fmt.Printf("START RAFT GET AGREEMENT\n")
 
 	startTime := time.Now()
 	for !kv.killed() {
@@ -110,13 +126,11 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	op.Key = args.Key
 	op.Value = args.Value
 	op.Operation = args.Op
-	// if args.Op == "Put" {
-	// 	op.Operation = "Put"
-	// }
 
-	// if op.Operation == "Append" {
-	// 	op.Operation = "Append"
-	// }
+	// kv.mu.Lock()
+	// value, ok := kv.lastApplied[op.ClerkRequestName]
+	// isLeae
+	// kv.mu.Unlock()
 	_, _, isLeader := kv.rf.Start(op)
 	if !isLeader {
 		reply.Err = ErrWrongLeader
