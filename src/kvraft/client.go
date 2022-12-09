@@ -1,22 +1,26 @@
 package kvraft
 
-import "6.824/labrpc"
-import "crypto/rand"
-import "math/big"
+import (
+	"crypto/rand"
+	"math/big"
+	"sync"
 
+	"6.824/labrpc"
+)
 
 type Clerk struct {
-	servers []*labrpc.ClientEnd
-	kvID int // server ID which turned out to be leader. Raft Peers are mapped to kv servers
-	clerkID int64 // unique clerk that sends a request to key value servers
-	requestID int // unique request associated with a unique clerk 
+	servers   []*labrpc.ClientEnd
+	kvID      int   // server ID which turned out to be leader. Raft Peers are mapped to kv servers
+	clerkID   int64 // unique clerk that sends a request to key value servers
+	requestID int   // unique request associated with a unique clerk
+	mu        sync.Mutex
 	// You will have to modify this struct.
-	// unique id 
-	// lastNode - leader 
-	// unique clerk id 
+	// unique id
+	// lastNode - leader
+	// unique clerk id
 }
 
-// Random number generator for generating unique clerk IDS 
+// Random number generator for generating unique clerk IDS
 func nrand() int64 {
 	max := big.NewInt(int64(1) << 62)
 	bigx, _ := rand.Int(rand.Reader, max)
@@ -27,8 +31,8 @@ func nrand() int64 {
 func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.servers = servers
-	ck.kvID = -1
-	ck.clerkID = nrand() 
+	ck.kvID = 0
+	ck.clerkID = nrand()
 	ck.requestID = 0
 
 	// You'll have to add code here.
@@ -48,9 +52,35 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 // arguments. and reply must be passed as a pointer.
 //
 func (ck *Clerk) Get(key string) string {
+	ck.mu.Lock()
+	clerkID := ck.clerkID
+	requestID := ck.requestID 
+	requestID += 1
+	ck.mu.Unlock()
+	i := ck.kvID
+	var currentValue = ""
 
+	for {
+		// Get Args
+		args := GetArgs{}
+		args.Key = key
+		args.ClerkID = clerkID 
+		args.RequestID = requestID
+		// Get Reply
+		reply := GetReply{}
+
+		ok := ck.servers[i].Call("KVServer.Get", &args, &reply)
+		if ok && reply.Err == "OK" {
+			ck.mu.Lock()
+			ck.kvID = i
+			ck.mu.Unlock()
+			currentValue = reply.Value
+			break
+		}
+		i = (i + 1) % len(ck.servers)
+	}
 	// You will have to modify this function.
-	return ""
+	return currentValue
 }
 
 //
