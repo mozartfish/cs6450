@@ -8,7 +8,7 @@ import "math/big"
 type Clerk struct {
 	servers []*labrpc.ClientEnd
 	kvID int // server ID which turned out to be leader. Raft Peers are mapped to kv servers
-	clerkID int // unique clerk that sends a request to key value servers
+	clerkID int64 // unique clerk that sends a request to key value servers
 	requestID int // unique request associated with a unique clerk 
 	// You will have to modify this struct.
 	// unique id 
@@ -16,6 +16,7 @@ type Clerk struct {
 	// unique clerk id 
 }
 
+// Random number generator for generating unique clerk IDS 
 func nrand() int64 {
 	max := big.NewInt(int64(1) << 62)
 	bigx, _ := rand.Int(rand.Reader, max)
@@ -26,6 +27,10 @@ func nrand() int64 {
 func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.servers = servers
+	ck.kvID = -1
+	ck.clerkID = nrand() 
+	ck.requestID = 0
+
 	// You'll have to add code here.
 	return ck
 }
