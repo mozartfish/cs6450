@@ -81,15 +81,12 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	if !isLeader || currentTerm != term {
 		if ok {
 			kv.mu.Lock()
-			// reply.Err = ErrWrongLeader
 			delete(kv.lastApplied, op.ClerkRequestName)
 			kv.mu.Unlock()
 		}
 		reply.Err = ErrWrongLeader
 		return
 	}
-
-	// fmt.Printf("START RAFT GET AGREEMENT\n")
 
 	startTime := time.Now()
 	for !kv.killed() {
@@ -98,8 +95,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		if kv.lastApplied[op.ClerkRequestName] {
 			reply.Err = OK
 			reply.Value = kv.store[args.Key]
-			// fmt.Printf("GET SUCCESS\n")
-			// fmt.Printf("KV STORE: %v\n", kv.store)
 			kv.mu.Unlock()
 			return
 		}
@@ -109,7 +104,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 			if !isLeader || currentTerm != term {
 				reply.Err = ErrWrongLeader
 				delete(kv.lastApplied, op.ClerkRequestName)
-				// fmt.Printf("LEADER CHANGED GET, KV STORE: %v\n", kv.store)
 				kv.mu.Unlock()
 				return
 			}
@@ -117,7 +111,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 
 		if time.Since(startTime) >= (500 * time.Millisecond) {
 			reply.Err = ErrNoKey
-			// fmt.Printf("GET TIME OUT\n")
 			kv.mu.Unlock()
 			return
 		}
@@ -164,17 +157,12 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 		return
 	}
 
-	// fmt.Printf("START RAFT PUTAPPEND AGREEMENT\n")
 
 	startTime := time.Now()
 	for !kv.killed() {
-		// term, isLeader = kv.rf.GetState()
 		kv.mu.Lock()
-		// fmt.Printf("ACQUIRE PUTAPPEND LOCK\n")
 		if kv.lastApplied[op.ClerkRequestName] {
 			reply.Err = OK
-			// fmt.Printf("PUTAPPEND SUCCESS\n")
-			// fmt.Printf("KV STORE: %v\n", kv.store)
 			kv.mu.Unlock()
 			return
 		}
@@ -184,7 +172,6 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 			if !isLeader || currentTerm != term {
 				reply.Err = ErrWrongLeader
 				delete(kv.lastApplied, op.ClerkRequestName)
-				// fmt.Printf("LEADER CHANGED PUTAPPEND, KV STORE: %v\n", kv.store)
 				kv.mu.Unlock()
 				return
 			}
@@ -192,7 +179,6 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 
 		if time.Since(startTime) >= (500 * time.Millisecond) {
 			reply.Err = ErrNoKey
-			// fmt.Printf("PUTAPPEND TIME OUT\n")
 			kv.mu.Unlock()
 			return
 		}
