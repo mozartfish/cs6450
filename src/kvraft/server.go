@@ -1,6 +1,7 @@
 package kvraft
 
 import (
+	// "fmt"
 	"fmt"
 	"log"
 	"strconv"
@@ -44,6 +45,7 @@ type KVServer struct {
 	// Your definitions here.
 	store       map[string]string // key-value store data structure
 	lastApplied map[string]bool   // data structure for handling multiple requests for the same command
+	lastTerm    int               // keep track of the previous term
 }
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
@@ -55,13 +57,16 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	op.Operation = "Get"
 
 	kv.mu.Lock()
+	currentTerm := kv.lastTerm
 	value, ok := kv.lastApplied[op.ClerkRequestName]
 	isLeader := false
 	if !ok {
-		_, _, isLeader = kv.rf.Start(op)
+		_, term, isLeader := kv.rf.Start(op)
 		if isLeader {
+			// value, ok = kv.lastApplied[op.ClerkRequestName]
 			kv.lastApplied[op.ClerkRequestName] = false
 			value = false
+			kv.lastTerm = term
 		}
 	}
 	kv.mu.Unlock()
@@ -74,8 +79,14 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		return
 	}
 
-	_, isLeader = kv.rf.GetState()
-	if !isLeader {
+	term, isLeader := kv.rf.GetState()
+	if !isLeader || currentTerm != term {
+		if ok {
+			kv.mu.Lock()
+			// reply.Err = ErrWrongLeader
+			delete(kv.lastApplied, op.ClerkRequestName)
+			kv.mu.Unlock()
+		}
 		reply.Err = ErrWrongLeader
 		return
 	}
@@ -84,9 +95,9 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 
 	startTime := time.Now()
 	for !kv.killed() {
-		_, isLeader = kv.rf.GetState()
+
 		kv.mu.Lock()
-		if kv.lastApplied[op.ClerkRequestName] && isLeader {
+		if kv.lastApplied[op.ClerkRequestName] {
 			reply.Err = OK
 			reply.Value = kv.store[args.Key]
 			fmt.Printf("GET SUCCESS\n")
@@ -95,14 +106,18 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 			return
 		}
 
-		if !isLeader {
-			reply.Err = ErrWrongLeader
-			fmt.Printf("LEADER CHANGED GET, KV STORE: %v\n", kv.store)
-			kv.mu.Unlock()
-			return
+		if kv.lastApplied[op.ClerkRequestName] {
+			term, isLeader := kv.rf.GetState()
+			if !isLeader || currentTerm != term {
+				reply.Err = ErrWrongLeader
+				delete(kv.lastApplied, op.ClerkRequestName)
+				fmt.Printf("LEADER CHANGED GET, KV STORE: %v\n", kv.store)
+				kv.mu.Unlock()
+				return
+			}
 		}
 
-		if time.Since(startTime) >= (300 * time.Millisecond) {
+		if time.Since(startTime) >= (500 * time.Millisecond) {
 			reply.Err = ErrNoKey
 			fmt.Printf("GET TIME OUT\n")
 			kv.mu.Unlock()
@@ -111,12 +126,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 		kv.mu.Unlock()
 		time.Sleep(10 * time.Millisecond)
 	}
-
-	// reply.Err = OK
-
-	// value := <-kv.applyCh
-	// cmd := value.Command.(Op)
-	// reply.Value = kv.store[cmd.Key]
 }
 
 func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
@@ -127,26 +136,44 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	op.Value = args.Value
 	op.Operation = args.Op
 
-	// kv.mu.Lock()
-	// value, ok := kv.lastApplied[op.ClerkRequestName]
-	// isLeae
-	// kv.mu.Unlock()
-	_, _, isLeader := kv.rf.Start(op)
-	if !isLeader {
+	kv.mu.Lock()
+	currentTerm := kv.lastTerm
+	value, ok := kv.lastApplied[op.ClerkRequestName]
+	isLeader := false
+	if !ok {
+		_, term, isLeader := kv.rf.Start(op)
+		if isLeader {
+			kv.lastApplied[op.ClerkRequestName] = false
+			kv.lastTerm = term
+			value = false
+		}
+	}
+	kv.mu.Unlock()
+
+	if value {
+		reply.Err = OK
+		return
+	}
+
+	term, isLeader := kv.rf.GetState()
+	if !isLeader || currentTerm != term {
+		if ok {
+			kv.mu.Lock()
+			delete(kv.lastApplied, op.ClerkRequestName)
+			kv.mu.Unlock()
+		}
 		reply.Err = ErrWrongLeader
 		return
 	}
 
 	fmt.Printf("START RAFT PUTAPPEND AGREEMENT\n")
-	kv.mu.Lock()
-	kv.lastApplied[op.ClerkRequestName] = false
-	kv.mu.Unlock()
 
 	startTime := time.Now()
 	for !kv.killed() {
-		_, isLeader = kv.rf.GetState()
+		// term, isLeader = kv.rf.GetState()
 		kv.mu.Lock()
-		if kv.lastApplied[op.ClerkRequestName] && isLeader {
+		fmt.Printf("ACQUIRE PUTAPPEND LOCK\n")
+		if kv.lastApplied[op.ClerkRequestName] {
 			reply.Err = OK
 			fmt.Printf("PUTAPPEND SUCCESS\n")
 			fmt.Printf("KV STORE: %v\n", kv.store)
@@ -154,14 +181,18 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 			return
 		}
 
-		if !isLeader {
-			reply.Err = ErrWrongLeader
-			fmt.Printf("LEADER CHANGED PUTAPPEND, KV STORE: %v\n", kv.store)
-			kv.mu.Unlock()
-			return
+		if kv.lastApplied[op.ClerkRequestName] {
+			term, isLeader = kv.rf.GetState()
+			if !isLeader || currentTerm != term {
+				reply.Err = ErrWrongLeader
+				delete(kv.lastApplied, op.ClerkRequestName)
+				fmt.Printf("LEADER CHANGED PUTAPPEND, KV STORE: %v\n", kv.store)
+				kv.mu.Unlock()
+				return
+			}
 		}
 
-		if time.Since(startTime) >= (300 * time.Millisecond) {
+		if time.Since(startTime) >= (500 * time.Millisecond) {
 			reply.Err = ErrNoKey
 			fmt.Printf("PUTAPPEND TIME OUT\n")
 			kv.mu.Unlock()
@@ -170,21 +201,18 @@ func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 		kv.mu.Unlock()
 		time.Sleep(10 * time.Millisecond)
 	}
-
 }
 
 // The ReadApplyMsg go routine starts a background go routine to apply commands and operations from commands
 // that have been replicated and applied on all the servers
 func (kv *KVServer) ReadApplyMsg() {
-	for {
+	for !kv.killed() {
 		msg := <-kv.applyCh
 		fmt.Printf("GOT VALUE ON APPLY CHANNEL, %v\n", msg)
 		op := msg.Command.(Op)
 		kv.mu.Lock()
 		if !kv.lastApplied[op.ClerkRequestName] {
 			switch op.Operation {
-			case "Get":
-				// op.Value = kv.store[op.Key]
 			case "Put":
 				kv.store[op.Key] = op.Value
 			case "Append":
@@ -193,7 +221,6 @@ func (kv *KVServer) ReadApplyMsg() {
 			kv.lastApplied[op.ClerkRequestName] = true
 		}
 		kv.mu.Unlock()
-		// time.Sleep(time.Duration(1) * time.Millisecond)
 	}
 }
 
