@@ -51,6 +51,7 @@ func (ck *Clerk) Get(key string) string {
 	clerkID := ck.clientID
 	requestID := ck.requestID
 	requestID += 1
+	ck.requestID = requestID
 	ck.mu.Unlock()
 	i := ck.leaderServer
 	// Get Args
@@ -88,20 +89,17 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 	clerkID := ck.clientID
 	requestID := ck.requestID
 	requestID += 1
+	ck.requestID = requestID
 	ck.mu.Unlock()
 	i := ck.leaderServer
 	// PutAppend Args
 	args := PutAppendArgs{}
-	// if op == "Put" {
-	// 	args.Op = op
-	// } else if op == "Append" {
-	// 	args.Op = op
-	// }
 	args.Op = op
 	args.Key = key
 	args.Value = value
 	args.ClerkID = clerkID
 	args.RequestID = requestID
+
 
 	for {
 		// PutAppend Reply
